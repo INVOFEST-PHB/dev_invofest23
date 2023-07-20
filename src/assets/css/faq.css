@@ -1,0 +1,11 @@
+  /* FAQ */
+.test {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  color: #2759c5;
+
+
+  @media(max-width:767px);
+  font-size: 14px;
+}
