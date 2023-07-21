@@ -13,6 +13,7 @@ import CompentitionVideo from './pages/competition/CompentitionVideo';
 import CompetitonUiUx from './pages/competition/CompetitonUiUx';
 import CompentitionSoftware from './pages/competition/CompentitionSoftware';
 import CompentitionKti from './pages/competition/CompentitionKti';
+import Register from './component/Login/Register';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={ <Login /> }/>
+          <Route path="/register" element={ <Register /> }/>
         </Routes>
       </Router>
     </>

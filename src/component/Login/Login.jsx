@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/login.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState('');
+  const history = useNavigate();
+
+  const Login = async(e) =>{
+    e.preventDefault();
+    try {
+        await axios.post('http://localhost:5000/login',{
+            email:email,
+            password: password
+        });
+        history("/")
+        ;
+    } catch (error) {
+        if (error.response) {
+            setMsg(error.response.data.msg);
+        }
+    }
+  }
+  
+
   return (
-    
    <div className="belakang">
     <div className="card-login">
       <div className="wrapper">
@@ -12,27 +36,31 @@ export const Login = () => {
           <img src={maskot} alt="" />
         </div>
         <div className="text-center mt-2 name">LOGIN</div>
-        <form className="p-3 mt-5">
+        <form onSubmit={Login} className="p-3 mt-5">
+        <p>{msg}</p>
           <div className="form-field d-flex align-items-center">
             <input
-              type="text"
-              name="userName"
-              id="userName"
+              type="email"
+              className="input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Username"
             />
           </div>
           <div className="form-field d-flex align-items-center">
             <input
               type="password"
-              name="password"
-              id="pwd"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
           </div>
-          <button className="btn mt-3">Login</button>
+          <button className="button btn mt-3" type="submit">
+            LOGIN
+          </button>
         </form>
         <div className="text-center fs-6">
-          <a href="/">Forget password?</a> or <a href="/">Sign up</a>
+          <a href="/register">Forget password?</a> or <a href="/">Sign up</a>
         </div>
       </div>
       </div>

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Logo from "../../assets/img/maskot.png";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
-import 'animate.css';
+import { ArrowRightCircle } from 'react-bootstrap-icons';   
 import '../../assets/css/banner.css';
 import TrackVisibility from 'react-on-screen';
 

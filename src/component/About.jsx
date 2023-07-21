@@ -15,7 +15,7 @@ const About = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-12 col-sm-12 col-xs-12">
             <div className="video-container">
-              <iframe width="500" height="300" src="https://www.youtube.com/embed/LFsskcpoAPo" title="YouTube video player"  allow=" autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              <iframe width="500" height="300" src="https://www.youtube.com/embed/LFsskcpoAPo" title="YouTube video player"></iframe>
               </div>
               <p>
                 event spektakuler tahunan yang bernama Invofest (Informatics

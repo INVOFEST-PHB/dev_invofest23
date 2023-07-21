@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import Navbars from "../component/Navbars";
 import BannerAcara from "../component/banner/BannerAcara";
 // import Personal from '../component/card/personal/Personal';
