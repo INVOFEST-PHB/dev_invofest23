@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../assets/css/index.css";
 import { Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,8 +7,16 @@ import {
   faYoutube,
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function SocialIcons() {
+
+    useEffect(() => {
+      AOS.init();
+    }, []);
+
   return (
     <Col xl={12} className="social-icons">
       <a className=""

@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/login.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const Register = () => {
+
+    useEffect(() => {
+      AOS.init();
+    }, []);
+
   const [ name, setName] = useState('');
   const [ email, setEmail] = useState('');
   const [ password, setPassword] = useState('');

@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { useEffect, Component } from "react";
 import Faq from "react-faq-component";
 import "../assets/css/faq.css"
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const data = {
   title: "FAQ Invofest 2023",
@@ -42,11 +45,19 @@ const data = {
   ],
 };
 
+  // useEffect(() => {
+  //   AOS.init();
+  // }, []);
+
 
 export default class ComponentFaq extends Component {
+
   render() {
+
+
+
     return (
-      <div className="test">
+      <div data-aos="fade-up" data-aos-duration="300" className="test">
         <Faq
           data={data}
           styles={{
