@@ -4,12 +4,20 @@ import logo from '../assets/img/invofest.png';
 import '../assets/css/navbar.css';
 import { HashLink } from 'react-router-hash-link';
 
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // import './app.css';
 
 const Navbars = () =>  {
   
       const [activeLink, setActiveLink] = useState('home','workshop','seminar');
       const [scrolled, setScrolled] = useState(false);
+
+      useEffect(() => {
+            AOS.init();
+          }, []);
     
       useEffect(() => {
         const onScroll = () => {

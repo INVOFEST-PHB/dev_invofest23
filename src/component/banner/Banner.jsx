@@ -4,8 +4,15 @@ import Logo from "../../assets/img/maskot.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';   
 import '../../assets/css/banner.css';
 import TrackVisibility from 'react-on-screen';
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
+    useEffect(() => {
+    AOS.init();
+    }, []);
+
     const [loopNum] = useState(0);
     const [isDeleting] = useState(false);
     const [text, setText] = useState('');
@@ -35,7 +42,7 @@ const Banner = () => {
     return (
         <section className="banner" id="home">
             <Container>
-                <Row className="aligh-items-center">
+                <Row data-aos="zoom-in" data-aos-delay="300" className="aligh-items-center">
                     <Col xs={6} md={6} xl={7}>
                         <TrackVisibility>
                             {({ isVisible }) =>

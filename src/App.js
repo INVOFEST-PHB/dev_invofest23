@@ -14,6 +14,7 @@ import CompetitonUiUx from './pages/competition/CompetitonUiUx';
 import CompentitionSoftware from './pages/competition/CompentitionSoftware';
 import CompentitionKti from './pages/competition/CompentitionKti';
 import Register from './component/Login/Register';
+import Dashboard from './component/DashboardUser/Dashboard';
 
 
 function App() {
@@ -24,10 +25,19 @@ function App() {
           <Route path="/" element={<PageHome />} />
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />
-          <Route path="/competition/video-kreatif" element={<CompentitionVideo />} />
+          <Route
+            path="/competition/video-kreatif"
+            element={<CompentitionVideo />}
+          />
           <Route path="/competition/ui-ux" element={<CompetitonUiUx />} />
-          <Route path="/competition/software-developer" element={<CompentitionSoftware />} />
-          <Route path="/competition/karya-tulis-ilmiyah" element={<CompentitionKti />} />
+          <Route
+            path="/competition/software-developer"
+            element={<CompentitionSoftware />}
+          />
+          <Route
+            path="/competition/karya-tulis-ilmiyah"
+            element={<CompentitionKti />}
+          />
 
           {/* Compentition */}
           <Route path="/workshop" element={<Workshop />} />
@@ -35,8 +45,11 @@ function App() {
           <Route path="/workshop/laravel" element={<WorkshopOne />} />
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={ <Login /> }/>
-          <Route path="/register" element={ <Register /> }/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Dashboard User */}
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </>
