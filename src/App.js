@@ -9,12 +9,13 @@ import Seminar from './pages/Seminar';
 import About from "./pages/About";
 import Login from './component/Login/Login';
 import WorkshopOne from './pages/workshop/WorkshopOne';
-import CompentitionVideo from './pages/competition/CompentitionVideo';
+import CompentitionVideo from './pages/competition/CompetitionVideo';
 import CompetitonUiUx from './pages/competition/CompetitonUiUx';
-import CompentitionSoftware from './pages/competition/CompentitionSoftware';
-import CompentitionKti from './pages/competition/CompentitionKti';
+import CompentitionSoftware from './pages/competition/CompetitionSoftware';
+import CompentitionKti from './pages/competition/CompetitionKti';
 import Register from './component/Login/Register';
 import Dashboard from './component/DashboardUser/Dashboard';
+import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
 
 
 function App() {
@@ -35,8 +36,12 @@ function App() {
             element={<CompentitionSoftware />}
           />
           <Route
-            path="/competition/karya-tulis-ilmiyah"
+            path="/competition/karya-tulis-ilmiah"
             element={<CompentitionKti />}
+          />
+          <Route
+            path="/competition/web-desain"
+            element={<CompetitionWebDesain />}
           />
 
           {/* Compentition */}

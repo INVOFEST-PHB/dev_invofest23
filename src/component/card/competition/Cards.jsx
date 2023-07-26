@@ -37,7 +37,7 @@ function Cards() {
                 Start:
                 <span className="ag-courses-item_date p-3">04.11.2022</span>
                 <a
-                  href="/competition/karya-tulis-ilmiyah"
+                  href="/competition/karya-tulis-ilmiah"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -90,7 +90,7 @@ function Cards() {
               <div className="ag-courses-item_date-box">
                 Start:
                 <span className="ag-courses-item_date p-3">04.11.2022</span>
-                <a href="#">
+                <a href="/competition/web-desain">
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
@@ -129,7 +129,7 @@ function Cards() {
 
           <div
             data-aos="fade-up"
-            data-aos-duration="700"
+            data-aos-duration="600"
             className="ag-courses_item"
           >
             <div className="ag-courses-item_link">
