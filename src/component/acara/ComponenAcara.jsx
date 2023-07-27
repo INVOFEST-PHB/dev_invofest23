@@ -1,8 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react';
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class ComponenAcara extends Component {
     render() {
+
+        useEffect(() => {
+          AOS.init();
+        }, []);
+
         return (
             <div>
                 <div className="solution_card text-black">

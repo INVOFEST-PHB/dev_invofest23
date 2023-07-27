@@ -1,9 +1,17 @@
-import React, { Component } from "react";
+import React, { useEffect, Component } from "react";
 import { Container, Tab, Tabs } from "react-bootstrap";
 // import "../../assets/css/card/tabs.css"
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class TabsAcara extends Component {
   render() {
+
+    // useEffect(() => {
+    //   AOS.init();
+    // }, []);
+    
     const Demo1 = () => {
     return "Tab 1 using component to render tab instance";
     };

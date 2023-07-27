@@ -9,11 +9,13 @@ import Seminar from './pages/Seminar';
 import About from "./pages/About";
 import Login from './component/Login/Login';
 import WorkshopOne from './pages/workshop/WorkshopOne';
-import CompentitionVideo from './pages/competition/CompentitionVideo';
+import CompentitionVideo from './pages/competition/CompetitionVideo';
 import CompetitonUiUx from './pages/competition/CompetitonUiUx';
-import CompentitionSoftware from './pages/competition/CompentitionSoftware';
-import CompentitionKti from './pages/competition/CompentitionKti';
+import CompentitionSoftware from './pages/competition/CompetitionSoftware';
+import CompentitionKti from './pages/competition/CompetitionKti';
 import Register from './component/Login/Register';
+import Dashboard from './component/DashboardUser/Dashboard';
+import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
 
 
 function App() {
@@ -24,10 +26,23 @@ function App() {
           <Route path="/" element={<PageHome />} />
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />
-          <Route path="/competition/video-kreatif" element={<CompentitionVideo />} />
+          <Route
+            path="/competition/video-kreatif"
+            element={<CompentitionVideo />}
+          />
           <Route path="/competition/ui-ux" element={<CompetitonUiUx />} />
-          <Route path="/competition/software-developer" element={<CompentitionSoftware />} />
-          <Route path="/competition/karya-tulis-ilmiyah" element={<CompentitionKti />} />
+          <Route
+            path="/competition/software-developer"
+            element={<CompentitionSoftware />}
+          />
+          <Route
+            path="/competition/karya-tulis-ilmiah"
+            element={<CompentitionKti />}
+          />
+          <Route
+            path="/competition/web-desain"
+            element={<CompetitionWebDesain />}
+          />
 
           {/* Compentition */}
           <Route path="/workshop" element={<Workshop />} />
@@ -35,8 +50,11 @@ function App() {
           <Route path="/workshop/laravel" element={<WorkshopOne />} />
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={ <Login /> }/>
-          <Route path="/register" element={ <Register /> }/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Dashboard User */}
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </>

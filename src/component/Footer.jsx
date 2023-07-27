@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import img from "../assets/img/logo_invofest.png";
 import SocialIcons from "./LandingPage/SosialIcons";
-import img2 from "../assets/img/sponsor3.png";
-import img3 from "../assets/img/sponsor.jpg";
-import img4 from "../assets/img/sponsor2.png"
+
 
 export default function Footer() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="footer bg-dark text-white text-center">
       <Col xl={12}>

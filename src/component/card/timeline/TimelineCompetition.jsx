@@ -1,8 +1,16 @@
-import React, { Component } from "react";
+import React, { useEffect, Component } from "react";
 import "../../../assets/css/timelineCompetition.css"
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class TimelineCompetition extends Component {
     render() {
+        
+        //   useEffect(() => {
+        //     AOS.init();
+        //   }, []);
+
         return (
                 <div className="container">
                     <li className="list-inline-item event-list">
