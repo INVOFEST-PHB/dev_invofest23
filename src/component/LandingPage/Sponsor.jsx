@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react';
 import meter1 from "../../assets/img/sponsor.jpg";
 import meter2 from "../../assets/img/sponsor2.png";
 import meter3 from "../../assets/img/sponsor3.png";
@@ -7,11 +7,18 @@ import 'react-multi-carousel/lib/styles.css';
 // import colorSharp from "../../assets/img/color-sharp.png"
 import "../../assets/css/card/sponsor.css"
 import { Image } from 'react-bootstrap';
+// importing aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 class Sponsor extends Component {
     
+    
     render(){
+
+
+
         const responsive = {
             superLargeDesktop: {
               // the naming can be any, depends on you.
@@ -31,9 +38,13 @@ class Sponsor extends Component {
               items: 1
             }
           };
+
+        // useEffect(() => {
+        // AOS.init();
+        // }, []);
         
         return (
-            <section className="skill mt-5" id="skills">
+            <section data-aos="zoom-in" className="skill mt-5" id="skills">
             <div className="container">
                 <div className="row">
                     <div className="col-12">

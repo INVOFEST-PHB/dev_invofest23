@@ -12,8 +12,8 @@ class CompetitonUiUx extends Component {
             <div>
                  <Navbars />
         <BannerAcara 
-        title="Workshop"
-        description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
+        title="UI/UX"
+        description="Kompetisi Desain UI/UX Desain antar Mahasiswa"
         />
         <div className="container">
         <div className="row">
