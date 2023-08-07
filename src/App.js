@@ -14,8 +14,11 @@ import CompetitonUiUx from './pages/competition/CompetitonUiUx';
 import CompentitionSoftware from './pages/competition/CompetitionSoftware';
 import CompentitionKti from './pages/competition/CompetitionKti';
 import Register from './component/Login/Register';
-import Dashboard from './component/DashboardUser/Dashboard';
 import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
+import Test from './pages/DashboardUser/Test';
+import IndexUser from './pages/DashboardUser/IndexUser';
+import CompetitionUser from './pages/DashboardUser/CompetitionUser';
+// import Testing from "./component/DashboardUser/Testing";
 
 
 function App() {
@@ -54,7 +57,11 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Dashboard User */}
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<IndexUser/>} />
+          <Route path="/competition-user" element={<CompetitionUser/>} />
+
+          {/* Testing Layout */}
+          <Route path="/profil-user" element={<Test />} />
         </Routes>
       </Router>
     </>

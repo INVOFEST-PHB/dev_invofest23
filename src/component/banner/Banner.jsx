@@ -79,7 +79,7 @@ const Banner = () => {
                         <span className="wrap">{text}</span>
                       </span>
                     </h1>
-                    <p>
+                    {/* <p>
                       Menyambut Inovasi, Merayakan Teknologi: Invofest Kembali
                       Hadir untuk Menciptakan Masa Depan Lebih Terang!
                     </p>
@@ -91,7 +91,7 @@ const Banner = () => {
                       bergengsi di bidang teknologi, Invofest telah menjadi
                       ajang yang ditunggu-tunggu oleh para pencinta teknologi,
                       mahasiswa, akademisi, dan praktisi industri.
-                    </p>
+                    </p> */}
                     <button onClick={handleRedirect}>
                       Let’s Connect <ArrowRightCircle size={25} />
                     </button>

@@ -12,7 +12,7 @@ import 'aos/dist/aos.css';
 
 const Navbars = () =>  {
   
-      const [activeLink, setActiveLink] = useState('home','workshop','seminar');
+      const [activeLink, setActiveLink] = useState('dashboard_user','home','workshop','seminar');
       const [scrolled, setScrolled] = useState(false);
 
       useEffect(() => {
@@ -38,39 +38,101 @@ const Navbars = () =>  {
       }
    
         return (
-            <div>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" className='logo' />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="/workshop" className={activeLink === 'workshop' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('workshop')}>Workshop</Nav.Link>
-              <Nav.Link href="/seminar" className={activeLink === 'seminar' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('seminar')}>Seminar</Nav.Link>
-              <Nav.Link href="/competition" className={activeLink === 'competition' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('competition')}>Competition</Nav.Link>
-              <Nav.Link href="/about" className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>About</Nav.Link>
-              {/* <Nav.Link href="faq" className={activeLink === 'faq' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('faq')}>FAQ</Nav.Link> */}
-            </Nav>
-            <span className="navbar-text">
-              {/* <div className="social-icon">
+          <div>
+            <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+              <Container>
+                <Navbar.Brand href="/">
+                  <img src={logo} alt="Logo" className="logo" />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                  <span className="navbar-toggler-icon"></span>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="ms-auto">
+                    <Nav.Link
+                      href="/dashboard-user"
+                      className={
+                        activeLink === "dashboard_user"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("dashboard_user")}
+                    >
+                      Dashboard
+                    </Nav.Link>
+                    <Nav.Link
+                      href="/"
+                      className={
+                        activeLink === "home"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("home")}
+                    >
+                      Home
+                    </Nav.Link>
+                    <Nav.Link
+                      href="/workshop"
+                      className={
+                        activeLink === "workshop"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("workshop")}
+                    >
+                      Workshop
+                    </Nav.Link>
+                    <Nav.Link
+                      href="/seminar"
+                      className={
+                        activeLink === "seminar"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("seminar")}
+                    >
+                      Seminar
+                    </Nav.Link>
+                    <Nav.Link
+                      href="/competition"
+                      className={
+                        activeLink === "competition"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("competition")}
+                    >
+                      Competition
+                    </Nav.Link>
+                    <Nav.Link
+                      href="/about"
+                      className={
+                        activeLink === "about"
+                          ? "active navbar-link"
+                          : "navbar-link"
+                      }
+                      onClick={() => onUpdateActiveLink("about")}
+                    >
+                      About
+                    </Nav.Link>
+                    {/* <Nav.Link href="faq" className={activeLink === 'faq' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('faq')}>FAQ</Nav.Link> */}
+                  </Nav>
+                  <span className="navbar-text">
+                    {/* <div className="social-icon">
                 <a href="#"><img src={navIcon1} alt="" /></a>
                 <a href="#"><img src={navIcon2} alt="" /></a>
                 <a href="#"><img src={navIcon3} alt="" /></a>
               </div> */}
-              <HashLink to='/login'>
-                <button className="vvd"><span>Sign In</span></button>
-              </HashLink>
-            </span>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-            </div>
+                    <HashLink to="/login">
+                      <button className="vvd">
+                        <span>Sign In</span>
+                      </button>
+                    </HashLink>
+                  </span>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          </div>
         );
     }
 export default Navbars;

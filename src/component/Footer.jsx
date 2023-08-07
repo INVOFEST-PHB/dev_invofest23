@@ -5,9 +5,9 @@ import SocialIcons from "./LandingPage/SosialIcons";
 
 
 export default function Footer() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  // }, []);
   return (
     <div className="footer bg-dark text-white text-center">
       <Col xl={12}>
@@ -60,21 +60,21 @@ export default function Footer() {
                   {/* <div className="border border-danger" style={{width:'100%',height:'100%' , backgroundImage: `url(${img2})`}} /> */}
                   <img
                     className="float-start"
-                    src={img2}
+                    // src={img2}
                     alt=""
                     width="70"
                     height="45"
                   />
                   <img
                     className=" mx-auto "
-                    src={img3}
+                    // src={img3}
                     alt=""
                     width="70"
                     height="45"
                   />
                   <img
                     className=" Float-end "
-                    src={img4}
+                    // src={img4}
                     alt=""
                     width="70"
                     height="45"
