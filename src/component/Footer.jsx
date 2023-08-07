@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import img from "../assets/img/logo_invofest.png";
 import SocialIcons from "./LandingPage/SosialIcons";
-
+import img2 from "../assets/img/logo_poltek.png";
+import img3 from "../assets/img/LOGO HMPTI-1.png";
 
 export default function Footer() {
   // useEffect(() => {
@@ -22,62 +23,46 @@ export default function Footer() {
               </div>
               <div className="col-lg-3 col-md-6">
                 <h5 className="text-white mb-3 ">QUICK LINKS</h5>
-                <ul className="list-unstyled text-muted">
-                  <li>
-                    <a href="#">lorem ipsum</a>
+                <ul className="list-unstyled text-muted ">
+                  <li className="mb-2 fw-bold">
+                    <a href="/workshop">workshop</a>
                   </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>
+                  <li className="mb-2 fw-bold">
+                    <a href="/seminar">seminar</a>
                   </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>
-                  </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>
+                  <li className="fw-bold">
+                    <a href="/competition">competition</a>
                   </li>
                 </ul>
               </div>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 ">
                 <h5 className="text-white mb-3">GET IN TOUCH</h5>
                 <ul className="list-unstyled text-muted">
-                  <li>
-                    <a href="#">Lorem ipsum</a>
+                  <li className="mb-2 fw-bold">
+                    <a href="#">invofest@gmail.com</a>
                   </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>
-                  </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>=
-                  </li>
-                  <li>
-                    <a href="#">Lorem ipsum</a>
+                  <li className="fw-bold">
+                    <a href="#">012345678910</a>
                   </li>
                 </ul>
               </div>
               <div className="col-lg-3 col-md-6 ">
                 <h5 className="text-white mb-3 text-center">PRESENTED BY</h5>
-                <div className="d-flex flex-wrap gap-lg-1 ">
+                <div className="">
                   {/* <div className="border border-danger" style={{width:'100%',height:'100%' , backgroundImage: `url(${img2})`}} /> */}
                   <img
-                    className="float-start"
-                    // src={img2}
+                    className="mx-auto "
+                    src={img2}
                     alt=""
-                    width="70"
-                    height="45"
+                    width="85"
+                    height="70"
                   />
                   <img
-                    className=" mx-auto "
-                    // src={img3}
+                    className=" mx-auto"
+                    src={img3}
                     alt=""
-                    width="70"
-                    height="45"
-                  />
-                  <img
-                    className=" Float-end "
-                    // src={img4}
-                    alt=""
-                    width="70"
-                    height="45"
+                    width="85"
+                    height="70"
                   />
                 </div>
               </div>
