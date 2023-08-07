@@ -5,7 +5,6 @@ import SocialIcons from "./LandingPage/SosialIcons";
 import img2 from "../assets/img/logo_poltek.png";
 import img3 from "../assets/img/LOGO HMPTI-1.png";
 
-
 export default function Footer() {
   // useEffect(() => {
   //   AOS.init();
