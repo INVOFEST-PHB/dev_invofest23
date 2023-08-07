@@ -50,7 +50,7 @@ const Navbars = () =>  {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ms-auto">
                     <Nav.Link
-                      href="/dashboard-user"
+                      href="/dashboard"
                       className={
                         activeLink === "dashboard_user"
                           ? "active navbar-link"
