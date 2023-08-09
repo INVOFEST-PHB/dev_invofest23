@@ -9,6 +9,15 @@ export default function Footer() {
   // useEffect(() => {
   //   AOS.init();
   // }, []);
+
+    const sizeSponsor = {
+      width: "70px", // Atur lebar sesuai kebutuhan, contoh: 300px
+      height: "70px", // Atur tinggi sesuai kebutuhan, contoh: 200px
+    };
+
+    const tag_A = {
+      textDecoration: "none",
+    };
   return (
     <div className="footer bg-dark text-white text-center">
       <Col xl={12}>
@@ -25,13 +34,19 @@ export default function Footer() {
                 <h5 className="text-white mb-3 ">QUICK LINKS</h5>
                 <ul className="list-unstyled text-muted ">
                   <li className="mb-2 fw-bold">
-                    <a href="/workshop">workshop</a>
+                    <a href="/workshop" style={tag_A}>
+                      workshop
+                    </a>
                   </li>
                   <li className="mb-2 fw-bold">
-                    <a href="/seminar">seminar</a>
+                    <a href="/seminar" style={tag_A}>
+                      seminar
+                    </a>
                   </li>
                   <li className="fw-bold">
-                    <a href="/competition">competition</a>
+                    <a href="/competition" style={tag_A}>
+                      competition
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -39,10 +54,14 @@ export default function Footer() {
                 <h5 className="text-white mb-3">GET IN TOUCH</h5>
                 <ul className="list-unstyled text-muted">
                   <li className="mb-2 fw-bold">
-                    <a href="#">invofest@gmail.com</a>
+                    <a href="#" style={tag_A}>
+                      invofest@gmail.com
+                    </a>
                   </li>
                   <li className="fw-bold">
-                    <a href="#">012345678910</a>
+                    <a href="#" style={tag_A}>
+                      012345678910
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -52,6 +71,7 @@ export default function Footer() {
                   {/* <div className="border border-danger" style={{width:'100%',height:'100%' , backgroundImage: `url(${img2})`}} /> */}
                   <img
                     className="mx-auto "
+                    style={sizeSponsor}
                     src={img2}
                     alt=""
                     width="85"
@@ -59,6 +79,7 @@ export default function Footer() {
                   />
                   <img
                     className=" mx-auto"
+                    style={sizeSponsor}
                     src={img3}
                     alt=""
                     width="85"
