@@ -15,9 +15,21 @@ import CompentitionSoftware from './pages/competition/CompetitionSoftware';
 import CompentitionKti from './pages/competition/CompetitionKti';
 import Register from './component/Login/Register';
 import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
-import Test from './pages/DashboardUser/Test';
+// import Test from './pages/DashboardUser/Test';
 import IndexUser from './pages/DashboardUser/IndexUser';
 import CompetitionUser from './pages/DashboardUser/CompetitionUser';
+// import IndexAdmin from './pages/DashboardAdmin/IndexAdmin';
+import DashboardLama from './component/DashboardUser/DashboardLama';
+import IndexAdmin from './pages/DashboardAdmin/IndexAdmin';
+import Kti from './pages/DashboardAdmin/Competition/ComKti';
+import SoftwareDev from './pages/DashboardAdmin/Competition/SoftwareDev';
+import DesainPoster from './pages/DashboardAdmin/Competition/DesainPoster';
+import WorskspUiUx from './pages/DashboardAdmin/Workshop/WorkspUiUx';
+import Ai from './pages/DashboardAdmin/Workshop/Ai';
+import WorskspKti from './pages/DashboardAdmin/Workshop/WorkspKti';
+import CyberSecurity from './pages/DashboardAdmin/Seminar/CyberSecurity';
+import ComKti from './pages/DashboardAdmin/Competition/ComKti';
+import COmUiUx from './pages/DashboardAdmin/Competition/ComUiUx';
 // import Testing from "./component/DashboardUser/Testing";
 
 
@@ -57,11 +69,29 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Dashboard User */}
-          <Route path="/dashboard" element={<IndexUser/>} />
-          <Route path="/competition-user" element={<CompetitionUser/>} />
+          <Route path="/dashboard" element={<IndexUser />} />
+          <Route path="/competition-user" element={<CompetitionUser />} />
+
+          {/* Dashboard Admin */}
+          <Route path="/admin" element={<IndexAdmin />} />
+
+          {/* Dashboard Admin Competition */}
+          <Route path="/admin/data-competition/kti" element={<ComKti/>} />
+          <Route path="/admin/data-competition/software-development" element={<SoftwareDev/>} />
+          <Route path="/admin/data-competition/ui-ux" element={<COmUiUx/>} />
+          <Route path="/admin/data-competition/desain-poster" element={<DesainPoster/>}/>
+
+          {/* Dashboard Admin Workshop */}
+          <Route path="/admin/data-workshop/ui-ux" element={<WorskspUiUx/>}/>
+          <Route path="/admin/data-workshop/ai" element={<Ai/>}/>
+          <Route path="/admin/data-workshop/kti" element={<WorskspKti/>}/>
+
+          {/* Dashboard Admin Seminar */}
+          <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity/>}/>
 
           {/* Testing Layout */}
-          <Route path="/profil-user" element={<Test />} />
+          {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
+          <Route path="/testing" element={<DashboardLama />} />
         </Routes>
       </Router>
     </>

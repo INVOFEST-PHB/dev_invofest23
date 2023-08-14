@@ -83,7 +83,7 @@ const Dashboard = () => {
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
-                            Upgrade to PRO
+                            Lets Go
                           </a>
                         </span>
                       </div>
