@@ -30,10 +30,18 @@ import WorskspKti from './pages/DashboardAdmin/Workshop/WorkspKti';
 import CyberSecurity from './pages/DashboardAdmin/Seminar/CyberSecurity';
 import ComKti from './pages/DashboardAdmin/Competition/ComKti';
 import COmUiUx from './pages/DashboardAdmin/Competition/ComUiUx';
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import { Auth } from './config/firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import NotFoound from './config/NotFoound';
+=======
+import PilihCompetition from './component/DashboardUser/PilihCompetition';
+import Test from './pages/DashboardUser/Test';
+import ChooseCompetition from './pages/DashboardUser/Choose/ChooseCompetition';
+import ChooseEventSeminar from './pages/DashboardUser/Choose/ChooseEventSeminar';
+import ChooseEventWorkshop from './pages/DashboardUser/Choose/ChooseEventWorkshop';
+>>>>>>> a7e4fb13eadcb264945cb8779f5b7881f5a7ae8e
 // import Testing from "./component/DashboardUser/Testing";
 
 
@@ -98,6 +106,11 @@ function App() {
         )}
           <Route path="/competition-user" element={<CompetitionUser />} />
 
+          {/* Pilih Competition & Event */}
+          <Route path="/dashboard/pilih-competition" element={<ChooseCompetition/>} />
+          <Route path="/dashboard/pilih-seminar" element={<ChooseEventSeminar/>} />
+          <Route path="/dashboard/pilih-workshop" element={<ChooseEventWorkshop/>} />
+
           {/* Dashboard Admin */}
           <Route path="/admin" element={<IndexAdmin />} />
 
@@ -116,8 +129,13 @@ function App() {
           <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity/>}/>
 
           {/* Testing Layout */}
+<<<<<<< HEAD
           <Route path="/testing" element={<IndexAdmin/>} />
           <Route path="/testing" element={<DashboardLama />} />
+=======
+          {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
+          <Route path="/testing" element={<Test/>} /> 
+>>>>>>> a7e4fb13eadcb264945cb8779f5b7881f5a7ae8e
         </Routes>
       </Router>
     </>
