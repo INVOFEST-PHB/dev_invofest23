@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Route, BrowserRouter as Router,Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router,Routes, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHome from './pages/PageHome';
 import Competition from './pages/Competition';
@@ -30,10 +30,32 @@ import WorskspKti from './pages/DashboardAdmin/Workshop/WorkspKti';
 import CyberSecurity from './pages/DashboardAdmin/Seminar/CyberSecurity';
 import ComKti from './pages/DashboardAdmin/Competition/ComKti';
 import COmUiUx from './pages/DashboardAdmin/Competition/ComUiUx';
+import { useEffect, useState } from 'react';
+import { Auth } from './config/firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import NotFoound from './config/NotFoound';
 // import Testing from "./component/DashboardUser/Testing";
 
 
 function App() {
+  const [user, setUser] = useState(null); // Store user information
+
+  useEffect(() => {
+    
+    // Check if user is logged in
+    const unsubscribe = onAuthStateChanged(Auth, (user) => {
+      if (user) {
+        setUser(user); // Set user information if logged in
+      } else {
+        setUser(null); // Clear user information if not logged in
+      }
+    });
+
+    return () => {
+      unsubscribe(); // Unsubscribe from the auth state listener
+    };
+  }, []);
+
   return (
     <>
       <Router>
@@ -69,7 +91,11 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Dashboard User */}
-          <Route path="/dashboard" element={<IndexUser />} />
+          {user ? (
+          <Route path="/Profile" element={<IndexUser user={user} />} />
+        ) : (
+          <Route path="*" element={<Login />} />
+        )}
           <Route path="/competition-user" element={<CompetitionUser />} />
 
           {/* Dashboard Admin */}
@@ -83,14 +109,14 @@ function App() {
 
           {/* Dashboard Admin Workshop */}
           <Route path="/admin/data-workshop/ui-ux" element={<WorskspUiUx/>}/>
-          <Route path="/admin/data-workshop/ai" element={<Ai/>}/>
+          // <Route path="/admin/data-workshop/ai" element={<Ai/>}/>
           <Route path="/admin/data-workshop/kti" element={<WorskspKti/>}/>
 
           {/* Dashboard Admin Seminar */}
           <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity/>}/>
 
           {/* Testing Layout */}
-          {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
+          <Route path="/testing" element={<IndexAdmin/>} />
           <Route path="/testing" element={<DashboardLama />} />
         </Routes>
       </Router>
