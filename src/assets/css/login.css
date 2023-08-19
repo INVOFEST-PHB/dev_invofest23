@@ -85,3 +85,6 @@
         padding: 40px 15px 15px 15px;
     }
 }
+input:-moz-placeholder {
+    color: rgb(0, 0, 0);
+}

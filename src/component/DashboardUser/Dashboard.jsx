@@ -2,6 +2,7 @@ import React from 'react'
 import "../../assets_dashboardUser/assets/vendors/mdi/css/materialdesignicons.min.css";
 import "../../assets_dashboardUser/assets/vendors/css/vendor.bundle.base.css";
 // endinject
+import { useNavigate } from 'react-router-dom';
 // Plugin css for this page
 import "../../assets_dashboardUser/assets/vendors/jvectormap/jquery-jvectormap.css";
 import "../../assets_dashboardUser/assets/vendors/flag-icon-css/css/flag-icon.min.css";
@@ -15,63 +16,69 @@ import "../../assets_dashboardUser/assets/css/style.css";
 // End layout styles
 // import Icon from "assets/images/favicon.png";
 import LogoSelamatDatang from "../../assets_dashboardUser/assets/images/dashboard/Group126@2x.png";
+import { Auth, logout } from '../../config/firebase/firebase';
 
 
 const Dashboard = () => {
   const tag_A = {
     textDecoration: "none"
   };
+  const navigate = useNavigate(); // Use useHistory here
+  const user = Auth.currentUser;
+  const displayName = user.displayName;
+  const photoURL = user.photoURL;
+
   return (
     <>
       <br />
       <br />
       <br />
       <div
-        class="containerDashboard-fluid page-body-wrapper"
+        className="containerDashboard-fluid page-body-wrapper"
         data-aos="zoom-in"
         data-aos-delay="300"
       >
         {/* <!-- partial --> */}
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row" data-aos="zoom-in" data-aos-delay="300">
+        <div className="main-panel">
+          <div className="content-wrapper">
+            <div className="row" data-aos="zoom-in" data-aos-delay="300">
               <div
-                class="col-12 grid-margin stretch-card"
+                className="col-12 grid-margin stretch-card"
                 data-aos="zoom-in"
                 data-aos-delay="300"
               >
-                <div class="card corona-gradient-card">
-                  <div class="card-body py-0 px-0 px-sm-3">
-                    <div class="row align-items-center">
-                      <div class="col-4 col-sm-3 col-xl-2">
+                <div className="card corona-gradient-card">
+                  <div className="card-body py-0 px-0 px-sm-3">
+                    <div className="row align-items-center">
+                      <div className="col-4 col-sm-3 col-xl-2">
                         <img
                           src={LogoSelamatDatang}
-                          class="gradient-corona-img img-fluid"
+                          className="gradient-corona-img img-fluid"
                           alt=""
                         />
                       </div>
                       <div
-                        class="col-5 col-sm-7 col-xl-8 p-0"
+                        className="col-5 col-sm-7 col-xl-8 p-0"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <h4
-                          class="mb-1 mb-sm-0"
+                          className="mb-1 mb-sm-0"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Selamat Datang Kembali👋
                         </h4>
                         <p
-                          class="mb-0 font-weight-normal d-none d-sm-block"
+                          className="mb-0 font-weight-normal d-none d-sm-block"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
-                          Avriansyah Bahtiar
+                          {displayName}
                         </p>
                       </div>
                       <div
-                        class="col-3 col-sm-2 col-xl-2 ps-0 text-center"
+                        className="col-3 col-sm-2 col-xl-2 ps-0 text-center"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
@@ -79,7 +86,7 @@ const Dashboard = () => {
                           <a
                             href="https://www.bootstrapdash.com/product/corona-admin-template/"
                             target="_blank"
-                            class="btn btn-outline-light btn-rounded get-started-btn"
+                            className="btn btn-outline-light btn-rounded get-started-btn"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -93,24 +100,24 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div class="row" data-aos="zoom-in" data-aos-delay="300">
+            <div className="row" data-aos="zoom-in" data-aos-delay="300">
               <div
-                class="col-md-8 grid-margin stretch-card"
+                className="col-md-8 grid-margin stretch-card"
                 data-aos="zoom-in"
                 data-aos-delay="300"
               >
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-md-6"></div>
+                <div className="card">
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-md-6"></div>
                       <div
-                        class="col-md-6 d-flex justify-content-end"
+                        className="col-md-6 d-flex justify-content-end"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <button
                           type="button"
-                          class="btn btn-primary btn-rounded btn-fw"
+                          className="btn btn-primary btn-rounded btn-fw"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
@@ -119,37 +126,37 @@ const Dashboard = () => {
                       </div>
                     </div>
                     {/* <!-- content --> */}
-                    <div class="text-center">
+                    <div className="text-center">
                       <h2
-                        class="card-title p-4 mx-auto"
+                        className="card-title p-4 mx-auto"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
-                        Avriansyah Bahtiar <br />{" "}
+                        {displayName} <br />{" "}
                         <p
-                          class="text-muted"
+                          className="text-muted"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
-                          Avriansyah.stdy@gmail.com
+                          {user.email}
                         </p>
                       </h2>
                     </div>
 
                     <div
-                      class="mx-auto"
+                      className="mx-auto"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
-                      <div class="text-sm-left">
+                      <div className="text-sm-left">
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Tanggal Lahir <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -159,18 +166,18 @@ const Dashboard = () => {
                       </div>
 
                       <div
-                        class="text-sm-left"
+                        className="text-sm-left"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Alamat <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -180,18 +187,18 @@ const Dashboard = () => {
                       </div>
 
                       <div
-                        class="text-sm-left"
+                        className="text-sm-left"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Nomor HP <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -201,18 +208,18 @@ const Dashboard = () => {
                       </div>
 
                       <div
-                        class="text-sm-left"
+                        className="text-sm-left"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Status <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -222,18 +229,18 @@ const Dashboard = () => {
                       </div>
 
                       <div
-                        class="text-sm-left"
+                        className="text-sm-left"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Instansi <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -243,18 +250,18 @@ const Dashboard = () => {
                       </div>
 
                       <div
-                        class="text-sm-left"
+                        className="text-sm-left"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
                         <p
-                          class="card-title p-4 mx-auto"
+                          className="card-title p-4 mx-auto"
                           data-aos="zoom-in"
                           data-aos-delay="300"
                         >
                           Kartu KTM <br />{" "}
                           <span
-                            class="fw-bold"
+                            className="fw-bold"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
@@ -270,22 +277,22 @@ const Dashboard = () => {
               </div>
 
               <div
-                class="col-sm-4 grid-margin stretch-card"
+                className="col-sm-4 grid-margin stretch-card"
                 data-aos="zoom-in"
                 data-aos-delay="300"
               >
-                <div class="card">
-                  <div class="card-body">
+                <div className="card">
+                  <div className="card-body">
                     {/* <!-- content --> */}
                     <h5
-                      class="card-title p-4 mx-auto"
+                      className="card-title p-4 mx-auto"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
                       TIMELINE
                     </h5>
                     <h5
-                      class="card-title p-4 mx-auto"
+                      className="card-title p-4 mx-auto"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
@@ -297,28 +304,28 @@ const Dashboard = () => {
             </div>
 
             <div
-              class="col-md-12 grid-margin stretch-card"
+              className="col-md-12 grid-margin stretch-card"
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-row justify-content-center">
+              <div className="card">
+                <div className="card-body">
+                  <div className="d-flex flex-row justify-content-center">
                     <h4
-                      class="card-title mb-1"
+                      className="card-title mb-1"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
                       BELUM MENDAFTAR ? SILAHKAN DAFTAR
                     </h4>
-                    {/* <p class="text-muted mb-1">Your data status</p> */}
+                    {/* <p className="text-muted mb-1">Your data status</p> */}
                   </div>
                   {/* <!-- content --> */}
-                  <div class="row mt-5" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="col-md-6 d-flex justify-content-center mt-4">
+                  <div className="row mt-5" data-aos="zoom-in" data-aos-delay="300">
+                    <div className="col-md-6 d-flex justify-content-center mt-4">
                       <button
                         type="button"
-                        class="btn btn-primary btn-rounded btn-fw btn-lg"
+                        className="btn btn-primary btn-rounded btn-fw btn-lg"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
@@ -326,13 +333,13 @@ const Dashboard = () => {
                       </button>
                     </div>
                     <div
-                      class="col-md-6 d-flex justify-content-center mt-4"
+                      className="col-md-6 d-flex justify-content-center mt-4"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
                       <button
                         type="button"
-                        class="btn btn-primary btn-rounded btn-fw btn-lg"
+                        className="btn btn-primary btn-rounded btn-fw btn-lg"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
@@ -345,26 +352,26 @@ const Dashboard = () => {
             </div>
 
             <div
-              class="col-md-12 grid-margin stretch-card"
+              className="col-md-12 grid-margin stretch-card"
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <div class="card">
-                <div class="card-body">
+              <div className="card">
+                <div className="card-body">
                   <div
-                    class="d-flex flex-row justify-content-between"
+                    className="d-flex flex-row justify-content-between"
                     data-aos="zoom-in"
                     data-aos-delay="300"
                   >
                     <h4
-                      class="card-title mb-1"
+                      className="card-title mb-1"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
                       KOMPETISI YANG DIIKUTI
                     </h4>
                     <p
-                      class="text-muted mb-1"
+                      className="text-muted mb-1"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
@@ -372,23 +379,23 @@ const Dashboard = () => {
                     </p>
                   </div>
                   {/* <!-- content --> */}
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="preview-list">
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-primary">
-                              <i class="mdi mdi-file-document"></i>
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="preview-list">
+                        <div className="preview-item border-bottom">
+                          <div className="preview-thumbnail">
+                            <div className="preview-icon bg-primary">
+                              <i className="mdi mdi-file-document"></i>
                             </div>
                           </div>
                           <div
-                            class="preview-item-content d-sm-flex flex-grow"
+                            className="preview-item-content d-sm-flex flex-grow"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
-                            <div class="flex-grow">
+                            <div className="flex-grow">
                               <h6
-                                class="preview-subject"
+                                className="preview-subject"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -397,7 +404,7 @@ const Dashboard = () => {
                               <a
                                 href="#"
                                 style={tag_A}
-                                class="mb-0"
+                                className="mb-0"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -405,13 +412,13 @@ const Dashboard = () => {
                               </a>
                             </div>
                             <div
-                              class="me-auto text-sm-right pt-2 pt-sm-0"
+                              className="me-auto text-sm-right pt-2 pt-sm-0"
                               data-aos="zoom-in"
                               data-aos-delay="300"
                             >
                               <button
                                 type="button"
-                                class="btn btn-primary btn-rounded btn-fw"
+                                className="btn btn-primary btn-rounded btn-fw"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -421,20 +428,20 @@ const Dashboard = () => {
                           </div>
                         </div>
 
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-primary">
-                              <i class="mdi mdi-file-document"></i>
+                        <div className="preview-item border-bottom">
+                          <div className="preview-thumbnail">
+                            <div className="preview-icon bg-primary">
+                              <i className="mdi mdi-file-document"></i>
                             </div>
                           </div>
                           <div
-                            class="preview-item-content d-sm-flex flex-grow"
+                            className="preview-item-content d-sm-flex flex-grow"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
-                            <div class="flex-grow">
+                            <div className="flex-grow">
                               <h6
-                                class="preview-subject"
+                                className="preview-subject"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -443,7 +450,7 @@ const Dashboard = () => {
                               <a
                                 href="#"
                                 style={tag_A}
-                                class="mb-0"
+                                className="mb-0"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -451,13 +458,13 @@ const Dashboard = () => {
                               </a>
                             </div>
                             <div
-                              class="me-auto text-sm-right pt-2 pt-sm-0"
+                              className="me-auto text-sm-right pt-2 pt-sm-0"
                               data-aos="zoom-in"
                               data-aos-delay="300"
                             >
                               <button
                                 type="button"
-                                class="btn btn-primary btn-rounded btn-fw"
+                                className="btn btn-primary btn-rounded btn-fw"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -474,26 +481,26 @@ const Dashboard = () => {
             </div>
 
             <div
-              class="col-md-12 grid-margin stretch-card"
+              className="col-md-12 grid-margin stretch-card"
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <div class="card">
-                <div class="card-body">
+              <div className="card">
+                <div className="card-body">
                   <div
-                    class="d-flex flex-row justify-content-between"
+                    className="d-flex flex-row justify-content-between"
                     data-aos="zoom-in"
                     data-aos-delay="300"
                   >
                     <h4
-                      class="card-title mb-1"
+                      className="card-title mb-1"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
                       EVENTS
                     </h4>
                     <p
-                      class="text-muted mb-1"
+                      className="text-muted mb-1"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
@@ -501,23 +508,23 @@ const Dashboard = () => {
                     </p>
                   </div>
                   {/* <!-- content --> */}
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="preview-list">
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-primary">
-                              <i class="mdi mdi-file-document"></i>
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="preview-list">
+                        <div className="preview-item border-bottom">
+                          <div className="preview-thumbnail">
+                            <div className="preview-icon bg-primary">
+                              <i className="mdi mdi-file-document"></i>
                             </div>
                           </div>
                           <div
-                            class="preview-item-content d-sm-flex flex-grow"
+                            className="preview-item-content d-sm-flex flex-grow"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
-                            <div class="flex-grow">
+                            <div className="flex-grow">
                               <h6
-                                class="preview-subject"
+                                className="preview-subject"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -526,7 +533,7 @@ const Dashboard = () => {
                               <a
                                 href="#"
                                 style={tag_A}
-                                class="mb-0"
+                                className="mb-0"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -534,13 +541,13 @@ const Dashboard = () => {
                               </a>
                             </div>
                             <div
-                              class="me-auto text-sm-right pt-2 pt-sm-0"
+                              className="me-auto text-sm-right pt-2 pt-sm-0"
                               data-aos="zoom-in"
                               data-aos-delay="300"
                             >
                               <button
                                 type="button"
-                                class="btn btn-primary btn-rounded btn-fw"
+                                className="btn btn-primary btn-rounded btn-fw"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -550,20 +557,20 @@ const Dashboard = () => {
                           </div>
                         </div>
 
-                        <div class="preview-item border-bottom">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-primary">
-                              <i class="mdi mdi-file-document"></i>
+                        <div className="preview-item border-bottom">
+                          <div className="preview-thumbnail">
+                            <div className="preview-icon bg-primary">
+                              <i className="mdi mdi-file-document"></i>
                             </div>
                           </div>
                           <div
-                            class="preview-item-content d-sm-flex flex-grow"
+                            className="preview-item-content d-sm-flex flex-grow"
                             data-aos="zoom-in"
                             data-aos-delay="300"
                           >
-                            <div class="flex-grow">
+                            <div className="flex-grow">
                               <h6
-                                class="preview-subject"
+                                className="preview-subject"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -572,7 +579,7 @@ const Dashboard = () => {
                               <a
                                 href="#"
                                 style={tag_A}
-                                class="mb-0"
+                                className="mb-0"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
@@ -580,22 +587,23 @@ const Dashboard = () => {
                               </a>
                             </div>
                             <div
-                              class="me-auto text-sm-right pt-2 pt-sm-0"
+                              className="me-auto text-sm-right pt-2 pt-sm-0"
                               data-aos="zoom-in"
                               data-aos-delay="300"
                             >
-                              {/* <!-- <p class="text-muted">15 minutes ago</p>
-                                <p class="text-muted mb-0">30 tasks, 5 issues </p> --> */}
+                              {/* <!-- <p className="text-muted">15 minutes ago</p>
+                                <p className="text-muted mb-0">30 tasks, 5 issues </p> --> */}
                               <button
                                 type="button"
-                                class="btn btn-primary btn-rounded btn-fw"
+                                className="btn btn-primary btn-rounded btn-fw"
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
                                 Belum Verifikasi
                               </button>
-                              {/* <!-- <button type="button" class="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
+                              {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
                             </div>
+                           
                           </div>
                         </div>
                       </div>
