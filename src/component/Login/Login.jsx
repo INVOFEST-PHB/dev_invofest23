@@ -11,6 +11,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+  const [error, setError] = useState(null);
   const history = useNavigate();
 
   useEffect(() => {
@@ -20,13 +21,21 @@ function Login() {
   const handleEmailLogin = async (e) => {
     e.preventDefault();
     try {
-      const user = await loginWithEmailAndPassword(Auth, email, password);
-      if (user) {
-        localStorage.setItem("loggedIn", "true");
-        history.push("/dashboard"); // Use history.push instead of history("/dashboard")
+      const userCredential = await signInWithEmailAndPassword(Auth, email, password);
+      const user = userCredential.user;
+      const userdata = {
+        email: user.email,
+        uid: user.uid,
+        refreshToken: user.refreshToken,
+        emailVerified: user.emailVerified,
       }
+      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem('userdata',JSON.stringify(userdata))
+      console.log(userdata);
+      history("/profile");
     } catch (error) {
-      setMsg("Invalid email or password");
+      setError("Invalid email or password");
+      console.error("Sign-In Error:", error);
     }
   };
 
@@ -36,7 +45,7 @@ function Login() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       localStorage.setItem("loggedIn", "true");
-      localStorage.setItem("email", user.email);
+      // localStorage.setItem("email", user.email);
       history("/profile");
     } catch (error) {
       console.error("Error during Google login:", error);
