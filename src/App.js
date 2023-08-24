@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { Route, BrowserRouter as Router,Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router,Routes, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHome from './pages/PageHome';
 import Competition from './pages/Competition';
@@ -30,18 +30,21 @@ import WorskspKti from './pages/DashboardAdmin/Workshop/WorkspKti';
 import CyberSecurity from './pages/DashboardAdmin/Seminar/CyberSecurity';
 import ComKti from './pages/DashboardAdmin/Competition/ComKti';
 import COmUiUx from './pages/DashboardAdmin/Competition/ComUiUx';
-<<<<<<< HEAD
+
 import { useEffect, useState } from 'react';
 import { Auth } from './config/firebase/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import NotFoound from './config/NotFoound';
-=======
+
 import PilihCompetition from './component/DashboardUser/PilihCompetition';
 import Test from './pages/DashboardUser/Test';
 import ChooseCompetition from './pages/DashboardUser/Choose/ChooseCompetition';
 import ChooseEventSeminar from './pages/DashboardUser/Choose/ChooseEventSeminar';
 import ChooseEventWorkshop from './pages/DashboardUser/Choose/ChooseEventWorkshop';
->>>>>>> a7e4fb13eadcb264945cb8779f5b7881f5a7ae8e
+   import { Provider } from 'react-redux';
+import { Store } from './config/Login/storeLogin';
+import FormBiodata from './component/Login/FormBiodata';
+
 // import Testing from "./component/DashboardUser/Testing";
 
 
@@ -51,7 +54,8 @@ function App() {
   useEffect(() => {
     
     // Check if user is logged in
-    const unsubscribe = onAuthStateChanged(Auth, (user) => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user); // Set user information if logged in
       } else {
@@ -65,7 +69,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Provider store={Store}>
       <Router>
         <Routes>
           <Route path="/" element={<PageHome />} />
@@ -95,8 +99,10 @@ function App() {
           <Route path="/workshop/laravel" element={<WorkshopOne />} />
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+        <Route path="/biodata" element={user ? <FormBiodata /> : <Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/biodata" element={<Biodata />} /> */}
 
           {/* Dashboard User */}
           {user ? (
@@ -129,16 +135,17 @@ function App() {
           <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity/>}/>
 
           {/* Testing Layout */}
-<<<<<<< HEAD
           <Route path="/testing" element={<IndexAdmin/>} />
           <Route path="/testing" element={<DashboardLama />} />
-=======
+
           {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
           <Route path="/testing" element={<Test/>} /> 
->>>>>>> a7e4fb13eadcb264945cb8779f5b7881f5a7ae8e
+
+           
+
         </Routes>
       </Router>
-    </>
+    </Provider>
   );
 }
 
