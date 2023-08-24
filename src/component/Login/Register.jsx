@@ -93,7 +93,7 @@ const handleRegisterSubmit = async () => {
   if (password === confirmPassword) {
     // Passwords match, proceed with registration logic
     await SignUpUser(email, password);
-    history('/login');
+    history("/biodata");
   } else {
     // Passwords do not match, show an error or take appropriate action
     setPasswordMatch(false);
