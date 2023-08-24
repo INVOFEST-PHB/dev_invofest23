@@ -1,16 +1,15 @@
-.belakang{
+.belakang_biodata{
   background-image: linear-gradient(to right top, #d16ba5, #c864b1, #b960bf, #a35fcf, #8261de, #7c61e6, #7461ee, #6a62f6, #8f5cf8, #b153f7, #cf47f3, #ec35ec);
   overflow: scroll;
-  padding: 10%;
 }
 
-.card-login{
-    margin-top: 120px;
+.card-biodata{
+    margin-top: 10px;
 }
 .wrapper2{
   max-width: 450px;
   min-height: 500px;
-  margin: 80px auto;
+  margin: 100px auto;
   padding: 40px 30px 30px 30px;
   background-color: #000000;
   border-radius: 15px;
