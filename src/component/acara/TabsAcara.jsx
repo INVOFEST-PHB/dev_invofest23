@@ -27,10 +27,21 @@ class TabsAcara extends Component {
         <Container>
         <Tabs justify className="tabs mb-3">
         <Tab className="subtabs" eventKey="Deskripsi" title="Deskripsi">
-        <Demo1 />
+        {/* <Demo1 /> */}
+        <p className="blockquote">{this.props.tabsDeskripsi1}
+        <br /><br />{this.props.tabsDeskripsi2}</p>
+
         </Tab>
-        <Tab className="subtabs" eventKey="Persiapan" title="Persiapan">
-        <Demo2 />
+        <Tab className="subtabs" eventKey="Persiapan" title={ this.props.titleTabs}>
+        <ol>
+        <p className="blockquote"><li className="ms-2">{this.props.li1}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li2}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li3}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li4}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li5}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li6}</li></p>
+        <p className="blockquote"><li className="ms-2">{this.props.li7}</li></p>
+        </ol>
         </Tab>
         <Tab className="subtabs" eventKey="contact" title="Contact">
         <Demo3 />

@@ -366,6 +366,7 @@ class Dashboard extends Component {
                     data-aos-delay="300"
                   >
                     <div className="col-md-6 d-flex justify-content-center mt-4">
+                      <a href="/competition">
                       <button
                         type="button"
                         className="btn btn-primary btn-rounded btn-fw btn-lg"
@@ -374,6 +375,7 @@ class Dashboard extends Component {
                       >
                         Daftar Competition
                       </button>
+                        </a>
                     </div>
                     <div
                       className="col-md-6 d-flex justify-content-center mt-4"
