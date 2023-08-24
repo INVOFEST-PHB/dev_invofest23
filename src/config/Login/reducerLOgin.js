@@ -2,7 +2,8 @@ const initializeApp={
   popup: false,
   isLogin:false,
   isLoading: false,
-  user: false
+  user: {},
+  informasi:[]
 }
 
 const reducer = (state=  initializeApp, action)=>{
@@ -30,6 +31,12 @@ const reducer = (state=  initializeApp, action)=>{
       return{
         ...state,
         user:action.value
+      }
+    }
+    if (action.type === 'SET_BIODATA') {
+      return{
+        ...state,
+        informasi : action.value
       }
     }
     return state;
