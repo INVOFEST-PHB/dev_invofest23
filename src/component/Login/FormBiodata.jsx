@@ -57,40 +57,98 @@ class FormBiodata extends Component {
   render() {
     const { username, ttl, alamat, noHp, status, pendidikan, jurusan } = this.state;
     return (
-      <div className="belakang">
-        <div className="card-login">
+      <div className="belakang_biodata">
+        <div className="card-biodata">
           <div className="wrapper">
             <div className="logo">
               <img src={maskot} alt="" />
             </div>
             <div className="text-center mt-2 name">ISI BIODATA</div>
-            <form className="p-3 mt-5">
+            <form className="p-3 "onSubmit={this.handleSaveBiodata}>
               <div className="mt-5">
                 <div className="form-field d-flex align-items-center mt-5">
-                  <label htmlFor="username">Username</label>
-                  <input type="text" id="username" placeholder="Enter your username" />
+                  {/* <label htmlFor="username">Username</label> */}
+                  <input
+                    type="text"
+                    className="input"
+                    name="username"
+                    value={username}
+                    onChange={this.handleChange}
+                    placeholder="Enter your username"
+                  />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  <label htmlFor="alamat">Alamat</label>
-                  <input type="text" id="alamat" placeholder="Enter your address" />
+                  {/* <label htmlFor="alamat">Alamat</label> */}
+                  <input
+                    type="date"
+                    className="input"
+                    id="tanggalLahir"
+                    name="ttl"
+                    value={ttl}
+                    onChange={this.handleChange}
+                    placeholder="Tempat Tanggal Lahir"
+                  />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  <label htmlFor="tanggalLahir">Tanggal Lahir</label>
-                  <input type="date" id="tanggalLahir" />
+                  {/* <label htmlFor="tanggalLahir">Tanggal Lahir</label> */}
+                  <input
+                    type="text"
+                    className="input"
+                    name="alamat"
+                    value={alamat}
+                    onChange={this.handleChange}
+                    placeholder="Enter your address"
+                  />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  <label htmlFor="nomerHandphone">Nomer Handphone</label>
-                  <input type="tel" id="nomerHandphone" placeholder="Enter your phone number" />
+                  {/* <label htmlFor="nomerHandphone">Nomer Handphone</label> */}
+                  <input
+                    type="text"
+                    className="input"
+                    name="noHp"
+                    value={noHp}
+                    onChange={this.handleChange}
+                    placeholder="Enter your phone number"
+                  />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  <label htmlFor="jenjangPendidikan">Jenjang Pendidikan/Status</label>
-                  <input type="text" id="jenjangPendidikan" placeholder="Enter your education status" />
+                <input
+                    type="text"
+                    className="input"
+                    name="status"
+                    value={status}
+                    onChange={this.handleChange}
+                    placeholder="Enter your education status"
+                  />
+                  {/* {/* <label htmlFor="jenjangPendidikan">Jenjang Pendidikan/Status</label> */}
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  <label htmlFor="namaInstitusi">Nama Institusi</label>
-                  <input type="text" id="namaInstitusi" placeholder="Enter the name of your institution" />
+                  {/* {/* <label htmlFor="namaInstitusi">Nama Institusi</label> */} 
+                  <input
+                    type="text"
+                    className="input"
+                    name="pendidikan"
+                    value={pendidikan}
+                    onChange={this.handleChange}
+                    placeholder="Enter your institution"
+                  />
                 </div>
-                <button className="button btn mt-3" type="submit">
+                <div className="form-field d-flex align-items-center">
+                  {/* {/* <label htmlFor="namaInstitusi">Nama Institusi</label> */} 
+                  <input
+                    type="text"
+                    className="input"
+                    name="jurusan"
+                    value={jurusan}
+                    onChange={this.handleChange}
+                    placeholder="jurusan"
+                  />
+                </div>
+                <button
+                  className="button btn mt-3"
+                  type="button"
+                  onClick={this.handleSaveBiodata}
+                >
                   SELESAI
                 </button>
               </div>
