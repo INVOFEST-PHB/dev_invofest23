@@ -3,7 +3,8 @@ const initializeApp={
   isLogin:false,
   isLoading: false,
   user: {},
-  informasi:[]
+  informasi:[],
+  uiux:[]
 }
 
 const reducer = (state=  initializeApp, action)=>{
@@ -37,6 +38,12 @@ const reducer = (state=  initializeApp, action)=>{
       return{
         ...state,
         informasi : action.value
+      }
+    }
+    if (action.type === 'SET_UIUX') {
+      return{
+        ...state,
+        uiux : action.value
       }
     }
     return state;

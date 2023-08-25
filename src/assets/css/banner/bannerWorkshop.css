@@ -1,4 +1,12 @@
-
+.btn-daftar {
+  box-shadow: none;
+  width: 10%;
+  height: 40px;
+  background-color: #03A9F4;
+  color: #fff;
+  border-radius: 25px;
+  letter-spacing: 1.3px;
+}
 
 .image{
     margin-top: 0;
