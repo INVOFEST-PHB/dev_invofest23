@@ -168,21 +168,25 @@ class DaftarUiUx extends Component {
             <div className="logo">
               <img src={maskot} alt="" />
             </div>
-            <div className="text-center mt-2 name">ISI BIODATA</div>
+            <div className="text-center font-bold">ISI BIODATA</div>
             <form className="p-3">
               <div className="mt-5">
-                <div className="form-field d-flex align-items-center mt-5">
-                  <select
+
+                  <select className="form-field form-select input p-xl-3"
                     name="jenisLomba"
                     value={jenisLomba}
                     onChange={this.handleChange}
                   >
+                    <option value="Pilih Kategori">Pilih Kategori</option> 
                     <option value="UIUX">UI{"/"}UX </option>
-                    <option value="Video">Video</option>
+                    <option value="video">Video</option>
+                    <option value="Web Design">Web Desain</option>
+                    <option value="Karya Tulis">Karya Tulis Ilmiah</option>
+                    <option value="Software Dev">Software Development</option>
                   </select>
+                  
                   <div className="error">{formErrors.jenisLomba}</div>
-                </div>
-                <div className="form-field d-flex align-items-center mt-5">
+                <div className="form-field d-flex align-items-center mt-auto">
                   <input
                     type="text"
                     className="input"
@@ -193,6 +197,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.email}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -204,6 +209,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.namaTeam}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -215,6 +221,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.namaKetuaTeam}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -226,6 +233,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.teamMember1}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -237,6 +245,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.teamMember2}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -248,6 +257,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.asalPerguruanTinggi}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -259,6 +269,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.kartuTandaMahasiswa}</div>
                 </div>
+
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -270,6 +281,7 @@ class DaftarUiUx extends Component {
                   />
                   <div className="error">{formErrors.noWhatsAppKetua}</div>
                 </div>
+                
                 <button
                   className="button btn mt-3"
                   type="button"
