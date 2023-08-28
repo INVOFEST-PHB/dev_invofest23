@@ -21,6 +21,7 @@ import CompentitionSoftware from "./pages/competition/CompetitionSoftware";
 import CompentitionKti from "./pages/competition/CompetitionKti";
 import Register from "./component/Login/Register";
 import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
+import Options from "./component/From/From_Lomba/DaftarUi/DaftarWorkshop";
 // import Test from './pages/DashboardUser/Test';
 import IndexUser from "./pages/DashboardUser/IndexUser";
 import CompetitionUser from "./pages/DashboardUser/CompetitionUser";

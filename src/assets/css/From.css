@@ -4,7 +4,8 @@
 }
 
 .card-biodata{
-    margin-top: 10px;
+    margin-top: 20px;
+    
 }
 .wrapper2{
   max-width: 450px;
@@ -16,3 +17,4 @@
   background-image: url(../img/color-sharp.png);
 
 } 
+
