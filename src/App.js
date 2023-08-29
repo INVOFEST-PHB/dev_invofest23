@@ -21,7 +21,7 @@ import CompentitionSoftware from "./pages/competition/CompetitionSoftware";
 import CompentitionKti from "./pages/competition/CompetitionKti";
 import Register from "./component/Login/Register";
 import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
-import Options from "./component/From/From_Lomba/DaftarUi/DaftarWorkshop";
+import Options from "./component/Form/DaftarWorkshop";
 // import Test from './pages/DashboardUser/Test';
 import IndexUser from "./pages/DashboardUser/IndexUser";
 import CompetitionUser from "./pages/DashboardUser/CompetitionUser";
@@ -51,7 +51,10 @@ import ChooseEventWorkshop from "./pages/DashboardUser/Choose/ChooseEventWorksho
 import { Provider } from "react-redux";
 import { Store } from "./config/Login/storeLogin";
 import FormBiodata from "./component/Login/FormBiodata";
-import DaftarUiUx from "./component/From/From_Lomba/DaftarUi/DaftarUiUx";
+import DaftarSeminar from "./component/Form/DaftarSeminar";
+import DaftarWorkshop from "./component/Form/DaftarWorkshop";
+import DaftarCompetitionx from "./component/Form/DaftarCompetition";
+import RegisterSucces from "./component/success/RegisterSucces";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -131,8 +134,14 @@ function App() {
             path="/dashboard/pilih-workshop"
             element={<ChooseEventWorkshop />}
           />
+          
           {/* Daftar Competition */}
-          <Route path="/competition/ui-ux/daftar-ui-ux" element={<DaftarUiUx />} />
+          <Route path="/competition/register-competition" element={<DaftarCompetitionx />} />
+          {/* Daftar Seminar */}
+          <Route path="/seminar/register-seminar" element={<DaftarSeminar />} />
+          {/* Daftar Worskhop */}
+          <Route path="/workshop/register-workshop" element={<DaftarWorkshop />} />
+
 
           {/* Dashboard Admin */}
           <Route path="/admin" element={<IndexAdmin />} />
@@ -161,6 +170,8 @@ function App() {
           <Route path="/testing" element={<DashboardLama />} />
           {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
           <Route path="/testing" element={<Test />} />
+
+          <Route path="/success" element={<RegisterSucces/>} />
         </Routes>
       </Router>
     </Provider>
