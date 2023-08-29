@@ -21,8 +21,7 @@ const RegisterSucces = () => {
             />
             <h2>Registrasi Berhasil!</h2>
             <p>
-              Silahkan tunggu konfirmasi email dari kami dan <br />
-              kami akan menginformasikan resi secept mungkin!
+              Silahkan cek dashboard anda! <br/> untuk informasi lebih lanjut
             </p>
             <div>
               <a class="btn btn-success w-50 mt-4" href="#">
