@@ -1,8 +1,8 @@
+import "aos/dist/aos.css";
 import React, { useEffect, Component } from "react";
 import "../../assets/css/banner/bannerWorkshop.css";
 // importing aos
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
 
 class BannerAcara extends Component {
   render() {
@@ -18,10 +18,15 @@ class BannerAcara extends Component {
             <h5 className="font-italic mb-0 opacity-100">
               {this.props.description}
             </h5>
-            <p className="font-italic">
-              <a href="https://bootstrapious.com" className="text-white"></a>
-            </p>
-            {this.props.buttonbanner}
+            <a href={this.props.linkDaftar}>
+            <button
+                  className="button btn-daftar mt-3"
+                  type="button"
+                >
+                  Daftar
+                </button>
+                </a>
+      
           </div>
         </div>
       </div>

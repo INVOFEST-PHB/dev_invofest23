@@ -13,12 +13,7 @@ import 'aos/dist/aos.css';
 
 
 class Sponsor extends Component {
-    
-    
     render(){
-
-
-
         const responsive = {
             superLargeDesktop: {
               // the naming can be any, depends on you.
@@ -72,8 +67,12 @@ class Sponsor extends Component {
                     </div>
                 </div>
             </div>
+            <br/>
+            <br />
+            <br />
             {/* <img className="background-image-left" src={colorSharp} alt="Image" /> */}
         </section>
+        
         );
     }
 }

@@ -31,7 +31,7 @@ class FormBiodata extends Component {
     const biodataRef = ref(db, 'biodata/' + uid);
     const userdata = localStorage.getItem('userdata');
     const newBiodataRef = push(biodataRef); // Buat referensi baru dengan push()
-    const newData = {
+    const newData = { 
       username: username,
       ttl: ttl,
       alamat: alamat,
