@@ -1,66 +1,53 @@
 import React, { Component } from "react";
-import maskot from "../../../../assets/img/invofest.png";
+import maskot from "../../assets/img/invofest.png";
 import { getDatabase, push, ref, set } from "firebase/database";
-import { Auth } from "../../../../config/firebase/firebase";
+import { Auth } from "../../config/firebase/firebase";
 
-class DaftarUiUx extends Component {
+class DaftarWorkshop extends Component {
   state = {
-    jenisLomba: "UI/UX", // Nilai default "UI/UX"
+    jenisWorkshop: "Workshop", // Nilai default "UI/UX"
     email: "",
-    namaTeam: "",
-    namaKetuaTeam: "",
-    teamMember1: "",
-    teamMember2: "",
+    nama: "",
     asalPerguruanTinggi: "",
     kartuTandaMahasiswa: "",
-    noWhatsAppKetua: "",
+    noWhatsApp: "",
     formErrors: {
-      jenisLomba: "",
       email: "",
-      namaTeam: "",
-      namaKetuaTeam: "",
-      teamMember1: "",
-      teamMember2: "",
+      nama: "",
       asalPerguruanTinggi: "",
       kartuTandaMahasiswa: "",
-      noWhatsAppKetua: "",
+      noWhatsApp: "",
     },
     formValid: false,
   };
 
-  handleSaveLomba = () => {
+  handleSaveWorkshop = () => {
     const user = Auth.currentUser;
     const uid = user.uid;
     const {
-      jenisLomba,
+      jenisWorkshop,
       email,
-      namaTeam,
-      namaKetuaTeam,
-      teamMember1,
-      teamMember2,
+      nama,
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
-      noWhatsAppKetua,
+      noWhatsApp,
     } = this.state;
 
     // Validasi form sebelum mengirim data
     if (this.validateForm()) {
       const db = getDatabase();
-      const lombaRef = ref(db, jenisLomba + "/" + uid);
-      const newLombaRef = push(lombaRef);
+      const workshopRef = ref(db, jenisWorkshop + "/" + uid);
+      const newWorkshopRef = push(workshopRef);
       const newData = {
-        jenisLomba,
+        jenisWorkshop,
         email,
-        namaTeam,
-        namaKetuaTeam,
-        teamMember1,
-        teamMember2,
+        nama,
         asalPerguruanTinggi,
         kartuTandaMahasiswa,
-        noWhatsAppKetua,
+        noWhatsApp,
       };
 
-      set(newLombaRef, newData)
+      set(newWorkshopRef, newData)
         .then(() => {
           console.log("Data berhasil disimpan ke Firebase");
           // Tambahkan logika lain yang Anda butuhkan setelah sukses menyimpan data.
@@ -76,53 +63,31 @@ class DaftarUiUx extends Component {
   // Fungsi untuk validasi form
   validateForm() {
     const {
-      jenisLomba,
+      jenisWorkshop,
       email,
-      namaTeam,
-      namaKetuaTeam,
-      teamMember1,
-      teamMember2,
+      nama,
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
-      noWhatsAppKetua,
+      noWhatsApp,
     } = this.state;
 
     const formErrors = {
-      jenisLomba: "",
+      jenisWorkshop,
       email: "",
-      namaTeam: "",
-      namaKetuaTeam: "",
-      teamMember1: "",
-      teamMember2: "",
+      nama: "",
       asalPerguruanTinggi: "",
       kartuTandaMahasiswa: "",
-      noWhatsAppKetua: "",
+      noWhatsApp: "",
     };
 
     // Contoh validasi sederhana: pastikan field yang diperlukan tidak kosong
     let formValid = true;
-    if (!jenisLomba) {
-      formErrors.jenisLomba = "Jenis Lomba wajib dipilih";
-      formValid = false;
-    }
     if (!email) {
       formErrors.email = "Email wajib diisi";
       formValid = false;
     }
-    if (!namaTeam) {
-      formErrors.namaTeam = "Nama Team wajib diisi";
-      formValid = false;
-    }
-    if (!namaKetuaTeam) {
-      formErrors.namaKetuaTeam = "Nama Ketua Team wajib diisi";
-      formValid = false;
-    }
-    if (!teamMember1) {
-      formErrors.teamMember1 = "Nama Anggota 1 wajib diisi";
-      formValid = false;
-    }
-    if (!teamMember2) {
-      formErrors.teamMember2 = "Nama Anggota 2 wajib diisi";
+    if (!nama) {
+      formErrors.nama = "Nama wajib diisi";
       formValid = false;
     }
     if (!asalPerguruanTinggi) {
@@ -133,8 +98,8 @@ class DaftarUiUx extends Component {
       formErrors.kartuTandaMahasiswa = "KTM wajib diisi";
       formValid = false;
     }
-    if (!noWhatsAppKetua) {
-      formErrors.noWhatsAppKetua = "No. WhatsApp Ketua wajib diisi";
+    if (!noWhatsApp) {
+      formErrors.noWhatsApp = "No. WhatsApp Ketua wajib diisi";
       formValid = false;
     }
 
@@ -149,15 +114,12 @@ class DaftarUiUx extends Component {
 
   render() {
     const {
-      jenisLomba,
+      jenisWorkshop,
       email,
-      namaTeam,
-      namaKetuaTeam,
-      teamMember1,
-      teamMember2,
+      nama,
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
-      noWhatsAppKetua,
+      noWhatsApp,
       formErrors,
     } = this.state;
 
@@ -171,21 +133,18 @@ class DaftarUiUx extends Component {
             <div className="text-center font-bold">ISI BIODATA</div>
             <form className="p-3">
               <div className="mt-5">
+                <select
+                  className="form-field form-select input p-xl-3"
+                  name="jenisWorkshop"
+                  value={jenisWorkshop}
+                  onChange={this.handleChange}
+                >
+                  <option value="Pilih Workshop">Pilih Workshop</option>
+                  <option value="UIUX">UI/UX Desain</option>
+                  <option value="UIUX">Artificial Intelegent</option>
+                </select>
 
-                  <select className="form-field form-select input p-xl-3"
-                    name="jenisLomba"
-                    value={jenisLomba}
-                    onChange={this.handleChange}
-                  >
-                    <option value="Pilih Kategori">Pilih Kategori</option> 
-                    <option value="UIUX">UI{"/"}UX </option>
-                    <option value="video">Video</option>
-                    <option value="Web Design">Web Desain</option>
-                    <option value="Karya Tulis">Karya Tulis Ilmiah</option>
-                    <option value="Software Dev">Software Development</option>
-                  </select>
-                  
-                  <div className="error">{formErrors.jenisLomba}</div>
+                <div className="error">{formErrors.jenisWorkshop}</div>
                 <div className="form-field d-flex align-items-center mt-auto">
                   <input
                     type="text"
@@ -202,48 +161,24 @@ class DaftarUiUx extends Component {
                   <input
                     type="text"
                     className="input"
-                    name="namaTeam"
-                    value={namaTeam}
+                    name="nama"
+                    value={nama}
                     onChange={this.handleChange}
-                    placeholder="Nama Team"
+                    placeholder="Nama"
                   />
-                  <div className="error">{formErrors.namaTeam}</div>
+                  <div className="error">{formErrors.nama}</div>
                 </div>
 
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
                     className="input"
-                    name="namaKetuaTeam"
-                    value={namaKetuaTeam}
+                    name="nama"
+                    value={nama}
                     onChange={this.handleChange}
-                    placeholder="Nama Ketua Team"
+                    placeholder="Nama"
                   />
-                  <div className="error">{formErrors.namaKetuaTeam}</div>
-                </div>
-
-                <div className="form-field d-flex align-items-center">
-                  <input
-                    type="text"
-                    className="input"
-                    name="teamMember1"
-                    value={teamMember1}
-                    onChange={this.handleChange}
-                    placeholder="Nama Anggota 1"
-                  />
-                  <div className="error">{formErrors.teamMember1}</div>
-                </div>
-
-                <div className="form-field d-flex align-items-center">
-                  <input
-                    type="text"
-                    className="input"
-                    name="teamMember2"
-                    value={teamMember2}
-                    onChange={this.handleChange}
-                    placeholder="Nama Anggota 2"
-                  />
-                  <div className="error">{formErrors.teamMember2}</div>
+                  <div className="error">{formErrors.nama}</div>
                 </div>
 
                 <div className="form-field d-flex align-items-center">
@@ -275,17 +210,17 @@ class DaftarUiUx extends Component {
                     type="text"
                     className="input"
                     name="noWhatsAppKetua"
-                    value={noWhatsAppKetua}
+                    value={noWhatsApp}
                     onChange={this.handleChange}
                     placeholder="No. WhatsApp Ketua"
                   />
-                  <div className="error">{formErrors.noWhatsAppKetua}</div>
+                  <div className="error">{formErrors.noWhatsApp}</div>
                 </div>
-                
+
                 <button
                   className="button btn mt-3"
                   type="button"
-                  onClick={this.handleSaveLomba}
+                  onClick={this.handleSaveWorkshop}
                 >
                   SELESAI
                 </button>
@@ -298,4 +233,4 @@ class DaftarUiUx extends Component {
   }
 }
 
-export default DaftarUiUx;
+export default DaftarWorkshop;

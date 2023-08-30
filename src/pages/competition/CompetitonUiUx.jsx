@@ -16,7 +16,7 @@ class CompetitonUiUx extends Component {
           user={Auth.currentUser} // Mengambil status login pengguna dari Firebase
           title="UI/UX"
           description="Kompetisi Desain UI/UX Desain antar Mahasiswa"
-          linkDaftar="/competition/ui-ux/daftar-ui-ux"
+          linkDaftar="/competition/register-competition"
         />
         <div className="container">
           <div className="row">
