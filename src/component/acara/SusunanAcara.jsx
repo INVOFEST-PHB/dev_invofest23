@@ -12,6 +12,7 @@ class SusunanAcara extends Component {
       //    AOS.init();
       //  }, []);
 
+      
     return (
       <div className="">
         <h1
