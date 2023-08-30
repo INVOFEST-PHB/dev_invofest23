@@ -8,10 +8,12 @@ import ComponentFaq from "../component/ComponentFaq";
 import Maps from "../component/Maps";
 import Sponsor from "../component/LandingPage/Sponsor";
 import { faMagento } from "@fortawesome/free-brands-svg-icons";
+// import { faMagento } from "../assets/img/logo_invofest.png";
 import Footer from "../component/Footer";
 // importing aos
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 
 export default class PageHome extends Component {
   render() {
@@ -40,6 +42,7 @@ export default class PageHome extends Component {
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
+                  // style={styleIcon}
                   icons={faMagento}
                   name="TALKSHOW"
                   desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
@@ -89,9 +92,10 @@ export default class PageHome extends Component {
                     className="timeline "
                   >
                     <Timeline
-                      tanggal="19 Oktober 2023"
-                      acara="Webinar"
-                      deskripsi="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet obcaecati eaque beatae sed officiis earum ab, ex cum odio consectetur illum saepe maiores tempore. Quisquam suscipit possimus similique veritatis quia."
+                      tanggal="23 Oktober 2023"
+                      acara="Talkshow"
+                      deskripsi="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era
+                      Digital: Peluang dan Tantangan di Dunia IT”."
                     />
                   </div>
                   <div
@@ -100,9 +104,21 @@ export default class PageHome extends Component {
                     className="timeline"
                   >
                     <Timeline
-                      tanggal="20 Oktober 2023"
-                      acara="Webinar"
-                      deskripsi="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet obcaecati eaque beatae sed officiis earum ab, ex cum odio consectetur illum saepe maiores tempore. Quisquam suscipit possimus similique veritatis quia."
+                      tanggal="24 Oktober 2023"
+                      acara="Workshop & Competition"
+                      deskripsi="Terdapat Workshop Mobile Development, UI/UX Desain, Artificial Intelegence dan Competition UI/UX Desain, Web Desain, dan  Software Development"
+                    />
+                  </div>
+                  <div
+                    data-aos="fade-left"
+                    data-aos-duration="300"
+                    className="timeline"
+                  >
+                    <Timeline
+                      tanggal="25 Oktober 2023"
+                      acara="Seminar"
+                      deskripsi="Acara Seminar yang dikemas dengan suasana santai dengan tema “Unlocking the Future:
+                      Embracing the Digital Revolution for a Better Tomorrow”"
                     />
                   </div>
                 </div>

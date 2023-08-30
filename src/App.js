@@ -55,6 +55,7 @@ import DaftarSeminar from "./component/Form/DaftarSeminar";
 import DaftarWorkshop from "./component/Form/DaftarWorkshop";
 import DaftarCompetitionx from "./component/Form/DaftarCompetition";
 import RegisterSucces from "./component/success/RegisterSucces";
+import BlankPage from "./component/BlankPage";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -82,38 +83,29 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PageHome />} />
+
+
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />
-          <Route
-            path="/competition/video-kreatif"
-            element={<CompentitionVideo />}
-          />
-          <Route path="/competition/ui-ux" element={<CompetitonUiUx />} />
-          <Route
-            path="/competition/software-developer"
-            element={<CompentitionSoftware />}
-          />
-          <Route
-            path="/competition/karya-tulis-ilmiah"
-            element={<CompentitionKti />}
-          />
-          <Route
-            path="/competition/web-desain"
-            element={<CompetitionWebDesain />}
-          />
-          {/* Compentition */}
+          {/* <Route path="/competition/video-kreatif" element={<CompentitionVideo />} /> */}
+          <Route path="/competition/ui-ux-desain" element={<CompetitonUiUx />} />
+          <Route path="/competition/web-desain" element={<CompetitionWebDesain />} />
+          <Route path="/competition/software-development" element={<CompentitionSoftware />} />
+          {/* <Route path="/competition/karya-tulis-ilmiah" element={<CompentitionKti />} /> */}
+
+
+          {/* Workshop */}
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/workshop/mobile_app" element={<WorkshopOne />} />
           <Route path="/workshop/laravel" element={<WorkshopOne />} />
           <Route path="/seminar" element={<Seminar />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/biodata"
-            element={user ? <FormBiodata /> : <Navigate to="/login" />}
-          />
+          <Route path="/biodata" element={user ? <FormBiodata /> : <Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/biodata" element={<Biodata />} /> */}
+
+
           {/* Dashboard User */}
           {user ? (
             <Route path="/Profile" element={<IndexUser user={user} />} />
@@ -121,19 +113,11 @@ function App() {
             <Route path="*" element={<Login />} />
           )}
           <Route path="/competition-user" element={<CompetitionUser />} />
+
           {/* Pilih Competition & Event */}
-          <Route
-            path="/dashboard/pilih-competition"
-            element={<ChooseCompetition />}
-          />
-          <Route
-            path="/dashboard/pilih-seminar"
-            element={<ChooseEventSeminar />}
-          />
-          <Route
-            path="/dashboard/pilih-workshop"
-            element={<ChooseEventWorkshop />}
-          />
+          <Route path="/dashboard/pilih-competition" element={<ChooseCompetition />} />
+          <Route path="/dashboard/pilih-seminar" element={<ChooseEventSeminar />} />
+          <Route path="/dashboard/pilih-workshop" element={<ChooseEventWorkshop />} />
           
           {/* Daftar Competition */}
           <Route path="/competition/register-competition" element={<DaftarCompetitionx />} />
@@ -147,31 +131,30 @@ function App() {
           <Route path="/admin" element={<IndexAdmin />} />
           {/* Dashboard Admin Competition */}
           <Route path="/admin/data-competition/kti" element={<ComKti />} />
-          <Route
-            path="/admin/data-competition/software-development"
-            element={<SoftwareDev />}
-          />
+          <Route path="/admin/data-competition/software-development" element={<SoftwareDev />} />
           <Route path="/admin/data-competition/ui-ux" element={<COmUiUx />} />
-          <Route
-            path="/admin/data-competition/desain-poster"
-            element={<DesainPoster />}
+          <Route path="/admin/data-competition/desain-poster" element={<DesainPoster />}
           />
           {/* Dashboard Admin Workshop */}
           <Route path="/admin/data-workshop/ui-ux" element={<WorskspUiUx />} />
           // <Route path="/admin/data-workshop/ai" element={<Ai />} />
           <Route path="/admin/data-workshop/kti" element={<WorskspKti />} />
           {/* Dashboard Admin Seminar */}
-          <Route
-            path="/admin/data-seminar/cyber-security"
-            element={<CyberSecurity />}
+          <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity />}
           />
+
+          
+          {/* Page Response */}
+          <Route path="/success" element={<RegisterSucces/>} />
+          <Route path="/blank" element={<BlankPage/>} />
+
+
           {/* Testing Layout */}
           <Route path="/testing" element={<IndexAdmin />} />
           <Route path="/testing" element={<DashboardLama />} />
           {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
           <Route path="/testing" element={<Test />} />
 
-          <Route path="/success" element={<RegisterSucces/>} />
         </Routes>
       </Router>
     </Provider>
