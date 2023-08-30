@@ -22,7 +22,7 @@ const RegisterSucces = () => {
             <h2>Registrasi Berhasil!</h2>
             <p>
               Silahkan cek dashboard anda! <br/> untuk informasi lebih lanjut
-            </p>
+            </p>  
             <div>
               <a class="btn btn-success w-50 mt-4" href="#">
                 My Dashboard
@@ -37,9 +37,7 @@ const RegisterSucces = () => {
       <br />
       <br />
       <br />
-      <div style={styleFooter}>
-        <Footer />
-      </div>
+      
     </>
   );
 }

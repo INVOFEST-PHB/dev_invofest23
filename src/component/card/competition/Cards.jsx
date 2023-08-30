@@ -23,7 +23,7 @@ function Cards() {
       </h5>
       <div className="ag-format-container">
         <div className="ag-courses_box">
-          <div
+          {/* <div
             data-aos="fade-up"
             data-aos-duration="300"
             className="ag-courses_item"
@@ -50,7 +50,7 @@ function Cards() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div
             data-aos="fade-up"
@@ -60,12 +60,12 @@ function Cards() {
             <div className="ag-courses-item_link">
               <div className="ag-courses-item_bg"></div>
 
-              <div className="ag-courses-item_title">UX/UI</div>
+              <div className="ag-courses-item_title">UX/UI Desain</div>
 
               <div className="ag-courses-item_date-box">
                 Start:
                 <span className="ag-courses-item_date p-3">04.11.2022</span>
-                <a href="/competition/ui-ux">
+                <a href="/competition/ui-ux-desain">
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
@@ -115,7 +115,7 @@ function Cards() {
               <div className="ag-courses-item_date-box">
                 Start:
                 <span className="ag-courses-item_date p-3">04.11.2022</span>
-                <a href="/competition/software-developer">
+                <a href="/competition/software-development">
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
@@ -127,7 +127,7 @@ function Cards() {
             </div>
           </div>
 
-          <div
+          {/* <div
             data-aos="fade-up"
             data-aos-duration="600"
             className="ag-courses_item"
@@ -150,7 +150,7 @@ function Cards() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
