@@ -30,7 +30,7 @@ export default class PageHome extends Component {
                 <SusunanAcara
                   icons={faMagento}
                   name="TALKSHOW"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
+                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era Digital: Peluang dan Tantangan di Dunia IT”."
                   button="read more"
                   link="/workshop"
                 />
@@ -44,7 +44,7 @@ export default class PageHome extends Component {
                 <SusunanAcara
                   // style={styleIcon}
                   icons={faMagento}
-                  name="TALKSHOW"
+                  name="WORKSHOP"
                   desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
                   button="read more"
                   link="/seminar"
@@ -57,7 +57,20 @@ export default class PageHome extends Component {
               <div className="solution_cards_box">
                 <SusunanAcara
                   icons={faMagento}
-                  name="TALKSHOW"
+                  name="SEMINAR"
+                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
+                  button="read more"
+                  link="/competition"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 col-sm-12 ">
+            <div className="our_solution_category">
+              <div className="solution_cards_box">
+                <SusunanAcara
+                  icons={faMagento}
+                  name="COMPETITION"
                   desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
                   button="read more"
                   link="/competition"
@@ -127,7 +140,7 @@ export default class PageHome extends Component {
           </div>
         </div>
         <Sponsor />
-        <ComponentFaq />
+        {/* <ComponentFaq /> */}
         <Maps />
         <Footer />
       </div>
