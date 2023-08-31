@@ -4,6 +4,7 @@ import logo from "../assets/img/invofest.png";
 import "../assets/css/navbar.css";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 // importing aos
 import AOS from "aos";
@@ -69,7 +70,7 @@ const Navbars = () => {
 
   return (
     <div>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="md" className={scrolled ? "scrolled " : ""}>
         <Container>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" className="logo" />
@@ -78,7 +79,7 @@ const Navbars = () => {
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className=" ms-auto flex align-items-center">
               {isLoggedIn && (
                 <Nav.Link
                   href="/profile"
@@ -92,8 +93,8 @@ const Navbars = () => {
                   Profile
                 </Nav.Link>
               )}
-              <Nav.Link
-                href="/"
+              <Nav.Link 
+                href="/home"
                 className={
                   activeLink === "home" ? "active navbar-link" : "navbar-link"
                 }
@@ -101,39 +102,21 @@ const Navbars = () => {
               >
                 Home
               </Nav.Link>
-              <Nav.Link
-                href="/workshop"
-                className={
-                  activeLink === "workshop"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("workshop")}
-              >
-                Workshop
-              </Nav.Link>
-              <Nav.Link
-                href="/seminar"
-                className={
-                  activeLink === "seminar"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("seminar")}
-              >
-                Seminar
-              </Nav.Link>
-              <Nav.Link
-                href="/competition"
-                className={
-                  activeLink === "competition"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("competition")}
-              >
-                Competition
-              </Nav.Link>
+
+
+              <NavDropdown className="ms-auto"
+                  title={ <span className="text-white">Event</span>} 
+                  id="basic-dropdown"
+                  >
+                <NavDropdown.Item href="/Workshop">Workshop</NavDropdown.Item>
+                <NavDropdown.Item href="/Seminar">
+                  Seminar
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/Competition">
+                  Competition
+                </NavDropdown.Item>
+              </NavDropdown>
+
               <Nav.Link
                 href="/about"
                 className={
