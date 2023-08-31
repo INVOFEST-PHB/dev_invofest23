@@ -59,7 +59,7 @@ class DaftarCompetition extends Component {
         asalPerguruanTinggi,
         kartuTandaMahasiswa,
         noWhatsAppKetua,
-        statusLomba:"padding"
+        statusLomba:"pending"
       };
 
       set(newLombaRef, newData)

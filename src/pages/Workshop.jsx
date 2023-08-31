@@ -10,6 +10,7 @@ import { faMagento } from "@fortawesome/free-brands-svg-icons";
 import Sponsor from "../component/LandingPage/Sponsor";
 import img from "../assets/img/12345.jpg";
 import Footer from "../component/Footer";
+import { Auth } from '../config/firebase/firebase';
 
 
 class Workshop extends Component {
@@ -18,6 +19,9 @@ class Workshop extends Component {
       <div>
         <Navbars />
         <BannerAcara
+          daftar_button="Daftar Seminar"
+          user={Auth.currentUser} 
+          linkDaftar="/workshop/register-workshop"
           title="Workshop"
           description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />

@@ -4,7 +4,9 @@ const initializeApp={
   isLoading: false,
   user: {},
   informasi:[],
-  lomba:[]
+  lomba:[],
+  seminar:[],
+  workshop:[]
 }
 
 const reducer = (state=  initializeApp, action)=>{
@@ -44,6 +46,18 @@ const reducer = (state=  initializeApp, action)=>{
       return{
         ...state,
         lomba : action.value
+      }
+    }
+    if (action.type === 'SET_SEMINAR') {
+      return{
+        ...state,
+        seminar : action.value
+      }
+    }
+    if (action.type === 'SET_WORKSHOP') {
+      return{
+        ...state,
+        workshop : action.value
       }
     }
     return state;

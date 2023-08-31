@@ -13,11 +13,11 @@ class CompetitonUiUx extends Component {
       <div>
         <Navbars />
         <BannerAcara
-          user={Auth.currentUser} // Mengambil status login pengguna dari Firebase
           title="UI/UX"
+          user={Auth.currentUser} // Mengambil status login pengguna dari Firebase
           daftar_button="Daftar Competition"
-          description="Kompetisi Desain UI/UX Desain antar Mahasiswa"
           linkDaftar="/competition/register-competition"
+          description="Kompetisi Desain UI/UX Desain antar Mahasiswa"
         />
         <div className="container">
           <div className="row">

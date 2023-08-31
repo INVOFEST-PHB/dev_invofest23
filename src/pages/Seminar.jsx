@@ -7,6 +7,7 @@ import DescPersonal from "../component/card/personal/DescPersonal";
 import Footer from "../component/Footer";
 import TabsAcara from "../component/acara/TabsAcara";
 import Sponsor from "../component/LandingPage/Sponsor";
+import { Auth } from "../config/firebase/firebase";
 
 
 class Seminar extends Component {
@@ -15,6 +16,9 @@ class Seminar extends Component {
       <div>
       <Navbars />
       <BannerAcara
+      daftar_button="Daftar Seminar"
+      user={Auth.currentUser} 
+      linkDaftar="/seminar/register-seminar"
         title="Seminar"
         description="Acara Seminar Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
       />

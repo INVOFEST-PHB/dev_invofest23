@@ -8,14 +8,17 @@ class DaftarWorkshop extends Component {
     jenisWorkshop: "Workshop", // Nilai default "UI/UX"
     email: "",
     nama: "",
+    alamat:"",
     asalPerguruanTinggi: "",
-    kartuTandaMahasiswa: "",
+    buktiPembayaran: "",
     noWhatsApp: "",
+    statusPembayaran:"pending",
     formErrors: {
       email: "",
       nama: "",
+      alamat:"",      
       asalPerguruanTinggi: "",
-      kartuTandaMahasiswa: "",
+      buktiPembayaran: "",
       noWhatsApp: "",
     },
     formValid: false,
@@ -28,9 +31,11 @@ class DaftarWorkshop extends Component {
       jenisWorkshop,
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
+      statusPembayaran
     } = this.state;
 
     // Validasi form sebelum mengirim data
@@ -42,15 +47,18 @@ class DaftarWorkshop extends Component {
         jenisWorkshop,
         email,
         nama,
+        alamat,
         asalPerguruanTinggi,
-        kartuTandaMahasiswa,
+        buktiPembayaran,
         noWhatsApp,
+        statusPembayaran: "Pending"
       };
 
       set(newWorkshopRef, newData)
         .then(() => {
           console.log("Data berhasil disimpan ke Firebase");
           // Tambahkan logika lain yang Anda butuhkan setelah sukses menyimpan data.
+          window.location.href = "/success";
         })
         .catch((error) => {
           console.error("Gagal menyimpan data ke Firebase:", error);
@@ -66,8 +74,9 @@ class DaftarWorkshop extends Component {
       jenisWorkshop,
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
     } = this.state;
 
@@ -75,8 +84,9 @@ class DaftarWorkshop extends Component {
       jenisWorkshop,
       email: "",
       nama: "",
+      alamat: "",
       asalPerguruanTinggi: "",
-      kartuTandaMahasiswa: "",
+      buktiPembayaran: "",
       noWhatsApp: "",
     };
 
@@ -94,8 +104,8 @@ class DaftarWorkshop extends Component {
       formErrors.asalPerguruanTinggi = "Asal Perguruan Tinggi wajib diisi";
       formValid = false;
     }
-    if (!kartuTandaMahasiswa) {
-      formErrors.kartuTandaMahasiswa = "KTM wajib diisi";
+    if (!buktiPembayaran) {
+      formErrors.buktiPembayaran = "Link Drive Bukti Pembayaran";
       formValid = false;
     }
     if (!noWhatsApp) {
@@ -117,8 +127,9 @@ class DaftarWorkshop extends Component {
       jenisWorkshop,
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
       formErrors,
     } = this.state;
@@ -140,11 +151,12 @@ class DaftarWorkshop extends Component {
                   onChange={this.handleChange}
                 >
                   <option value="Pilih Workshop">Pilih Workshop</option>
-                  <option value="UIUX">UI/UX Desain</option>
-                  <option value="UIUX">Artificial Intelegent</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Artificial Intelegent">Artificial Intelegent</option>
+                  <option value="Mobile Development">Mobile Development</option>
                 </select>
 
-                <div className="error">{formErrors.jenisWorkshop}</div>
+                {/* <div className="error">{formErrors.jenisWorkshop}</div> */}
                 <div className="form-field d-flex align-items-center mt-auto">
                   <input
                     type="text"
@@ -173,12 +185,12 @@ class DaftarWorkshop extends Component {
                   <input
                     type="text"
                     className="input"
-                    name="nama"
-                    value={nama}
+                    name="alamat"
+                    value={alamat}
                     onChange={this.handleChange}
-                    placeholder="Nama"
+                    placeholder="Alamat"
                   />
-                  <div className="error">{formErrors.nama}</div>
+                  <div className="error">{formErrors.alamat}</div>
                 </div>
 
                 <div className="form-field d-flex align-items-center">
@@ -197,24 +209,24 @@ class DaftarWorkshop extends Component {
                   <input
                     type="text"
                     className="input"
-                    name="kartuTandaMahasiswa"
-                    value={kartuTandaMahasiswa}
+                    name="buktiPembayaran"
+                    value={buktiPembayaran}
                     onChange={this.handleChange}
                     placeholder="Kartu Tanda Mahasiswa (KTM)"
                   />
-                  <div className="error">{formErrors.kartuTandaMahasiswa}</div>
+                  <div className="error">{formErrors.buktiPembayaran}</div>
                 </div>
 
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
                     className="input"
-                    name="noWhatsAppKetua"
-                    value={noWhatsApp}
+                    name="noWhatsApp"
+                    value={ noWhatsApp}
                     onChange={this.handleChange}
-                    placeholder="No. WhatsApp Ketua"
+                    placeholder="No. WhatsApp"
                   />
-                  <div className="error">{formErrors.noWhatsApp}</div>
+                  <div className="error">{formErrors. noWhatsApp}</div>
                 </div>
 
                 <button

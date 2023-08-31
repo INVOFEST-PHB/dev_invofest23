@@ -9,14 +9,16 @@ class DaftarSeminar extends Component {
     jenisSeminar: "Seminar Nasional", // Nilai default "UI/UX"
     email: "",
     nama: "",
+    alamat:"",
     asalPerguruanTinggi: "",
-    kartuTandaMahasiswa: "",
+    buktiPembayaran: "",
     noWhatsApp: "",
     formErrors: {
       email: "",
       nama: "",
+      alamat:"" ,
       asalPerguruanTinggi: "",
-      kartuTandaMahasiswa: "",
+      buktiPembayaran: "",
       noWhatsApp: "",
     },
     formValid: false,
@@ -26,32 +28,34 @@ class DaftarSeminar extends Component {
     const user = Auth.currentUser;
     const uid = user.uid;
     const {
-      jenisSeminar,
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
     } = this.state;
 
     // Validasi form sebelum mengirim data
     if (this.validateForm()) {
       const db = getDatabase();
-      const seminarRef = ref(db, Seminar + "/" + uid);
+      const seminarRef = ref(db,  "seminar/" + uid);
       const newSeminarRef = push(seminarRef);
       const newData = {
-        jenisSeminar,
+        eventAcara:"Seminar",
         email,
         nama,
         asalPerguruanTinggi,
-        kartuTandaMahasiswa,
+        buktiPembayaran,
         noWhatsApp,
+        StatusPembayaran: "pending"
       };
 
       set(newSeminarRef, newData)
         .then(() => {
           console.log("Data berhasil disimpan ke Firebase");
           // Tambahkan logika lain yang Anda butuhkan setelah sukses menyimpan data.
+          window.location.href = "/success";
         })
         .catch((error) => {
           console.error("Gagal menyimpan data ke Firebase:", error);
@@ -64,20 +68,20 @@ class DaftarSeminar extends Component {
   // Fungsi untuk validasi form
   validateForm() {
     const {
-      jenisSeminar,
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
     } = this.state;
 
     const formErrors = {
-      jenisSeminar,
       email: "",
       nama: "",
+      alamat:"",
       asalPerguruanTinggi: "",
-      kartuTandaMahasiswa: "",
+      buktiPembayaran: "",
       noWhatsApp: "",
     };
 
@@ -95,12 +99,16 @@ class DaftarSeminar extends Component {
       formErrors.asalPerguruanTinggi = "Asal Perguruan Tinggi wajib diisi";
       formValid = false;
     }
-    if (!kartuTandaMahasiswa) {
-      formErrors.kartuTandaMahasiswa = "KTM wajib diisi";
+    if (!buktiPembayaran) {
+      formErrors.buktiPembayaran = "Bukti Pembayaran wajib diisi";
       formValid = false;
     }
     if (!noWhatsApp) {
       formErrors.noWhatsApp = "No. WhatsApp Ketua wajib diisi";
+      formValid = false;
+    }
+    if (!alamat) {
+      formErrors.alamat = "No. WhatsApp Ketua wajib diisi";
       formValid = false;
     }
 
@@ -115,11 +123,12 @@ class DaftarSeminar extends Component {
 
   render() {
     const {
-      jenisSeminar,
+    
       email,
       nama,
+      alamat,
       asalPerguruanTinggi,
-      kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsApp,
       formErrors,
     } = this.state;
@@ -134,17 +143,6 @@ class DaftarSeminar extends Component {
             <h2 className="text-center font-bold mt-3 "> Daftar Competition</h2>
             <form className="p-3">
               <div className="mt-5">
-                <select
-                  className="form-field form-select input p-xl-3"
-                  name="jenisSeminar"
-                  value={jenisSeminar}
-                  onChange={this.handleChange}
-                >
-                  <option value="Pilih Seminar">Pilih Seminar</option>
-                  <option value="UIUX">Seminar Nasional</option>
-                </select>
-
-                <div className="error">{formErrors.jenisSeminar}</div>
                 <div className="form-field d-flex align-items-center mt-auto">
                   <input
                     type="text"
@@ -173,14 +171,13 @@ class DaftarSeminar extends Component {
                   <input
                     type="text"
                     className="input"
-                    name="nama"
-                    value={nama}
+                    name="alamat"
+                    value={alamat}
                     onChange={this.handleChange}
-                    placeholder="Nama"
+                    placeholder="Alamat"
                   />
-                  <div className="error">{formErrors.nama}</div>
+                  <div className="error">{formErrors.alamat}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -192,30 +189,30 @@ class DaftarSeminar extends Component {
                   />
                   <div className="error">{formErrors.asalPerguruanTinggi}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
                     className="input"
-                    name="kartuTandaMahasiswa"
-                    value={kartuTandaMahasiswa}
+                    name="buktiPembayaran"
+                    value={buktiPembayaran}
                     onChange={this.handleChange}
-                    placeholder="Kartu Tanda Mahasiswa (KTM)"
+                    placeholder="Link Drive Bukti Pembayaran"
                   />
-                  <div className="error">{formErrors.kartuTandaMahasiswa}</div>
+                  <div className="error">{formErrors.buktiPembayaran}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
                     className="input"
-                    name="noWhatsAppKetua"
+                    name="noWhatsApp"
                     value={noWhatsApp}
                     onChange={this.handleChange}
-                    placeholder="No. WhatsApp Ketua"
+                    placeholder="Nomer WhatsApp"
                   />
                   <div className="error">{formErrors.noWhatsApp}</div>
                 </div>
+
+               
 
                 <button
                   className="button btn mt-3"
