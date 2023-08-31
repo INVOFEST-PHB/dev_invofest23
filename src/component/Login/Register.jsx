@@ -109,10 +109,10 @@ const handleRegisterSubmit = async () => {
     <div className="belakang">
       <div className="card-login">
         <div className="wrapper">
-          <div className="logo">
-            <img src={maskot} alt="" />
-          </div>
-          <div className="text-center mt-2 name">REGISTER</div>
+        <div className="maskot">
+              <img src={maskot} alt="" />
+            </div>
+            <h2 className="text-center font-bold mt-3 ">Registrasi</h2>
           <div className="p-3 mt-5">
             {!passwordMatch && <p>Confirm Passwords do not match!</p>}
             {!validEmail && <p>Please enter a valid email address!</p>}

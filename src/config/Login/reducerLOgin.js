@@ -4,7 +4,7 @@ const initializeApp={
   isLoading: false,
   user: {},
   informasi:[],
-  uiux:[]
+  lomba:[]
 }
 
 const reducer = (state=  initializeApp, action)=>{
@@ -40,10 +40,10 @@ const reducer = (state=  initializeApp, action)=>{
         informasi : action.value
       }
     }
-    if (action.type === 'SET_UIUX') {
+    if (action.type === 'SET_LOMBA') {
       return{
         ...state,
-        uiux : action.value
+        lomba : action.value
       }
     }
     return state;

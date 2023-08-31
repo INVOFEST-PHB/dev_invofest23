@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import maskot from "../../assets/img/invofest.png";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { Auth } from "../../config/firebase/firebase";
+import "../../assets/css/From.css"; 
 
 class DaftarCompetition extends Component {
   state = {
@@ -58,6 +59,7 @@ class DaftarCompetition extends Component {
         asalPerguruanTinggi,
         kartuTandaMahasiswa,
         noWhatsAppKetua,
+        statusLomba:"padding"
       };
 
       set(newLombaRef, newData)
@@ -166,12 +168,12 @@ class DaftarCompetition extends Component {
       <div className="belakang_biodata">
         <div className="card-biodata">
           <div className="wrapper">
-            <div className="logo">
+            <div className="maskot">
               <img src={maskot} alt="" />
             </div>
-            <div className="text-center font-bold">ISI BIODATA</div>
+            <h2 className="text-center font-bold mt-3 "> Daftar Competition</h2>
             <form className="p-3">
-              <div className="mt-5">
+              <div className="mt-2">
 
                   <select className="form-field form-select input p-xl-3"
                     name="jenisLomba"
@@ -179,10 +181,8 @@ class DaftarCompetition extends Component {
                     onChange={this.handleChange}
                   >
                     <option value="Pilih Competition">Pilih Competition</option> 
-                    <option value="UIUX">UI/UX </option>
-                    <option value="video">Video</option>
+                    <option value="UI/UX">UI/UX </option>
                     <option value="Web Design">Web Desain</option>
-                    <option value="Karya Tulis">Karya Tulis Ilmiah</option>
                     <option value="Software Dev">Software Development</option>
                   </select>
                   

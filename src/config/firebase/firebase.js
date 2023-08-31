@@ -139,32 +139,7 @@ export const getDataAPI = (userId) => (dispatch) => {
     });
   });
 };
-export const getUiUxAPI = (userId) => (dispatch) => {
-  return new Promise((resolve, reject) => {
-    const db = getDatabase();
-    const biodataRef = ref(db, "uiux/" + userId);
-    // Attach an event listener to listen for changes in the data
-    onValue(biodataRef, (snapshot) => {
-      if (snapshot.exists()) {
-        const data = snapshot.val();
-        console.log('get data:', data)
-        // Resolve the Promise with the retrieved biodata
-        const dataObject = [];
-         Object.keys(snapshot.val()).map(key=>{
-          dataObject.push({
-          id : key,
-          dataObject : snapshot.val()[key]
-        })
-     });
-        dispatch({type: 'SET_UIUX', value: dataObject})
-        resolve(data);
-      } else {
-        // Reject the Promise with an error message
-        reject("No data found for the user");
-      }
-    });
-  });
-};
+
 
 
 

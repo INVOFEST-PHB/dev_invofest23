@@ -13,7 +13,9 @@ class CompentitionKti extends Component {
         <Navbars />
         <BannerAcara
           title="Karya Tulis Ilmiah"
+          daftar_button="Daftar Competition"
           description="Kompetisi Karya Tulis Ilmiah untuk Mahasiswa"
+          linkDaftar="/competition/register-competition"
         />
         <div className="container">
           <div className="row">

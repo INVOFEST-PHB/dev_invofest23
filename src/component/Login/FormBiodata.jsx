@@ -60,10 +60,10 @@ class FormBiodata extends Component {
       <div className="belakang_biodata">
         <div className="card-biodata">
           <div className="wrapper">
-            <div className="logo">
+          <div className="maskot">
               <img src={maskot} alt="" />
             </div>
-            <div className="text-center mt-2 name">ISI BIODATA</div>
+            <h2 className="text-center font-bold mt-3 ">Isi Biodata</h2>
             <form className="p-3 "onSubmit={this.handleSaveBiodata}>
               <div className="mt-5">
                 <div className="form-field d-flex align-items-center mt-5">

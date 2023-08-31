@@ -15,6 +15,7 @@ class Competition extends Component {
                 title = "Competition"
                 description = "Kompetisi invofest 2023"
                 />
+                <br />
                 <Cards/>
                 <Footer/>
             </div>

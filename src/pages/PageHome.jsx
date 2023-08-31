@@ -24,7 +24,7 @@ export default class PageHome extends Component {
         <About />
         <SusunanAcara acara="Susunan Acara" />
         <div className="row">
-          <div className="col-md-4 col-sm-12 ">
+          <div className="col-md-6 col-sm-12 ">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
@@ -38,7 +38,7 @@ export default class PageHome extends Component {
             </div>
           </div>
 
-          <div className="col-md-4 col-sm-12">
+          <div className="col-md-6 col-sm-12">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
@@ -52,7 +52,7 @@ export default class PageHome extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-sm-12 ">
+          <div className="col-md-6 col-sm-12 ">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
@@ -65,7 +65,7 @@ export default class PageHome extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-sm-12 ">
+          <div className="col-md-6 col-sm-12 ">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara

@@ -12,6 +12,8 @@ class CompetitionWebDesain extends Component {
       <div>
         <Navbars />
         <BannerAcara
+        linkDaftar="/competition/register-competition"
+        daftar_button="Daftar Competition"
           title="Web Desain"
           description="Kompetisi Web Desain untuk SMA/SMK Sederajat"
         />

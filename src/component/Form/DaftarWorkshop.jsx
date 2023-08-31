@@ -127,10 +127,10 @@ class DaftarWorkshop extends Component {
       <div className="belakang_biodata">
         <div className="card-biodata">
           <div className="wrapper">
-            <div className="logo">
+          <div className="maskot">
               <img src={maskot} alt="" />
             </div>
-            <div className="text-center font-bold">ISI BIODATA</div>
+            <h2 className="text-center font-bold mt-3 "> Daftar Competition</h2>
             <form className="p-3">
               <div className="mt-5">
                 <select

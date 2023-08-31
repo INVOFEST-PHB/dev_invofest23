@@ -56,10 +56,10 @@ function Login() {
     <div className="belakang">
       <div className="card-login">
         <div className="wrapper">
-          <div className="logo">
-            <img src={maskot} alt="" />
-          </div>
-          <div className="text-center mt-2 name">LOGIN </div>
+        <div className="maskot">
+              <img src={maskot} alt="" />
+            </div>
+            <h2 className="text-center font-bold mt-3 ">Login</h2>
           <form onSubmit={handleEmailLogin} className="p-3 mt-5">
             <div className="mt-5">
               <p>{msg}</p>
@@ -69,7 +69,7 @@ function Login() {
                   className="input"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Username"
+                  placeholder="Email"
                 />
               </div>
               <div className="form-field d-flex align-items-center">

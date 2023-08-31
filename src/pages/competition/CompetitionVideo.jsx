@@ -12,6 +12,8 @@ class CompentitionVideo extends Component {
           <div>
             <Navbars />
             <BannerAcara
+            daftar_button="Daftar Competition"
+            linkDaftar="/competition/register-competition"
               title="Video Kreatif"
               description="Kompetisi Video Kreatif khusus untuk Mahasiswa Politeknik Harapan Bersama"
             />

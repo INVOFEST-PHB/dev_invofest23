@@ -12,6 +12,8 @@ class CompentitionSoftware extends Component {
           <div>
             <Navbars />
             <BannerAcara
+            daftar_button="Daftar Competition"
+            linkDaftar="/competition/register-competition"
               title="Software Development"
               description="Kompetisi Pengembangan Perangkat Lunak untuk Mahasiswa"
             />
