@@ -7,6 +7,8 @@ nav.navbar {
   top: 0;
   z-index: 9999;
   transition:  0.32s ease-in-out;
+
+  
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -106,7 +108,8 @@ span.navbar-text {
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
 	outline: none;
-    box-shadow: none;
+  box-shadow: non
+
 }
 nav.navbar .navbar-toggler-icon {
   width: 24px;
@@ -147,4 +150,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
+}
+
+.scrolled .navbar {
+  display: flex;
+  justify-content: center; /* Mengatur tata letak horizontal menjadi tengah */
+  width: 100%;
+}
+
+.navbar-collapse {
+  justify-content: center; /* Mengatur tata letak horizontal untuk elemen di dalam collapse */
+}
+
+/* #basic-dropdown {
+  background-color: red;
+} */
+
+
+/* CSS untuk mengatur dropdown menjadi tampil saat di-hover */
+.nav .navbar-link:hover .dropdown-content {
+  display: block;
+}
+
+/* CSS untuk menyembunyikan dropdown secara default */
+.dropdown-content {
+  display: none;
 }

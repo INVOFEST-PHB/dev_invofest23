@@ -9,18 +9,17 @@ import TabsAcara from "../component/acara/TabsAcara";
 import Sponsor from "../component/LandingPage/Sponsor";
 import { Auth } from "../config/firebase/firebase";
 
-
-class Seminar extends Component {
+class Talkshow extends Component {
   render() {
     return (
       <div>
         <Navbars />
         <BannerAcara
-          daftar_button="Daftar Seminar"
+          daftar_button="Daftar Talkshow"
           user={Auth.currentUser}
-          linkDaftar="/seminar/register-seminar"
-          title="Seminar"
-          description="Acara Seminar Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
+          linkDaftar="/Talkshow/register-Talkshow"
+          title="Talkshow"
+          description="Acara Talkshow Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />
         {/* <SusunanAcara acara="Susunan Acara" />
       <div className="row">
@@ -55,11 +54,11 @@ class Seminar extends Component {
             <h5 className="section-title h1 mt-5">Pembicara</h5>
             <div className="row">
               {/* <!-- Team member --> */}
-              <div className="col">
+              <div className="col-xs-12 col-sm-6 col-md-4">
                 <DescPersonal
                   image={img}
-                  name="David WijayaAAA"
-                  jobdesk="Business Development Manager Training & Academy di Red Hat Indonesia"
+                  name="Mohamad Khadik"
+                  job="Web Developer"
                   names="Mohamad Khadik"
                   jobs="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis suscipit veritatis cupiditate repellendus inventore. "
                   fb="https://"
@@ -67,13 +66,21 @@ class Seminar extends Component {
                   google="https://"
                 />
               </div>
-              <div className="col">
+              <div className="col-xs-12 col-sm-6 col-md-4">
                 <DescPersonal
                   image={img}
-                  name="Romi Satria Wahono"
-                  job="Enterprise Architecture & Digital Transformation Guru
-                  Founder & CEO BrainCorp"
+                  name="Mohamad Idham Bakhri"
+                  job="Web Developer"
                   names="Mohamad Idham Bakhri"
+                  jobs="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis suscipit veritatis cupiditate repellendus inventore. "
+                />
+              </div>
+              <div className="col-xs-12 col-sm-12 col-md-4">
+                <DescPersonal
+                  image={img}
+                  name="iqbal maulana"
+                  job="Web Developer"
+                  names="iqbal maulana"
                   jobs="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis suscipit veritatis cupiditate repellendus inventore. "
                 />
               </div>
@@ -88,4 +95,4 @@ class Seminar extends Component {
   }
 }
 
-export default Seminar;
+export default Talkshow;
