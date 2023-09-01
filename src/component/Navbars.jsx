@@ -11,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Auth, logout } from "../config/firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { Justify } from "react-bootstrap-icons";
 
 // import './app.css';
 
@@ -19,8 +20,10 @@ const Navbars = () => {
   const [activeLink, setActiveLink] = useState(
     "dashboard_user",
     "home",
+    "talkshow",
     "workshop",
-    "seminar"
+    "seminar",
+    "competititon"
   );
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
@@ -68,6 +71,17 @@ const Navbars = () => {
     // ... Any additional logout actions ...
   };
 
+  const fontSize = {
+    fontSize: "17px",
+    justifyContent: "center"
+  }
+
+  const borderDropdown = {
+    border: "none",
+    backgroundColor: "none",
+    background: "none",
+  }
+
   return (
     <div>
       <Navbar expand="md" className={scrolled ? "scrolled " : ""}>
@@ -78,10 +92,15 @@ const Navbars = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className=" ms-auto flex align-items-center">
+
+          <Navbar.Collapse id="basic-navbar-nav text-white">
+            <Nav
+              style={{ paddingLeft: "230px" }}
+              className="align-items-center justify-content-center"
+            >
               {isLoggedIn && (
                 <Nav.Link
+                  style={fontSize}
                   href="/profile"
                   className={
                     activeLink === "profile"
@@ -93,54 +112,132 @@ const Navbars = () => {
                   Profile
                 </Nav.Link>
               )}
-              <Nav.Link 
-                href="/home"
-                className={
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }
+
+              <Nav.Link
+                style={fontSize}
+                href="/"
+                className="active navbar-link navbar-text text-white"
                 onClick={() => onUpdateActiveLink("home")}
               >
                 Home
               </Nav.Link>
 
+              <NavDropdown
+                style={{
+                  borderDropdown,
+                }}
+                className="active navbar-link navbar-text text-white"
+                title={
+                  <span className="text-white justify-content-center">
+                    Event
+                  </span>
+                }
+                id="basic-dropdown bg-red"
+              >
+                <div style={borderDropdown}>
+                  <NavDropdown.Item className="text-white" href="/talkshow">
+                    Talkshow
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className="text-white" href="/Workshop">
+                    Workshop
+                  </NavDropdown.Item>
+                  <NavDropdown.Item className="text-white" href="/Seminar">
+                    Seminar
+                  </NavDropdown.Item>
+                </div>
+              </NavDropdown>
 
-              <NavDropdown className="ms-auto"
-                  title={ <span className="text-white">Event</span>} 
-                  id="basic-dropdown"
-                  >
-                <NavDropdown.Item href="/Workshop">Workshop</NavDropdown.Item>
-                <NavDropdown.Item href="/Seminar">
-                  Seminar
+              {/* <Nav.Link
+                style={fontSize}
+                href="/competition"
+                className={
+                  activeLink === "competition"
+                    ? "active navbar-link text-white"
+                    : "navbar-link text-white"
+                }
+                className="active navbar-link navbar-text text-white"
+                onClick={() => onUpdateActiveLink("competition")}
+              >
+                Competition
+              </Nav.Link> */}
+
+              <NavDropdown
+                style={{
+                  fontSize: "17px",
+                  justifyContent: "center",
+                  color: "white",
+                }}
+                className="active navbar-link navbar-text text-white"
+                title={
+                  <span className="text-white justify-content center">
+                    Competition
+                  </span>
+                }
+                id="basic-dropdown"
+              >
+                <NavDropdown.Item className="text-white" href="/Workshop">
+                  UI/UX Desain
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/Competition">
-                  Competition
+                <NavDropdown.Item className="text-white" href="/Seminar">
+                  Web Desain
+                </NavDropdown.Item>
+                <NavDropdown.Item className="text-white" href="/Competition">
+                  Software Development
                 </NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link
+                style={fontSize}
                 href="/about"
-                className={
-                  activeLink === "about" ? "active navbar-link" : "navbar-link"
-                }
+                // className={
+                // activeLink === "about"
+                //     ? "active navbar-link text-white"
+                //     : "navbar-link text-white"
+                // }
+                className="active navbar-link navbar-text text-white"
                 onClick={() => onUpdateActiveLink("about")}
               >
                 About
               </Nav.Link>
               {/* <Nav.Link href="faq" className={activeLink === 'faq' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('faq')}>FAQ</Nav.Link> */}
             </Nav>
-            <span className="navbar-text">
-              {isLoggedIn ? (
-                <button className="vvd" onClick={handleLogout}>
-                  <span>Logout</span>
-                </button>
-              ) : (
-                <HashLink to="/login">
-                  <button className="vvd">
-                    <span>Sign In</span>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "flex-end",
+                paddingLeft: "160px",
+              }}
+            >
+              <span
+                className="navbar-text"
+                style={{
+                  fontSize: "17px",
+                  justifyContent: "flex-end",
+                  marginRight: "15px",
+                }}
+              >
+                {isLoggedIn ? (
+                  <button
+                    className="vvd"
+                    onClick={handleLogout}
+                    style={{ fontSize: "17px", justifyContent: "flex-end" }}
+                  >
+                    <span>Logout</span>
                   </button>
-                </HashLink>
-              )}
-            </span>
+                ) : (
+                  <HashLink to="/login">
+                    <button
+                      className="vvd"
+                      style={{ fontSize: "17px", justifyContent: "flex-end" }}
+                    >
+                      <span>Sign In</span>
+                    </button>
+                  </HashLink>
+                )}
+              </span>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

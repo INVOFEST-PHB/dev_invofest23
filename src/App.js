@@ -26,17 +26,17 @@ import Options from "./component/Form/DaftarWorkshop";
 import IndexUser from "./pages/DashboardUser/IndexUser";
 import CompetitionUser from "./pages/DashboardUser/CompetitionUser";
 // import IndexAdmin from './pages/DashboardAdmin/IndexAdmin';
-import DashboardLama from "./component/DashboardUser/DashboardLama";
-import IndexAdmin from "./pages/DashboardAdmin/IndexAdmin";
-import Kti from "./pages/DashboardAdmin/Competition/ComKti";
-import SoftwareDev from "./pages/DashboardAdmin/Competition/SoftwareDev";
-import DesainPoster from "./pages/DashboardAdmin/Competition/DesainPoster";
-import WorskspUiUx from "./pages/DashboardAdmin/Workshop/WorkspUiUx";
-import Ai from "./pages/DashboardAdmin/Workshop/Ai";
-import WorskspKti from "./pages/DashboardAdmin/Workshop/WorkspKti";
-import CyberSecurity from "./pages/DashboardAdmin/Seminar/CyberSecurity";
-import ComKti from "./pages/DashboardAdmin/Competition/ComKti";
-import COmUiUx from "./pages/DashboardAdmin/Competition/ComUiUx";
+// import DashboardLama from "./component/DashboardUser/DashboardLama";
+// import IndexAdmin from "./pages/DashboardAdmin/IndexAdmin";
+// import Kti from "./pages/DashboardAdmin/Competition/ComKti";
+// import SoftwareDev from "./pages/DashboardAdmin/Competition/SoftwareDev";
+// import DesainPoster from "./pages/DashboardAdmin/Competition/DesainPoster";
+// import WorskspUiUx from "./pages/DashboardAdmin/Workshop/WorkspUiUx";
+// import Ai from "./pages/DashboardAdmin/Workshop/Ai";
+// import WorskspKti from "./pages/DashboardAdmin/Workshop/WorkspKti";
+// import CyberSecurity from "./pages/DashboardAdmin/Seminar/CyberSecurity";
+// import ComKti from "./pages/DashboardAdmin/Competition/ComKti";
+// import COmUiUx from "./pages/DashboardAdmin/Competition/ComUiUx";
 
 import { useEffect, useState } from "react";
 import { Auth } from "./config/firebase/firebase";
@@ -56,6 +56,7 @@ import DaftarWorkshop from "./component/Form/DaftarWorkshop";
 import DaftarCompetitionx from "./component/Form/DaftarCompetition";
 import RegisterSucces from "./component/success/RegisterSucces";
 import BlankPage from "./component/BlankPage";
+import Talkshow from "./pages/Talkshow";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -98,7 +99,15 @@ function App() {
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/workshop/mobile_app" element={<WorkshopOne />} />
           <Route path="/workshop/laravel" element={<WorkshopOne />} />
+
+
+          {/* Talkshow */}
+          <Route path="/talkshow" element={<Talkshow/>} />
+
+
+          {/* Seminar */}
           <Route path="/seminar" element={<Seminar />} />
+
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
           <Route path="/biodata" element={user ? <FormBiodata /> : <Navigate to="/login" />} />
@@ -128,20 +137,20 @@ function App() {
 
 
           {/* Dashboard Admin */}
-          <Route path="/admin" element={<IndexAdmin />} />
+          {/* <Route path="/admin" element={<IndexAdmin />} /> */}
           {/* Dashboard Admin Competition */}
-          <Route path="/admin/data-competition/kti" element={<ComKti />} />
+          {/* <Route path="/admin/data-competition/kti" element={<ComKti />} />
           <Route path="/admin/data-competition/software-development" element={<SoftwareDev />} />
           <Route path="/admin/data-competition/ui-ux" element={<COmUiUx />} />
           <Route path="/admin/data-competition/desain-poster" element={<DesainPoster />}
-          />
+          /> */}
           {/* Dashboard Admin Workshop */}
-          <Route path="/admin/data-workshop/ui-ux" element={<WorskspUiUx />} />
+          {/* <Route path="/admin/data-workshop/ui-ux" element={<WorskspUiUx />} />
           // <Route path="/admin/data-workshop/ai" element={<Ai />} />
-          <Route path="/admin/data-workshop/kti" element={<WorskspKti />} />
+          <Route path="/admin/data-workshop/kti" element={<WorskspKti />} /> */}
           {/* Dashboard Admin Seminar */}
-          <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity />}
-          />
+          {/* <Route path="/admin/data-seminar/cyber-security" element={<CyberSecurity />}
+          /> */}
 
           
           {/* Page Response */}
@@ -150,10 +159,10 @@ function App() {
 
 
           {/* Testing Layout */}
-          <Route path="/testing" element={<IndexAdmin />} />
-          <Route path="/testing" element={<DashboardLama />} />
+          {/* <Route path="/testing" element={<IndexAdmin />} />
+          <Route path="/testing" element={<DashboardLama />} /> */}
           {/* <Route path="/testing" element={<IndexAdmin/>} /> */}
-          <Route path="/testing" element={<Test />} />
+          {/* <Route path="/testing" element={<Test />} /> */}
 
         </Routes>
       </Router>
