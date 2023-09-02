@@ -55,6 +55,7 @@ class CompetitonUiUx extends Component {
         </div>
         <div className="mt-4">
           <TabsAcara
+          
             tabsDeskripsi1="Salah satu perlombaan dalam kegiatan Invofest (Infomatics Vocational
           Festival) 2023 adalah National UI UX Design Competition yang mana
           diharapkan melalui ajang perlombaan ini para peserta dari kalangan
@@ -72,6 +73,7 @@ class CompetitonUiUx extends Component {
           tanggung jawab sosial. Kesadaran akan dampak jangka panjang serta
           kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
           tujuan tersebut."
+
             titleTabs="Persyaratan"
             li1="Peserta adalah mahasiswa/i aktif D1 hingga S1/Sederajat perguruan
           tinggi/universitas se-Indonesia yang dibuktikan dengan Kartu Tanda
@@ -88,6 +90,10 @@ class CompetitonUiUx extends Component {
           OVO (081919008338) a.n Nurul Febi Anisa"
             li7="Peserta harus mengikuti seluruh rangkaian acara, prosedur, dan
           ketentuan perlombaan."
+
+          contact="Contact"
+          contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+          contact2="Filamsi Mabda G (+62 858-5368-5622)"
           />
         </div>
         <Sponsor />

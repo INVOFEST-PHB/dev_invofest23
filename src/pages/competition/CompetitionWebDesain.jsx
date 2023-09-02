@@ -20,28 +20,36 @@ class CompetitionWebDesain extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1 className="text-center">Susunan Jadwal Lomba</h1>
+              <h1 className="text-center">TIMELINE LOMBA</h1>
               <div className="card timeline_jadwal mt-3">
                 <div className="card-body">
                   <div className="hori-timeline" dir="ltr">
                     <ul className="list-inline events">
                       <TimelineCompetition
                         // 1
-                        tanggal1="4 Oktc"
-                        nameTime1="pendaftran"
+                        tanggal1="1 Sept 2023-15 okt 2023"
+                        nameTime1="Pendaftran"
                         descTime1="Ayo tunjukan skill Kalian!!"
                         // 2
-                        tanggal2="4 Oktc"
-                        nameTime2="pendaftran"
+                        tanggal2="16 Oktober 2023"
+                        nameTime2="Pengumpulan Karya"
                         descTime2="Ayo Pertunjakn skill Kalian!!"
                         // 3
-                        tanggal3="4 Oktc"
-                        nameTime3="pendaftran"
+                        tanggal3="19 Oktober 2023"
+                        nameTime3="Pengumuman Finalis"
                         descTime3="Ayo Pertunjakn skill Kalian!!"
                         // 4
-                        tanggal4="4 Oktc"
-                        nameTime4="pendaftran"
+                        tanggal4="20 Oktober 2023"
+                        nameTime4="Technical Meeting Finalis"
                         descTime4="Ayo Pertunjakn skill Kalian!!"
+                        // 5
+                        tanggal5="24 Oktober 2023"
+                        nameTime5="Presentasi Finalis"
+                        descTime5="Ayo Pertunjakn skill Kalian!!"
+                        // 6
+                        tanggal6="25 Oktober 2023"
+                        nameTime6="Pengumuman Pemenang"
+                        descTime6="Ayo Pertunjakn skill Kalian!!"
                       />
                     </ul>
                   </div>
@@ -59,7 +67,8 @@ class CompetitionWebDesain extends Component {
           dalam diri sebagai salah satu upaya menjadi sumber daya manusia yang
           unggul di bidang ilmu pengetahuan dan teknologi. Lomba ini mengusung
           tema “Innovation and creation of the golden generation to realize a
-          sustainable futur."
+          sustainable future."
+
             tabsDeskripsi2="Tema ini bertujuan mengajak generasi muda untuk mengembangkan
           inovasi dan kreativitas guna membentuk kelompok yang memiliki potensi
           luar biasa, yang mampu mewujudkan masa depan yang berkelanjutan.
@@ -69,6 +78,7 @@ class CompetitionWebDesain extends Component {
           tanggung jawab sosial. Kesadaran akan dampak jangka panjang serta
           kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
           tujuan tersebut."
+
             titleTabs="Persyaratan"
             li1="Peserta adalah mahasiswa/i aktif D1 hingga S1/Sederajat perguruan
           tinggi/universitas se-Indonesia yang dibuktikan dengan Kartu Tanda
@@ -85,7 +95,12 @@ class CompetitionWebDesain extends Component {
           OVO (081919008338) a.n Nurul Febi Anisa"
             li7="Peserta harus mengikuti seluruh rangkaian acara, prosedur, dan
           ketentuan perlombaan."
+
+           contact="Contact"
+           contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+           contact2="Filamsi Mabda G (+62 858-5368-5622)"
           />
+        
         </div>
         <Sponsor />
         <Footer />
