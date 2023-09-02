@@ -122,16 +122,6 @@ const Navbars = () => {
                 Home
               </Nav.Link>
 
-
-              <Nav.Link >
-              <NavDropdown className="ms-auto "
-                  title={ <span className="text-white ">Event</span>} 
-                  id="basic-dropdown"
-                  >
-                <NavDropdown.Item href="/Workshop">Workshop</NavDropdown.Item>
-                <NavDropdown.Item href="/Seminar">
-                  Seminar
-
               <NavDropdown
                 style={{
                   borderDropdown,
@@ -190,13 +180,11 @@ const Navbars = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Item className="text-white" href="/Seminar">
                   Web Desain
-
                 </NavDropdown.Item>
                 <NavDropdown.Item className="text-white" href="/Competition">
                   Software Development
                 </NavDropdown.Item>
               </NavDropdown>
-              </Nav.Link>
 
               <Nav.Link
                 style={fontSize}

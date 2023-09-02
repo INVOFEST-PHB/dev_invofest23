@@ -44,7 +44,9 @@ class TabsAcara extends Component {
         </ol>
         </Tab>
         <Tab className="subtabs" eventKey="contact" title="Contact">
-        <Demo3 />
+        <p className="blockquote">{this.props.contact1}
+        <br /><br />{this.props.contact2}</p>
+        {/* <Demo3 /> */}
         </Tab>
       </Tabs>
       </Container>
