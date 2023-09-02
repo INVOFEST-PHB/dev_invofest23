@@ -37,13 +37,14 @@ class DescPersonal extends Component {
                   <p
                     data-aos="fade-up"
                     data-aos-duration="300"
-                    className="card-text"
+                    // className="card-text"
+                    style={{ color: "black" }}
                   >
                     {this.props.job}
                   </p>
-                  <a href={this.props.link} className="btn btn-primary btn-sm">
+                  {/* <a href={this.props.link} className="btn btn-primary btn-sm" style={{color: "green"}}>
                     <i className="fa fa-plus"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -60,7 +61,8 @@ class DescPersonal extends Component {
                   <p
                     data-aos="fade-up"
                     data-aos-duration="300"
-                    className="card-text"
+                    // className="card-text"
+                    style={{ color: "black" }}
                   >
                     {this.props.jobs}
                   </p>

@@ -57,6 +57,7 @@ import DaftarCompetitionx from "./component/Form/DaftarCompetition";
 import RegisterSucces from "./component/success/RegisterSucces";
 import BlankPage from "./component/BlankPage";
 import Talkshow from "./pages/Talkshow";
+import WorkshopThree from "./pages/workshop/WorkshopThree";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -97,8 +98,9 @@ function App() {
 
           {/* Workshop */}
           <Route path="/workshop" element={<Workshop />} />
-          <Route path="/workshop/mobile_app" element={<WorkshopOne />} />
-          <Route path="/workshop/laravel" element={<WorkshopOne />} />
+          <Route path="/workshop/mobile-development" element={<WorkshopOne />} />
+          <Route path="/workshop/ui-desain" element-ui={<WorkshopOne />} />
+          <Route path="/workshop/artificial-intellegence" element={<WorkshopThree/>} />
 
 
           {/* Talkshow */}

@@ -3,6 +3,8 @@ import Navbars from "../component/Navbars";
 import BannerAcara from "../component/banner/BannerAcara";
 import "../assets/css/card/personal.css";
 import img from "../assets/img/12345.jpg";
+import Pemateri1 from "../assets/img/acara/seminar/pak_david.jpeg";
+import Pemateri2 from "../assets/img/acara/seminar/pak_romi.jpeg";
 import DescPersonal from "../component/card/personal/DescPersonal";
 import Footer from "../component/Footer";
 import TabsAcara from "../component/acara/TabsAcara";
@@ -57,11 +59,11 @@ class Seminar extends Component {
               {/* <!-- Team member --> */}
               <div className="col">
                 <DescPersonal
-                  image={img}
-                  name="David WijayaAAA"
-                  jobdesk="Business Development Manager Training & Academy di Red Hat Indonesia"
-                  names="Mohamad Khadik"
-                  jobs="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis suscipit veritatis cupiditate repellendus inventore. "
+                  image={Pemateri1}
+                  name="David Wijaya"
+                  job="Business Development Manager Training & Academy di Red Hat Indonesia"
+                  names="David Wijaya"
+                  jobs="Business Development Manager Training & Academy di Red Hat Indonesia"
                   fb="https://"
                   twiter="https://"
                   google="https://"
@@ -69,12 +71,13 @@ class Seminar extends Component {
               </div>
               <div className="col">
                 <DescPersonal
-                  image={img}
+                  image={Pemateri2}
                   name="Romi Satria Wahono"
                   job="Enterprise Architecture & Digital Transformation Guru
                   Founder & CEO BrainCorp"
-                  names="Mohamad Idham Bakhri"
-                  jobs="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis suscipit veritatis cupiditate repellendus inventore. "
+                  names="Romi Satria Wahono"
+                  jobs="Enterprise Architecture & Digital Transformation Guru
+                  Founder & CEO BrainCorp"
                 />
               </div>
             </div>
