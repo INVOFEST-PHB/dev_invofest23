@@ -22,7 +22,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run react build script
-        run: yarn start && yarn build && npm install @fortawesome/fontawesome-svg-core && yarn add @fortawesome/fontawesome-svg-core
+        run: yarn react-scripts start && yarn build && npm install @fortawesome/fontawesome-svg-core && yarn add @fortawesome/fontawesome-svg-core
 
         env:
           CI: false
