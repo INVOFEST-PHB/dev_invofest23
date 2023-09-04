@@ -39,18 +39,18 @@ function Login() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      const auth = getAuth();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      localStorage.setItem("loggedIn", "true");
-      // localStorage.setItem("email", user.email);
-      history("/profile");
-    } catch (error) {
-      console.error("Error during Google login:", error);
-    }
-  };
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     const auth = getAuth();
+  //     const result = await signInWithPopup(auth, provider);
+  //     const user = result.user;
+  //     localStorage.setItem("loggedIn", "true");
+  //     // localStorage.setItem("email", user.email);
+  //     history("/profile");
+  //   } catch (error) {
+  //     console.error("Error during Google login:", error);
+  //   }
+  // };
 
   return (
     <div className="belakang">
@@ -83,12 +83,12 @@ function Login() {
               <button className="button btn mt-3" type="submit">
                 LOGIN
               </button>
-              <button
+              {/* <button
                 onClick={handleGoogleLogin}
                 className="button btn mt-3"
               >
                 Login with Google
-              </button>
+              </button> */}
             </div>
           </form>
           <div className="text-center fs-6">
