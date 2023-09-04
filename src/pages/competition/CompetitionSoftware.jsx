@@ -99,7 +99,7 @@ class CompentitionSoftware extends Component {
                 contact2="Filamsi Mabda G (+62 858-5368-5622)"
               />
             </div>
-            <Sponsor />
+            {/* <Sponsor /> */}
             <Footer />
           </div>
         );

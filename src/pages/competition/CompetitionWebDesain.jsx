@@ -102,7 +102,7 @@ class CompetitionWebDesain extends Component {
           />
         
         </div>
-        <Sponsor />
+        {/* <Sponsor /> */}
         <Footer />
       </div>
     );

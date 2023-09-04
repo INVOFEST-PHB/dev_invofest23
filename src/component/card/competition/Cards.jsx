@@ -63,8 +63,8 @@ function Cards() {
               <div className="ag-courses-item_title">UX/UI Desain</div>
 
               <div className="ag-courses-item_date-box">
-                Start:
-                <span className="ag-courses-item_date p-3">04.11.2022</span>
+                Competition
+                <span className="ag-courses-item_date p-3">Register Now</span>
                 <a href="/competition/ui-ux-desain">
                   <button
                     type="button"
@@ -88,8 +88,8 @@ function Cards() {
               <div className="ag-courses-item_title">Web Desain</div>
 
               <div className="ag-courses-item_date-box">
-                Start:
-                <span className="ag-courses-item_date p-3">04.11.2022</span>
+                Competition:
+                <span className="ag-courses-item_date p-3">Register Now</span>
                 <a href="/competition/web-desain">
                   <button
                     type="button"
@@ -113,8 +113,8 @@ function Cards() {
               <div className="ag-courses-item_title">Software Develompment</div>
 
               <div className="ag-courses-item_date-box">
-                Start:
-                <span className="ag-courses-item_date p-3">04.11.2022</span>
+                Competition
+                <span className="ag-courses-item_date p-3">Register Now</span>
                 <a href="/competition/software-development">
                   <button
                     type="button"
