@@ -85,8 +85,7 @@ function App() {
     <Provider store={Store}>
       <Router>
         <Routes>
-          <Route path="/" element={<PageHome />} />
-
+          <Route exact path="/" element={<PageHome />} />
 
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />

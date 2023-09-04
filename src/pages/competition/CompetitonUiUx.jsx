@@ -55,11 +55,10 @@ class CompetitonUiUx extends Component {
         </div>
         <div className="mt-4">
           <TabsAcara
-          
             tabsDeskripsi1="Salah satu perlombaan dalam kegiatan Invofest (Infomatics Vocational
           Festival) 2023 adalah National UI UX Design Competition yang mana
           diharapkan melalui ajang perlombaan ini para peserta dari kalangan
-          mahasiswa/i dapat semakin menggali serta memacu potensi yang ada di
+          SMA/SMK Sederajat dapat semakin menggali serta memacu potensi yang ada di
           dalam diri sebagai salah satu upaya menjadi sumber daya manusia yang
           unggul di bidang ilmu pengetahuan dan teknologi. Lomba ini mengusung
           tema “Innovation and creation of the golden generation to realize a
@@ -73,14 +72,12 @@ class CompetitonUiUx extends Component {
           tanggung jawab sosial. Kesadaran akan dampak jangka panjang serta
           kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
           tujuan tersebut."
-
             titleTabs="Persyaratan"
-            li1="Peserta adalah mahasiswa/i aktif D1 hingga S1/Sederajat perguruan
-          tinggi/universitas se-Indonesia yang dibuktikan dengan Kartu Tanda
+            li1="Peserta adalah siswa/siswi dari SMA/SMK Sederajat se-Indonesia yang dibuktikan dengan Kartu Tanda
           Mahasiswa atau Surat Keterangan resmi."
             li2="Peserta adalah perorangan/individu maupun tim (maksimal 3 orang)
           serta tidak dapat diwakilkan oleh orang lain."
-            li3="Setiap anggota tim wajib berasal dari universitas yang sama."
+            li3="Setiap anggota tim wajib berasal dari Sekolah yang sama."
             li4="Masing-masing tim wajib menentukan nama tim dan satu ketua tim."
             li5="Peserta lomba mendaftar dan melengkapi seluruh data yang
           diperlukan melalui formulir yang telah disediakan."
@@ -90,13 +87,12 @@ class CompetitonUiUx extends Component {
           OVO (081919008338) a.n Nurul Febi Anisa"
             li7="Peserta harus mengikuti seluruh rangkaian acara, prosedur, dan
           ketentuan perlombaan."
-
-          contact="Contact"
-          contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-          contact2="Filamsi Mabda G (+62 858-5368-5622)"
+            contact="Contact"
+            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+            contact2="Filamsi Mabda G (+62 858-5368-5622)"
           />
         </div>
-        <Sponsor />
+        {/* <Sponsor /> */}
         <Footer />
       </div>
     );

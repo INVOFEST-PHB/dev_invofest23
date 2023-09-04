@@ -236,7 +236,11 @@ const Navbars = () => {
                 //     ? "active navbar-link text-white"
                 //     : "navbar-link text-white"
                 // }
-                className="active navbar-link navbar-text"
+                className={
+                  activeLink === "about"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
                 onClick={() => onUpdateActiveLink("about")}
               >
                 About
