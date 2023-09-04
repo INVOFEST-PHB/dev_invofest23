@@ -95,7 +95,7 @@ const Navbars = () => {
 
           <Navbar.Collapse id="basic-navbar-nav text-white">
             <Nav
-              style={{ paddingLeft: "230px" }}
+              // style={{ paddingLeft: "230px" }}
               className="align-items-center justify-content-center"
             >
               {isLoggedIn && (
@@ -122,7 +122,7 @@ const Navbars = () => {
                 Home
               </Nav.Link>
 
-              <NavDropdown
+              {/* <NavDropdown
                 style={{
                   borderDropdown,
                 }}
@@ -145,23 +145,65 @@ const Navbars = () => {
                     Seminar
                   </NavDropdown.Item>
                 </div>
-              </NavDropdown>
+              </NavDropdown> */}
 
-              {/* <Nav.Link
+              <Nav.Link
+                style={fontSize}
+                href="/talkshow"
+                className={
+                  activeLink === "talkshow"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                // className="active navbar-link navbar-text text-white"
+                onClick={() => onUpdateActiveLink("talkshow")}
+              >
+                Talkshow
+              </Nav.Link>
+
+              <Nav.Link
+                style={fontSize}
+                href="/workshop"
+                className={
+                  activeLink === "workshop"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                // className="active navbar-link navbar-text text-white"
+                onClick={() => onUpdateActiveLink("workshop")}
+              >
+                Workshop
+              </Nav.Link>
+
+              <Nav.Link
+                style={fontSize}
+                href="/seminar"
+                className={
+                  activeLink === "seminar"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                // className="active navbar-link navbar-text text-white"
+                onClick={() => onUpdateActiveLink("seminar")}
+              >
+                Seminar
+              </Nav.Link>
+
+              <Nav.Link
                 style={fontSize}
                 href="/competition"
                 className={
                   activeLink === "competition"
-                    ? "active navbar-link text-white"
-                    : "navbar-link text-white"
+                    ? "active navbar-link"
+                    : "navbar-link"
                 }
-                className="active navbar-link navbar-text text-white"
+                // className="active navbar-link navbar-text text-white"
                 onClick={() => onUpdateActiveLink("competition")}
               >
                 Competition
-              </Nav.Link> */}
+              </Nav.Link>
 
-              <NavDropdown
+              {/* <NavDropdown
                 style={{
                   fontSize: "17px",
                   justifyContent: "center",
@@ -184,7 +226,7 @@ const Navbars = () => {
                 <NavDropdown.Item className="text-white" href="/Competition">
                   Software Development
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
 
               <Nav.Link
                 style={fontSize}
@@ -194,7 +236,7 @@ const Navbars = () => {
                 //     ? "active navbar-link text-white"
                 //     : "navbar-link text-white"
                 // }
-                className="active navbar-link navbar-text text-white"
+                className="active navbar-link navbar-text"
                 onClick={() => onUpdateActiveLink("about")}
               >
                 About
@@ -202,36 +244,15 @@ const Navbars = () => {
               {/* <Nav.Link href="faq" className={activeLink === 'faq' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('faq')}>FAQ</Nav.Link> */}
             </Nav>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "flex-end",
-                paddingLeft: "160px",
-              }}
-            >
-              <span
-                className="navbar-text"
-                style={{
-                  fontSize: "17px",
-                  justifyContent: "flex-end",
-                  marginRight: "15px",
-                }}
-              >
+            <div>
+              <span className="navbar-text">
                 {isLoggedIn ? (
-                  <button
-                    className="vvd"
-                    onClick={handleLogout}
-                    style={{ fontSize: "17px", justifyContent: "flex-end" }}
-                  >
+                  <button className="vvd p-2 m-3" onClick={handleLogout}>
                     <span>Logout</span>
                   </button>
                 ) : (
                   <HashLink to="/login">
-                    <button
-                      className="vvd"
-                      style={{ fontSize: "17px", justifyContent: "flex-end" }}
-                    >
+                    <button className="vvd p-2 m-3">
                       <span>Sign In</span>
                     </button>
                   </HashLink>

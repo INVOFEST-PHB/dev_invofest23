@@ -24,7 +24,7 @@ class Talkshow extends Component {
           title="Talkshow"
           description="Acara Talkshow Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />
-  
+
         <section id="team" className="pb-5">
           <div className="container">
             <h5 className="section-title h1 mt-5">Pembicara</h5>
@@ -68,8 +68,22 @@ class Talkshow extends Component {
             </div>
           </div>
         </section>
-        <TabsAcara />
-        <Sponsor />
+        {/* <TabsAcara /> */}
+        <div className="mt-4">
+          <TabsAcara
+            tabsDeskripsi1="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era
+            Digital: Peluang dan Tantangan di Dunia IT”"
+            tabsDeskripsi2="Tema ini bertujuan mengajak generasi muda untuk mengembangkan
+            inovasi dan kreativitas diharapkan generasi ini akan berperan dalam
+            menciptakan solusi-solusi baru untuk tantangan masa kini dan
+            mendatang, baik dalam hal teknologi, lingkungan, pendidikan, maupun
+            tanggung jawab sosial. sehingga siap berkarir di era Digital seperti sekarang ini"
+            contact="Contact"
+            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+          />
+        </div>
+        {/* <Sponsor /> */}
         <Footer />
       </div>
     );

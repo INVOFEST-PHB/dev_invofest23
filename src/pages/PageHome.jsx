@@ -32,7 +32,7 @@ export default class PageHome extends Component {
                   name="TALKSHOW"
                   desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era Digital: Peluang dan Tantangan di Dunia IT”."
                   button="read more"
-                  link="/workshop"
+                  link="/talkshow"
                 />
               </div>
             </div>
@@ -45,7 +45,21 @@ export default class PageHome extends Component {
                   // style={styleIcon}
                   icons={faMagento}
                   name="WORKSHOP"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
+                  desc="Acara Workshop yang meliputi Workshop Mobile Development, UI/UX Desain dan Artificial Intelegence"
+                  button="read more"
+                  link="/workshop"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 col-sm-12 ">
+            <div className="our_solution_category">
+              <div className="solution_cards_box">
+                <SusunanAcara
+                  icons={faMagento}
+                  name="SEMINAR"
+                  desc="Acara Seminar yang dikemas dengan suasana santai dengan tema “Unlocking the Future:
+                  Embracing the Digital Revolution for a Better Tomorrow”"
                   button="read more"
                   link="/seminar"
                 />
@@ -57,21 +71,9 @@ export default class PageHome extends Component {
               <div className="solution_cards_box">
                 <SusunanAcara
                   icons={faMagento}
-                  name="SEMINAR"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
-                  button="read more"
-                  link="/competition"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-sm-12 ">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                <SusunanAcara
-                  icons={faMagento}
                   name="COMPETITION"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
+                  desc="IT Competition 2023 memiliki tema “Innovation and creation of the golden
+                  generation to realize a sustainable future” yang terbagi menjadi 3 kategori yaitu : UI/UX Desain, Web Desain, Software Development"
                   button="read more"
                   link="/competition"
                 />
@@ -139,7 +141,7 @@ export default class PageHome extends Component {
             </div>
           </div>
         </div>
-        <Sponsor />
+        {/* <Sponsor /> */}
         {/* <ComponentFaq /> */}
         <Maps />
         <Footer />

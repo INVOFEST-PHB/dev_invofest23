@@ -83,8 +83,24 @@ class Seminar extends Component {
             </div>
           </div>
         </section>
-        <TabsAcara />
-        <Sponsor />
+        {/* <TabsAcara /> */}
+        <div className="mt-4">
+          <TabsAcara
+            tabsDeskripsi1="Acara Seminar yang dikemas dengan suasana santai dengan tema “Unlocking the Future:
+            Embracing the Digital Revolution for a Better Tomorrow”"
+            tabsDeskripsi2="Tema ini bertujuan mengajak generasi muda untuk mengembangkan
+            inovasi dan kreativitas diharapkan generasi ini akan berperan dalam
+            menciptakan solusi-solusi baru untuk tantangan masa kini dan
+            mendatang, baik dalam hal teknologi, lingkungan, pendidikan, maupun
+            tanggung jawab sosial. Kesadaran akan dampak jangka panjang serta
+            kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
+            tujuan tersebut."
+            contact="Contact"
+            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+          />
+        </div>
+        {/* <Sponsor /> */}
         <Footer />
       </div>
     );

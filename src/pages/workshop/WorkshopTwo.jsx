@@ -36,8 +36,15 @@ class WorkshopTwo extends Component {
                 </div>
               </div>
             </section>
-            <TabsAcara />
-
+            {/* <TabsAcara /> */}
+            <div className="mt-4">
+              <TabsAcara
+                tabsDeskripsi1="Acara workshop UI/UX Desain yang akan di mentori langsung oleh Mas Agus Setyo P., Yang saat ini bekerja sebagai UI/UX Engineer di PT Indodev Niaga Internet, ayo saksikan keseruannya!!"
+                contact="Contact"
+                contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+                contact2="Filamsi Mabda G (+62 858-5368-5622)"
+              />
+            </div>
             <Footer />
           </div>
         );
