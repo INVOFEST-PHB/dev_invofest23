@@ -19,6 +19,7 @@ jobs:
       
     - name: 🔨 Build Project
       run: 
+        npm cache clear
         npm run build
     
     - name: 📂 Sync files
