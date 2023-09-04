@@ -58,6 +58,7 @@ import RegisterSucces from "./component/success/RegisterSucces";
 import BlankPage from "./component/BlankPage";
 import Talkshow from "./pages/Talkshow";
 import WorkshopThree from "./pages/workshop/WorkshopThree";
+import WorkshopTwo from "./pages/workshop/WorkshopTwo";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -99,7 +100,7 @@ function App() {
           {/* Workshop */}
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/workshop/mobile-development" element={<WorkshopOne />} />
-          <Route path="/workshop/ui-desain" element-ui={<WorkshopOne />} />
+          <Route path="/workshop/ui-ux-desain" element={<WorkshopTwo />} />
           <Route path="/workshop/artificial-intellegence" element={<WorkshopThree/>} />
 
 

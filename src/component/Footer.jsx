@@ -34,18 +34,28 @@ export default function Footer() {
                 <h5 className="text-white mb-3 ">QUICK LINKS</h5>
                 <ul className="list-unstyled text-muted ">
                   <li className="mb-2 fw-bold">
+                    <a href="/talkshow" style={tag_A}>
+                      Talkshow
+                    </a>
+                  </li>
+                  <li className="mb-2 fw-bold">
                     <a href="/workshop" style={tag_A}>
-                      workshop
+                      Workshop
                     </a>
                   </li>
                   <li className="mb-2 fw-bold">
                     <a href="/seminar" style={tag_A}>
-                      seminar
+                      Seminar
                     </a>
                   </li>
                   <li className="fw-bold">
                     <a href="/competition" style={tag_A}>
-                      competition
+                      Competition
+                    </a>
+                  </li>
+                  <li className="fw-bold">
+                    <a href="/about" style={tag_A}>
+                      About
                     </a>
                   </li>
                 </ul>
@@ -58,11 +68,11 @@ export default function Footer() {
                       invofest@gmail.com
                     </a>
                   </li>
-                  <li className="fw-bold">
+                  {/* <li className="fw-bold">
                     <a href="#" style={tag_A}>
                       012345678910
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
               <div className="col-lg-3 col-md-6 ">

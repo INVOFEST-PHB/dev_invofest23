@@ -22,7 +22,7 @@ class Workshop extends Component {
       <div>
         <Navbars />
         <BannerAcara
-          daftar_button="Daftar Seminar"
+          daftar_button="Daftar Workshop"
           user={Auth.currentUser}
           linkDaftar="/workshop/register-workshop"
           title="Workshop"
@@ -73,63 +73,6 @@ class Workshop extends Component {
         </div>
         {/* </div> */}
 
-        {/* <div className="row">
-          <div className="col-md-6 col-sm-12 ">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                <SusunanAcara
-                  icons={faMagento}
-                  name="TALKSHOW"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era Digital: Peluang dan Tantangan di Dunia IT”."
-                  button="read more"
-                  link="/workshop"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-6 col-sm-12">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                <SusunanAcara
-                  // style={styleIcon}
-                  icons={faMagento}
-                  name="WORKSHOP"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
-                  button="read more"
-                  link="/seminar"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-sm-12 ">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                <SusunanAcara
-                  icons={faMagento}
-                  name="SEMINAR"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
-                  button="read more"
-                  link="/competition"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-sm-12 ">
-            <div className="our_solution_category">
-              <div className="solution_cards_box">
-                <SusunanAcara
-                  icons={faMagento}
-                  name="COMPETITION"
-                  desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Prospek Kerja Industri IT Bagi Mahasiswa Vokasi"
-                  button="read more"
-                  link="/competition"
-                />
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <section id="team" className="pb-5">
           <div className="container">
             <h5 className="section-title h1 mt-5">Pembicara</h5>
@@ -166,7 +109,7 @@ class Workshop extends Component {
             </div>
           </div>
         </section>
-        <Sponsor />
+        {/* <Sponsor /> */}
         <Footer />
       </div>
     );

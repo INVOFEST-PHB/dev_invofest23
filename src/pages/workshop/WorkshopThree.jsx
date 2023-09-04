@@ -34,8 +34,15 @@ class WorkshopThree extends Component {
             </div>
           </div>
         </section>
-        <TabsAcara />
-
+        {/* <TabsAcara /> */}
+        <div className="mt-4">
+          <TabsAcara
+            tabsDeskripsi1="Acara workshop Artificial Intelligence yang akan di mentori langsung oleh Kak Dewi Idda Rohmana, Yang saat ini bekerja sebagai Artificial Intelligence Coach di Orbit Future Academy, ayo saksikan keseruannya!!"
+            contact="Contact"
+            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
+            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+          />
+        </div>
         <Footer />
       </div>
     );
