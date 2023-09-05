@@ -20,7 +20,7 @@ class CompetitionWebDesain extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1 className="text-center">TIMELINE LOMBA</h1>
+              <h1 className="text-center">Susunan Jadwal Lomba</h1>
               <div className="card timeline_jadwal mt-3">
                 <div className="card-body">
                   <div className="hori-timeline" dir="ltr">
