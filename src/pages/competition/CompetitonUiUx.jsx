@@ -29,7 +29,7 @@ class CompetitonUiUx extends Component {
                     <ul className="list-inline events">
                       <TimelineCompetition
                         // 1
-                        tanggal1="pendaftran"
+                        tanggal1="pendaftaran"
                         nameTime1="1 September - 15 Oktober 2023"
                         // 2
                         tanggal2="Pengumpulan Karya"
@@ -38,11 +38,12 @@ class CompetitonUiUx extends Component {
                         tanggal3="Pengumuman Finalis"
                         nameTime3=" 19 Oktober 2023"
                         // 4
-                        tanggal4="Technical Meeting FInalis"
+                        tanggal4="Technical Meeting Finalis"
                         nameTime4="20 Oktober 2023"
                         // 5
                         tanggal5="Presentasi Finalis"
                         nameTime5="24 Oktober 2023"
+                        // 6
                         tanggal6="Pengumuman Juara"
                         nameTime6="25 Oktober 2023"
                       />
