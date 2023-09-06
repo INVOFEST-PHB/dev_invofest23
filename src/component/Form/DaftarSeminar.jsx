@@ -140,7 +140,7 @@ class DaftarSeminar extends Component {
           <div className="maskot">
               <img src={maskot} alt="" />
             </div>
-            <h2 className="text-center font-bold mt-3 "> Daftar Competition</h2>
+            <h2 className="text-center font-bold mt-3 "> Daftar Seminar</h2>
             <form className="p-3">
               <div className="mt-5">
                 <div className="form-field d-flex align-items-center mt-auto">

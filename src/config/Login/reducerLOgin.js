@@ -6,7 +6,8 @@ const initializeApp={
   informasi:[],
   lomba:[],
   seminar:[],
-  workshop:[]
+  workshop:[],
+  talkshow:[]
 }
 
 const reducer = (state=  initializeApp, action)=>{
@@ -58,6 +59,12 @@ const reducer = (state=  initializeApp, action)=>{
       return{
         ...state,
         workshop : action.value
+      }
+    }
+    if (action.type === 'SET_TALKSHOW') {
+      return{
+        ...state,
+        talkshow : action.value
       }
     }
     return state;

@@ -87,3 +87,29 @@ export const getSeminarAPI = (uid) => (dispatch) => {
     });
   });
 };
+export const getTalkshowAPI = (uid) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const db = getDatabase();
+    const biodataRef = ref(db, "talkshow/" + uid);
+    // Attach an event listener to listen for changes in the data
+    onValue(biodataRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        console.log('get data Talkshow:', data)
+        // Resolve the Promise with the retrieved biodata
+        const dataObject = [];
+         Object.keys(snapshot.val()).map(key=>{
+          dataObject.push({
+          id : key,
+          dataObject : snapshot.val()[key]
+        })
+     });
+        dispatch({type: 'SET_TALKSHOW', value: dataObject})
+        resolve(data);
+      } else {
+        // Reject the Promise with an error message
+        reject("No data found for the user");
+      }
+    });
+  });
+};

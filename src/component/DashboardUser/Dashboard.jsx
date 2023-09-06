@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import {
   getLombaAPI,
   getSeminarAPI,
+  getTalkshowAPI,
   getWorkshopAPI,
 } from "../../config/firebase/GetData";
 import { getDatabase, ref } from "firebase/database";
@@ -37,6 +38,8 @@ class Dashboard extends Component {
       const uid = user.uid;
       this.props
         .SeminarApi(uid)
+      this.props
+        .TalskhowApi(uid)
         .then((userData) => {
           // Update the component state with the fetched user data
           this.setState({ userData });
@@ -128,6 +131,8 @@ class Dashboard extends Component {
     };
     const { seminar } = this.props;
     console.log("data seminar :", seminar);
+    const { talkshow } = this.props;
+    console.log("data talkshow :", talkshow);
 
     return (
       <>
@@ -464,10 +469,10 @@ class Dashboard extends Component {
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                        {bio.dataObject.nama}
+                                        {bio.dataObject.eventAcara}
                                       </h6>
                                       <a
-                                        href="#"
+                                        href="/seminar"
                                         style={tag_A}
                                         className="mb-0"
                                         data-aos="zoom-in"
@@ -487,7 +492,64 @@ class Dashboard extends Component {
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                        Belum Verifikasi
+                                        {bio.dataObject.StatusPembayaran}
+                                        
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </Fragment>
+                        ) : null}
+                        {talkshow.length > 0 ? (
+                          <Fragment>
+                            {talkshow.map((bio) => {
+                              return (
+                                <div className="preview-item border-bottom">
+                                  <div className="preview-thumbnail">
+                                    <div className="preview-icon bg-primary">
+                                      <i className="mdi mdi-file-document"></i>
+                                    </div>
+                                  </div>
+
+                                  {/* EVent */}
+                                  <div
+                                    className="preview-item-content d-sm-flex flex-grow"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300"
+                                    key={bio.id}
+                                  >
+                                    <div className="flex-grow">
+                                      <h6
+                                        className="preview-subject"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.eventAcara}
+                                      </h6>
+                                      <a
+                                        href="/talkshow"
+                                        style={tag_A}
+                                        className="mb-0"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        Lihat Timeline
+                                      </a>
+                                    </div>
+                                    <div
+                                      className="me-auto text-sm-right pt-2 pt-sm-0"
+                                      data-aos="zoom-in"
+                                      data-aos-delay="300"
+                                    >
+                                      <button
+                                        type="button"
+                                        className="btn btn-primary btn-rounded btn-fw"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                       {bio.dataObject.StatusPembayaran}
                                       </button>
                                     </div>
                                   </div>
@@ -521,7 +583,7 @@ class Dashboard extends Component {
                                 {bio.dataObject.jenisWorkshop}
                               </h6>
                               <a
-                                href="#"
+                                href="/qorkshop"
                                 style={tag_A}
                                 className="mb-0"
                                 data-aos="zoom-in"
@@ -543,7 +605,7 @@ class Dashboard extends Component {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
-                                Belum Verifikasi
+                                {bio.dataObject.statusPembayaran}
                               </button>
                               {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
                             </div>
@@ -577,7 +639,7 @@ class Dashboard extends Component {
                                 {bio.dataObject.jenisWorkshop}
                               </h6>
                               <a
-                                href="#"
+                                href="/workshop"
                                 style={tag_A}
                                 className="mb-0"
                                 data-aos="zoom-in"
@@ -599,7 +661,7 @@ class Dashboard extends Component {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
-                                Belum Verifikasi
+                               {bio.dataObject.statusPembayaran}
                               </button>
                               {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
                             </div>
@@ -633,7 +695,7 @@ class Dashboard extends Component {
                                 {bio.dataObject.jenisWorkshop}
                               </h6>
                               <a
-                                href="#"
+                                href="/workshop"
                                 style={tag_A}
                                 className="mb-0"
                                 data-aos="zoom-in"
@@ -655,7 +717,7 @@ class Dashboard extends Component {
                                 data-aos="zoom-in"
                                 data-aos-delay="300"
                               >
-                                Belum Verifikasi
+                                {bio.dataObject.statusPembayaran}
                               </button>
                               {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
                             </div>
@@ -683,13 +745,14 @@ class Dashboard extends Component {
 const reduxState = (state) => ({
   lomba: state.lomba,
   seminar: state.seminar,
+  talkshow: state.talkshow,
 });
 
 const reduxDispatch = (dispatch) => ({
   LombaApi: (userId, jenisLomba) => dispatch(getLombaAPI(userId, jenisLomba)),
-  WorkshopApi: (userId, jenisWorkshop) =>
-    dispatch(getWorkshopAPI(userId, jenisWorkshop)),
+  WorkshopApi: (userId, jenisWorkshop) => dispatch(getWorkshopAPI(userId, jenisWorkshop)),
   SeminarApi: (uid) => dispatch(getSeminarAPI(uid)),
+  TalskhowApi: (uid) => dispatch(getTalkshowAPI(uid)),
 });
 
 export default connect(reduxState, reduxDispatch)(Dashboard);

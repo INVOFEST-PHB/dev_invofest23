@@ -22,6 +22,7 @@ import CompentitionKti from "./pages/competition/CompetitionKti";
 import Register from "./component/Login/Register";
 import CompetitionWebDesain from "./pages/competition/CompetitionWebDesain";
 import Options from "./component/Form/DaftarWorkshop";
+import DaftarTalkshow from "./component/Form/DaftarTalkshow";
 // import Test from './pages/DashboardUser/Test';
 import IndexUser from "./pages/DashboardUser/IndexUser";
 import CompetitionUser from "./pages/DashboardUser/CompetitionUser";
@@ -136,6 +137,7 @@ function App() {
           <Route path="/seminar/register-seminar" element={<DaftarSeminar />} />
           {/* Daftar Worskhop */}
           <Route path="/workshop/register-workshop" element={<DaftarWorkshop />} />
+          <Route path="/talkshow/register-talkshow" element={<DaftarTalkshow />} />
 
 
           {/* Dashboard Admin */}

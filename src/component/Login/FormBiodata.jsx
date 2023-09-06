@@ -44,6 +44,7 @@ class FormBiodata extends Component {
     set(newBiodataRef, newData)
       .then((newData) => {
         console.log('Data berhasil disimpan ke Firebase : ',newData);
+        window.location.href = "/profile";
       })
       .catch((error) => {
         console.error('Gagal menyimpan data ke Firebase:', error);

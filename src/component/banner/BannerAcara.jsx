@@ -41,8 +41,7 @@ function BannerAcara(props) {
           <h5 className="font-italic mb-0 opacity-100">{props.description}</h5>
           {props.linkDaftar && ( // Tampilkan tombol "Daftar" jika linkDaftar disediakan
             <button
-              className="button btn-daftar mt-3"
-              type="button"
+            type="button" className="btn btn-primary mt-5"
               onClick={redirectToPage}
             >
               {props.daftar_button || "Daftar"} {/* Gunakan "Daftar" sebagai default jika tidak ada props.daftar_button */}

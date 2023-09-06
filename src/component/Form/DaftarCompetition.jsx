@@ -15,6 +15,7 @@ class DaftarCompetition extends Component {
     asalPerguruanTinggi: "",
     kartuTandaMahasiswa: "",
     noWhatsAppKetua: "",
+    buktiPembayaran:"",
     formErrors: {
       jenisLomba: "",
       email: "",
@@ -24,6 +25,7 @@ class DaftarCompetition extends Component {
       teamMember2: "",
       asalPerguruanTinggi: "",
       kartuTandaMahasiswa: "",
+      buktiPembayaran:"",
       noWhatsAppKetua: "",
     },
     formValid: false,
@@ -41,6 +43,7 @@ class DaftarCompetition extends Component {
       teamMember2,
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsAppKetua,
     } = this.state;
 
@@ -58,6 +61,7 @@ class DaftarCompetition extends Component {
         teamMember2,
         asalPerguruanTinggi,
         kartuTandaMahasiswa,
+        buktiPembayaran,
         noWhatsAppKetua,
         statusLomba:"pending"
       };
@@ -87,6 +91,7 @@ class DaftarCompetition extends Component {
       teamMember2,
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
+      buktiPembayaran,
       noWhatsAppKetua,
     } = this.state;
 
@@ -99,6 +104,7 @@ class DaftarCompetition extends Component {
       teamMember2: "",
       asalPerguruanTinggi: "",
       kartuTandaMahasiswa: "",
+      buktiPembayaran:"",
       noWhatsAppKetua: "",
     };
 
@@ -140,6 +146,10 @@ class DaftarCompetition extends Component {
       formErrors.noWhatsAppKetua = "No. WhatsApp Ketua wajib diisi";
       formValid = false;
     }
+    if (!buktiPembayaran) {
+      formErrors.buktiPembayaran = "No. WhatsApp Ketua wajib diisi";
+      formValid = false;
+    }
 
     this.setState({ formErrors });
     return formValid;
@@ -161,6 +171,7 @@ class DaftarCompetition extends Component {
       asalPerguruanTinggi,
       kartuTandaMahasiswa,
       noWhatsAppKetua,
+      buktiPembayaran,
       formErrors,
     } = this.state;
 
@@ -266,9 +277,20 @@ class DaftarCompetition extends Component {
                     name="kartuTandaMahasiswa"
                     value={kartuTandaMahasiswa}
                     onChange={this.handleChange}
-                    placeholder="Kartu Tanda Mahasiswa (KTM)"
+                    placeholder="link Drive student ID card"
                   />
                   <div className="error">{formErrors.kartuTandaMahasiswa}</div>
+                </div>
+                <div className="form-field d-flex align-items-center">
+                  <input
+                    type="text"
+                    className="input"
+                    name="buktiPembayaran"
+                    value={buktiPembayaran}
+                    onChange={this.handleChange}
+                    placeholder="link Drive Bukti Pembayaran"
+                  />
+                  <div className="error">{formErrors.buktiPembayaran}</div>
                 </div>
 
                 <div className="form-field d-flex align-items-center">
