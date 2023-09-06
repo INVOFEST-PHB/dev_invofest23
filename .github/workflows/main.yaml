@@ -19,7 +19,7 @@ jobs:
       
     - name: 🔨 Build Project
       run: 
-        npm cache clean --force
+        npm install
         npm run build
     
     - name: 📂 Sync files
@@ -29,4 +29,5 @@ jobs:
         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
         password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
         protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+        port: 1234
         local-dir: ./build/
