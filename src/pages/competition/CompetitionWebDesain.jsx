@@ -20,35 +20,35 @@ class CompetitionWebDesain extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1 className="text-center">TIMELINE LOMBA</h1>
+              <h1 className="text-center">Susunan Jadwal Lomba</h1>
               <div className="card timeline_jadwal mt-3">
                 <div className="card-body">
                   <div className="hori-timeline" dir="ltr">
                     <ul className="list-inline events">
                       <TimelineCompetition
                         // 1
-                        tanggal1="1 Sept 2023-15 okt 2023"
-                        nameTime1="Pendaftran"
+                        tanggal1="Pendaftaran"
+                        nameTime1="1 September 2023-15 oktober 2023"
                         descTime1="Ayo tunjukan skill Kalian!!"
                         // 2
-                        tanggal2="16 Oktober 2023"
-                        nameTime2="Pengumpulan Karya"
+                        tanggal2="Pengumpulan Karya"
+                        nameTime2="16 Oktober 2023"
                         descTime2="Ayo Pertunjakn skill Kalian!!"
                         // 3
-                        tanggal3="19 Oktober 2023"
-                        nameTime3="Pengumuman Finalis"
+                        tanggal3="Pengumuman Finalis"
+                        nameTime3="19 Oktober 2023"
                         descTime3="Ayo Pertunjakn skill Kalian!!"
                         // 4
-                        tanggal4="20 Oktober 2023"
-                        nameTime4="Technical Meeting Finalis"
+                        tanggal4="Technical Meeting Finalis"
+                        nameTime4="20 Oktober 2023"
                         descTime4="Ayo Pertunjakn skill Kalian!!"
                         // 5
-                        tanggal5="24 Oktober 2023"
-                        nameTime5="Presentasi Finalis"
+                        tanggal5="Presentasi Finalis"
+                        nameTime5="24 Oktober 2023"
                         descTime5="Ayo Pertunjakn skill Kalian!!"
                         // 6
-                        tanggal6="25 Oktober 2023"
-                        nameTime6="Pengumuman Pemenang"
+                        tanggal6="Pengumuman Pemenang"
+                        nameTime6="25 Oktober 2023"
                         descTime6="Ayo Pertunjakn skill Kalian!!"
                       />
                     </ul>
