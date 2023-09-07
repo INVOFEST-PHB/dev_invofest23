@@ -20,7 +20,7 @@ class Talkshow extends Component {
         <BannerAcara
           daftar_button="Daftar Talkshow"
           user={Auth.currentUser}
-          linkDaftar="/Talkshow/register-Talkshow"
+          linkDaftar="/Talkshow/register-talkshow"
           title="Talkshow"
           description="Acara Talkshow Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />

@@ -15,10 +15,10 @@ const BlankPage = () => {
             <h1>404</h1>
             <h2>Halaman tidak ditemukan!</h2>
             <p>
-              Silahkan cek alamat URL yang benar!
+              Silahkan cek alamat URL dengan benar!
             </p>
             <div>
-              <a class="btn btn-success w-50 mt-4" href="#">
+              <a class="btn btn-success w-50 mt-4" href="/">
                 Kembali
               </a>
               {/* <a class="btn btn-signup w-50 mt-4" href="#">

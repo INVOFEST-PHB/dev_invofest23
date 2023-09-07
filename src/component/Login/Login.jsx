@@ -56,13 +56,13 @@ function Login() {
     <div className="belakang">
       <div className="card-login">
         <div className="wrapper">
-        <div className="maskot">
-              <img src={maskot} alt="" />
-            </div>
-            <h2 className="text-center font-bold mt-3 ">Login</h2>
+          <div className="maskot">
+            <img src={maskot} alt="" />
+          </div>
+          <h3 className="text-center font-bold mt-3 ">Login</h3>
           <form onSubmit={handleEmailLogin} className="p-3 mt-5">
             <div className="mt-5">
-              <p>{msg}</p>
+              <h2 className="text-center font-bold mt-3">{error}</h2>
               <div className="form-field d-flex align-items-center mt-5">
                 <input
                   type="email"
@@ -92,8 +92,7 @@ function Login() {
             </div>
           </form>
           <div className="text-center fs-6">
-            <a href="">Forget password?</a> or{" "}
-            <a href="/register">Sign up</a>
+            <a href="">Forget password?</a> or <a href="/register">Sign up</a>
           </div>
         </div>
       </div>

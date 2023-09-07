@@ -4,7 +4,7 @@ class NotFoound extends Component {
     render() {
         return (
             <div>
-                Ggal
+                Gagal
             </div>
         );
     }

@@ -1,11 +1,14 @@
 import React, { useEffect, Component } from "react";
 import "../../assets/css/susunanacara.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // importing aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
+
 class SusunanAcara extends Component {
+  
   render() {
 
       //  useEffect(() => {
@@ -32,10 +35,11 @@ class SusunanAcara extends Component {
             data-aos-duration="300"
             className="solution_card text-black"
           >
-            <div className="hover_color_bubble"></div>
-            <div className="so_top_icon" border="black">
-              <FontAwesomeIcon icon={this.props.icons} />
-            </div>
+            <img
+              style={{ height: "70px", width: "70px" }}
+              src={this.props.icons}
+            />
+            {/* </div> */}
             <div className="solu_title">
               <h3 data-aos="zoom-out" data-aos-duration="300">
                 {this.props.name}

@@ -5,6 +5,8 @@ import { Auth } from "../../config/firebase/firebase";
 import "../../assets/css/From.css"; 
 
 class DaftarCompetition extends Component {
+  
+
   state = {
     jenisLomba: "UI/UX", // Nilai default "UI/UX"
     email: "",
@@ -59,7 +61,7 @@ class DaftarCompetition extends Component {
         asalPerguruanTinggi,
         kartuTandaMahasiswa,
         noWhatsAppKetua,
-        statusLomba:"pending"
+        statusLomba:"Belum Verifikasi"
       };
 
       set(newLombaRef, newData)
@@ -76,6 +78,7 @@ class DaftarCompetition extends Component {
     }
   };
 
+  
   // Fungsi untuk validasi form
   validateForm() {
     const {
@@ -138,6 +141,9 @@ class DaftarCompetition extends Component {
     }
     if (!noWhatsAppKetua) {
       formErrors.noWhatsAppKetua = "No. WhatsApp Ketua wajib diisi";
+      formValid = false;
+    } else if (isNaN(noWhatsAppKetua)) {
+      formErrors.noWhatsAppKetua = "No. WhatsApp Ketua harus berupa angka";
       formValid = false;
     }
 

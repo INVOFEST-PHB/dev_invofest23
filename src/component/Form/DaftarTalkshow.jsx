@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import maskot from "../../assets/img/invofest.png";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { Auth } from "../../config/firebase/firebase";
+import Talkshow from "../../pages/Talkshow";
 
-class DaftarWorkshop extends Component {
+class DaftarTalkshow extends Component {
   state = {
-    jenisWorkshop: "Workshop", // Nilai default "UI/UX"
+    jenisTalkshow: "Talkshow Nasional", // Nilai default "UI/UX"
     email: "",
     nama: "",
-    alamat:"",
+    alamat: "",
     asalPerguruanTinggi: "",
     buktiPembayaran: "",
     noWhatsApp: "",
-    statusPembayaran:"pending",
     formErrors: {
       email: "",
       nama: "",
-      alamat:"",      
+      alamat: "",
       asalPerguruanTinggi: "",
       buktiPembayaran: "",
       noWhatsApp: "",
@@ -24,37 +24,34 @@ class DaftarWorkshop extends Component {
     formValid: false,
   };
 
-  handleSaveWorkshop = () => {
+  handleSaveTalkshow = () => {
     const user = Auth.currentUser;
     const uid = user.uid;
     const {
-      jenisWorkshop,
       email,
       nama,
       alamat,
       asalPerguruanTinggi,
       buktiPembayaran,
       noWhatsApp,
-      statusPembayaran
     } = this.state;
 
     // Validasi form sebelum mengirim data
     if (this.validateForm()) {
       const db = getDatabase();
-      const workshopRef = ref(db, jenisWorkshop + "/" + uid);
-      const newWorkshopRef = push(workshopRef);
+      const talkshowRef = ref(db, "talkshow/" + uid);
+      const newTalkshowRef = push(talkshowRef);
       const newData = {
-        jenisWorkshop,
+        eventAcara: "Talkshow",
         email,
         nama,
-        alamat,
         asalPerguruanTinggi,
         buktiPembayaran,
         noWhatsApp,
-        statusPembayaranWorkshop: "Pending" 
+        StatusPembayaranTalkshow: "Pending",
       };
 
-      set(newWorkshopRef, newData)
+      set(newTalkshowRef, newData)
         .then(() => {
           console.log("Data berhasil disimpan ke Firebase");
           // Tambahkan logika lain yang Anda butuhkan setelah sukses menyimpan data.
@@ -71,7 +68,6 @@ class DaftarWorkshop extends Component {
   // Fungsi untuk validasi form
   validateForm() {
     const {
-      jenisWorkshop,
       email,
       nama,
       alamat,
@@ -81,7 +77,6 @@ class DaftarWorkshop extends Component {
     } = this.state;
 
     const formErrors = {
-      jenisWorkshop,
       email: "",
       nama: "",
       alamat: "",
@@ -105,11 +100,15 @@ class DaftarWorkshop extends Component {
       formValid = false;
     }
     if (!buktiPembayaran) {
-      formErrors.buktiPembayaran = "Link Drive Bukti Pembayaran";
+      formErrors.buktiPembayaran = "Bukti Pembayaran wajib diisi";
       formValid = false;
     }
     if (!noWhatsApp) {
       formErrors.noWhatsApp = "No. WhatsApp Ketua wajib diisi";
+      formValid = false;
+    }
+    if (!alamat) {
+      formErrors.alamat = "No. WhatsApp Ketua wajib diisi";
       formValid = false;
     }
 
@@ -124,7 +123,6 @@ class DaftarWorkshop extends Component {
 
   render() {
     const {
-      jenisWorkshop,
       email,
       nama,
       alamat,
@@ -138,25 +136,12 @@ class DaftarWorkshop extends Component {
       <div className="belakang_biodata">
         <div className="card-biodata">
           <div className="wrapper">
-          <div className="maskot">
+            <div className="maskot">
               <img src={maskot} alt="" />
             </div>
-            <h2 className="text-center font-bold mt-3 "> Daftar Workshop</h2>
+            <h2 className="text-center font-bold mt-3 "> Daftar Talkshow</h2>
             <form className="p-3">
               <div className="mt-5">
-                <select
-                  className="form-field form-select input p-xl-3"
-                  name="jenisWorkshop"
-                  value={jenisWorkshop}
-                  onChange={this.handleChange}
-                >
-                  <option value="Pilih Workshop">Pilih Workshop</option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="Artificial Intelegent">Artificial Intelegent</option>
-                  <option value="Mobile Development">Mobile Development</option>
-                </select>
-
-                {/* <div className="error">{formErrors.jenisWorkshop}</div> */}
                 <div className="form-field d-flex align-items-center mt-auto">
                   <input
                     type="text"
@@ -192,7 +177,6 @@ class DaftarWorkshop extends Component {
                   />
                   <div className="error">{formErrors.alamat}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -204,7 +188,6 @@ class DaftarWorkshop extends Component {
                   />
                   <div className="error">{formErrors.asalPerguruanTinggi}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
@@ -212,27 +195,26 @@ class DaftarWorkshop extends Component {
                     name="buktiPembayaran"
                     value={buktiPembayaran}
                     onChange={this.handleChange}
-                    placeholder="Kartu Tanda Mahasiswa (KTM)"
+                    placeholder="Link Drive Bukti Pembayaran"
                   />
                   <div className="error">{formErrors.buktiPembayaran}</div>
                 </div>
-
                 <div className="form-field d-flex align-items-center">
                   <input
                     type="text"
                     className="input"
                     name="noWhatsApp"
-                    value={ noWhatsApp}
+                    value={noWhatsApp}
                     onChange={this.handleChange}
-                    placeholder="No. WhatsApp"
+                    placeholder="Nomer WhatsApp"
                   />
-                  <div className="error">{formErrors. noWhatsApp}</div>
+                  <div className="error">{formErrors.noWhatsApp}</div>
                 </div>
 
                 <button
                   className="button btn mt-3"
                   type="button"
-                  onClick={this.handleSaveWorkshop}
+                  onClick={this.handleSaveTalkshow}
                 >
                   SELESAI
                 </button>
@@ -245,4 +227,4 @@ class DaftarWorkshop extends Component {
   }
 }
 
-export default DaftarWorkshop;
+export default DaftarTalkshow;

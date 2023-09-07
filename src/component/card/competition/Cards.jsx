@@ -6,7 +6,7 @@ import "../../../assets/css/competitions.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function Cards() {
+function Cards(props) {
 
     useEffect(() => {
       AOS.init();
@@ -14,45 +14,40 @@ function Cards() {
 
   return (
     <div>
-      <h5
+      {/* <h5
         data-aos="flip-up"
         data-aos-duration="300"
         className="text-center display-4 font-weight-bold"
       >
-        Competition Invofest 2023 !!
-      </h5>
+        {props.title}
+      </h5> */}
       <div className="ag-format-container">
         <div className="ag-courses_box">
-          {/* <div
+          <div
             data-aos="fade-up"
-            data-aos-duration="300"
+            data-aos-duration="400"
             className="ag-courses_item"
           >
             <div className="ag-courses-item_link">
               <div className="ag-courses-item_bg"></div>
 
-              <div className="ag-courses-item_title">Karya Tulis Ilmiah</div>
+              <div className="ag-courses-item_title">{props.cardTitle}</div>
 
               <div className="ag-courses-item_date-box">
-                Start:
-                <span className="ag-courses-item_date p-3">04.11.2022</span>
-                <a
-                  href="/competition/karya-tulis-ilmiah"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                {props.text1}
+                <span className="ag-courses-item_date p-3">{props.text2}</span>
+                <a href={props.link}>
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
                   >
-                    Daftar
+                    {props.text3}
                   </button>
                 </a>
               </div>
             </div>
-          </div> */}
-
-          <div
+          </div>
+          {/* <div
             data-aos="fade-up"
             data-aos-duration="400"
             className="ag-courses_item"
@@ -125,35 +120,13 @@ function Cards() {
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* <div
-            data-aos="fade-up"
-            data-aos-duration="600"
-            className="ag-courses_item"
-          >
-            <div className="ag-courses-item_link">
-              <div className="ag-courses-item_bg"></div>
-
-              <div className="ag-courses-item_title">Video Kreatif</div>
-
-              <div className="ag-courses-item_date-box">
-                Start:
-                <span className="ag-courses-item_date p-3">04.11.2022</span>
-                <a href="/competition/video-kreatif">
-                  <button
-                    type="button"
-                    className="btn btn-outline-warning btn-lg mt-2"
-                  >
-                    Daftar
-                  </button>
-                </a>
-              </div>
-            </div>
           </div> */}
         </div>
       </div>
     </div>
   );
 }
+
+// Cards.propTypes = {};
+
 export default Cards;

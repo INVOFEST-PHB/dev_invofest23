@@ -13,6 +13,8 @@ import Footer from "../component/Footer";
 // importing aos
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Logo from "../assets/img/logo_invofest.png"
+
 
 
 export default class PageHome extends Component {
@@ -22,13 +24,20 @@ export default class PageHome extends Component {
         <Navbars />
         <Banner />
         <About />
-        <SusunanAcara acara="Susunan Acara" />
+        {/* <SusunanAcara acara="Susunan Acara" icons={HiddenIcon} /> */}
+        <h1
+          data-aos="zoom-out"
+          data-aos-duration="300"
+          className="text-center mt-5 text-decoration-underline"
+        >
+          SUSUNAN ACARA
+        </h1>
         <div className="row">
           <div className="col-md-6 col-sm-12 ">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  icons={faMagento}
+                  icons={Logo}
                   name="TALKSHOW"
                   desc="Acara Talkshow yang dikemas dengan suasana santai dengan tema “Navigasi Karir di Era Digital: Peluang dan Tantangan di Dunia IT”."
                   button="read more"
@@ -43,7 +52,7 @@ export default class PageHome extends Component {
               <div className="solution_cards_box">
                 <SusunanAcara
                   // style={styleIcon}
-                  icons={faMagento}
+                  icons={Logo}
                   name="WORKSHOP"
                   desc="Acara Workshop yang meliputi Workshop Mobile Development, UI/UX Desain dan Artificial Intelegence"
                   button="read more"
@@ -56,7 +65,8 @@ export default class PageHome extends Component {
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  icons={faMagento}
+                  // icons={faMagento}
+                  icons={Logo}
                   name="SEMINAR"
                   desc="Acara Seminar yang dikemas dengan suasana santai dengan tema “Unlocking the Future:
                   Embracing the Digital Revolution for a Better Tomorrow”"
@@ -70,7 +80,8 @@ export default class PageHome extends Component {
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  icons={faMagento}
+                  // icons={faMagento}
+                  icons={Logo}
                   name="COMPETITION"
                   desc="IT Competition 2023 memiliki tema “Innovation and creation of the golden
                   generation to realize a sustainable future” yang terbagi menjadi 3 kategori yaitu : UI/UX Desain, Web Desain, Software Development"

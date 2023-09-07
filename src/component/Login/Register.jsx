@@ -122,6 +122,8 @@ const handleRegisterSubmit = async () => {
             {showEmailExistsPopup && (
               <p>Email already registered. Please use a different email or log in.</p>
             )}
+
+            <p>Password kombinasi huruf kapital, simbol, dan angka</p>
             <div className="form-field d-flex align-items-center">
               <input
                 type="text"

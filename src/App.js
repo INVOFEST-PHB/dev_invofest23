@@ -59,6 +59,7 @@ import BlankPage from "./component/BlankPage";
 import Talkshow from "./pages/Talkshow";
 import WorkshopThree from "./pages/workshop/WorkshopThree";
 import WorkshopTwo from "./pages/workshop/WorkshopTwo";
+import DaftarTalkshow from "./component/Form/DaftarTalkshow";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -86,6 +87,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<PageHome />} />
+          <Route path="/*" element={<BlankPage/>} />
 
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />
@@ -136,6 +138,8 @@ function App() {
           <Route path="/seminar/register-seminar" element={<DaftarSeminar />} />
           {/* Daftar Worskhop */}
           <Route path="/workshop/register-workshop" element={<DaftarWorkshop />} />
+          {/* Daftar Talkshow */}
+          <Route path="/talkshow/register-talkshow" element={<DaftarTalkshow />} />
 
 
           {/* Dashboard Admin */}
@@ -157,7 +161,7 @@ function App() {
           
           {/* Page Response */}
           <Route path="/success" element={<RegisterSucces/>} />
-          <Route path="/blank" element={<BlankPage/>} />
+          {/* <Route path="/blank" element={<BlankPage/>} /> */}
 
 
           {/* Testing Layout */}
