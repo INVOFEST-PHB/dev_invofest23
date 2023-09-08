@@ -82,7 +82,7 @@ export const getSeminarAPI = (uid) => (dispatch) => {
         resolve(data);
       } else {
         // Reject the Promise with an error message
-        reject("No data found for the user");
+        // reject("No data found for the user");
       }
     });
   });
@@ -108,7 +108,7 @@ export const getTalkshowAPI = (uid) => (dispatch) => {
         resolve(data);
       } else {
         // Reject the Promise with an error message
-        reject("No data found for the user");
+        // reject("No data found for the user");
       }
     });
   });

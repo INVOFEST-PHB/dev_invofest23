@@ -3,9 +3,9 @@ import { getDatabase, ref, set } from 'firebase/database';
 import { getStorage, ref as storageRef, uploadBytes } from 'firebase/storage';
 import { Auth } from '../../config/firebase/firebase';
 import maskot from "../../assets/img/img_6.jpg";
-// import "../../assets/css/From.css"; 
+import "../../assets/css/From.css"; 
 
-const DaftarCompetition = () => {
+const File = () => {
   const [jenisLomba, setJenisLomba] = useState("UI/UX");
   const [email, setEmail] = useState("");
   const [namaTeam, setNamaTeam] = useState("");
@@ -91,7 +91,6 @@ const DaftarCompetition = () => {
       });
 
       console.log('Data saved successfully.');
-      window.location.href = '/success';
     } catch (error) {
       console.error('Error uploading data:', error);
     }
@@ -218,4 +217,4 @@ const DaftarCompetition = () => {
   );
 };
 
-export default DaftarCompetition;
+export default File;

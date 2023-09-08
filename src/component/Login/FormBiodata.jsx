@@ -3,7 +3,8 @@ import "../../assets/css/From.css";
 import maskot from "../../assets/img/invofest.png";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { Auth, getDataAPI } from "../../config/firebase/firebase";
- 
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
+
 class FormBiodata extends Component {
   state = {
     username: "",
@@ -13,48 +14,62 @@ class FormBiodata extends Component {
     status: "",
     pendidikan: "",
     jurusan: "",
+    schoolIDCard: null // Added for file upload
   };
- componentDidMount(){
+
+  componentDidMount() {
     const userdata = JSON.parse(localStorage.getItem('userdata'));
     const user = Auth.currentUser;
     const uid = user.uid;
-    getDataAPI(uid); 
+    getDataAPI(uid);
+  }
 
- }
+  handleSaveBiodata = async () => {
+    try {
+      const user = Auth.currentUser;
+      const uid = user.uid;
+      const { username, ttl, alamat, noHp, status, pendidikan, jurusan, schoolIDCard } = this.state;
 
-  handleSaveBiodata = () => {
-    const user = Auth.currentUser;
-    const uid = user.uid;
-    const { username, ttl, alamat, noHp, status, pendidikan, jurusan } = this.state;
-    
-    const db = getDatabase();
-    const biodataRef = ref(db, 'biodata/' + uid);
-    const userdata = localStorage.getItem('userdata');
-    const newBiodataRef = push(biodataRef); // Buat referensi baru dengan push()
-    const newData = { 
-      username: username,
-      ttl: ttl,
-      alamat: alamat,
-      noHp: noHp,
-      status: status,
-      pendidikan: pendidikan,
-      jurusan: jurusan,
-    };
-    console.log(newData);
-    set(newBiodataRef, newData)
-      .then((newData) => {
-        console.log('Data berhasil disimpan ke Firebase : ',newData);
-        window.location.href = "/profile";
-      })
-      .catch((error) => {
-        console.error('Gagal menyimpan data ke Firebase:', error);
-      });
+      const db = getDatabase();
+      const biodataRef = ref(db, 'biodata/' + uid);
+      const newBiodataRef = push(biodataRef);
+
+      const newData = {
+        username: username,
+        ttl: ttl,
+        alamat: alamat,
+        noHp: noHp,
+        status: status,
+        pendidikan: pendidikan,
+        jurusan: jurusan,
+      };
+
+      set(newBiodataRef, newData);
+
+      // Upload school ID card
+      if (schoolIDCard) {
+        const storage = getStorage();
+        const storageRefInstance = storageRef(storage, `schoolIDCards/${uid}/${schoolIDCard.name}`);
+        await uploadBytes(storageRefInstance, schoolIDCard);
+      }
+
+      console.log('Data and file uploaded successfully');
+
+      window.location.href = "/login";
+    } catch (error) {
+      console.error('Error saving data:', error);
+    }
+  };
+
+  handleFileChange = (e) => {
+    this.setState({ schoolIDCard: e.target.files[0] });
   };
 
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
+
   render() {
     const { username, ttl, alamat, noHp, status, pendidikan, jurusan } = this.state;
     return (
@@ -145,6 +160,15 @@ class FormBiodata extends Component {
                     placeholder="jurusan"
                   />
                 </div>
+                <div className="form-field d-flex align-items-center">
+                <input
+                  type="file"
+                  accept=".jpg, .jpeg, .png, .pdf"
+                  className="input"
+                  name="schoolIDCard"
+                  onChange={this.handleFileChange}
+                />
+              </div>
                 <button
                   className="button btn mt-3"
                   type="button"

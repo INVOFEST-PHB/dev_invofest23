@@ -70,7 +70,7 @@ function Register() {
 const handleRegisterSubmit = async () => {
   setLoading(true); // Start loading state
   const emailExists = await checkIfEmailExists(email);
-
+  window.location.href = "/biodata";
   if (emailExists) {
     // Email sudah ada, tampilkan pesan kesalahan
     setLoading(false); // Stop loading state
@@ -153,7 +153,7 @@ const handleRegisterSubmit = async () => {
             <button
               className="btn mt-3"
               onClick={handleRegisterSubmit}
-              disabled={!validEmail || !strongPassword || loading}
+              // disabled={!validEmail || !strongPassword || loading}
             >
               {loading ? "Loading..." : "Register"}
             </button>

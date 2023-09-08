@@ -54,12 +54,13 @@ import { Store } from "./config/Login/storeLogin";
 import FormBiodata from "./component/Login/FormBiodata";
 import DaftarSeminar from "./component/Form/DaftarSeminar";
 import DaftarWorkshop from "./component/Form/DaftarWorkshop";
-import DaftarCompetitionx from "./component/Form/DaftarCompetition";
 import RegisterSucces from "./component/success/RegisterSucces";
 import BlankPage from "./component/BlankPage";
 import Talkshow from "./pages/Talkshow";
 import WorkshopThree from "./pages/workshop/WorkshopThree";
 import WorkshopTwo from "./pages/workshop/WorkshopTwo";
+import File from "./component/Login/FIle";
+import DaftarCompetition from "./component/Form/DaftarCompetition";
 
 // import Testing from "./component/DashboardUser/Testing";
 
@@ -98,6 +99,7 @@ function App() {
 
 
           {/* Workshop */}
+          <Route path="/file" element={<File />} />
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/workshop/mobile-development" element={<WorkshopOne />} />
           <Route path="/workshop/ui-ux-desain" element={<WorkshopTwo />} />
@@ -132,7 +134,7 @@ function App() {
           <Route path="/dashboard/pilih-workshop" element={<ChooseEventWorkshop />} />
           
           {/* Daftar Competition */}
-          <Route path="/competition/register-competition" element={<DaftarCompetitionx />} />
+          <Route path="/competition/register-competition" element={<DaftarCompetition />} />
           {/* Daftar Seminar */}
           <Route path="/seminar/register-seminar" element={<DaftarSeminar />} />
           {/* Daftar Worskhop */}
