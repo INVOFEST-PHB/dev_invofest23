@@ -1,0 +1,46 @@
+ 
+ .social-icons{
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.google{
+  margin: 1%;
+  color: white;
+  margin-top: 10px;
+}
+
+.fb:hover{
+  color: #2759c5;
+}
+
+.yt{
+  margin: 1%;
+  color: white;
+}
+
+.git:hover{
+  color: #e90808;
+}
+
+.ig{
+  margin: 1%;
+  color: white;
+}
+
+.insta:hover{
+  color: #a833a2;
+}
+
+.gold-text {
+  color: #a38d14;
+}
+
+.icons-acara {
+  width: 45px;
+  margin-bottom: 2%;
+}
+.img-footer{
+  width: 25px;
+}

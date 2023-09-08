@@ -1,0 +1,8 @@
+
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/u1563815/public_html/invofest.phbtegal.com/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
