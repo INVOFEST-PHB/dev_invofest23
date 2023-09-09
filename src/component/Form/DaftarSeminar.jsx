@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, push, ref, set } from "firebase/database";
 import { Auth } from "../../config/firebase/firebase";
 import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/From.css";
@@ -92,7 +92,7 @@ const DaftarSeminar = () => {
       const user = Auth.currentUser;
       const uid = user.uid;
       const db = getDatabase();
-      const seminarRef = ref(db, "seminar/" + uid);
+      const seminarRef = push(ref(db, "seminar/" + uid));
 
       if (formValid) {
         // Upload buktiPembayaran if it's not null

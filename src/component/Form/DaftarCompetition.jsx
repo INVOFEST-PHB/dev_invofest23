@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, push, ref, set } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 import { Auth } from "../../config/firebase/firebase";
 import maskot from "../../assets/img/img_6.jpg";
@@ -16,8 +16,6 @@ const DaftarCompetition = () => {
   const [noWhatsAppKetua, setNoWhatsAppKetua] = useState("");
   const [kartuTandaMahasiswa, setKartuTandaMahasiswa] = useState(null);
   const [buktiPembayaran, setBuktiPembayaran] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
   const [kartuTandaMahasiswaTeamMember1, setKartuTandaMahasiswaTeamMember1] =
     useState(null);
   const [kartuTandaMahasiswaTeamMember2, setKartuTandaMahasiswaTeamMember2] =
@@ -59,42 +57,28 @@ const DaftarCompetition = () => {
   };
   const handleKTMUpload = async (e, member) => {
     const file = e.target.files[0];
-  
-    // Check if the file size is less than or equal to 500KB
-    if (file && file.size <= 500 * 1024) {
-      switch (member) {
-        case "teamMember1":
-          setKartuTandaMahasiswaTeamMember1(file);
-          break;
-        case "teamMember2":
-          setKartuTandaMahasiswaTeamMember2(file);
-          break;
-        case "ketua":
-          setKartuTandaMahasiswaKetua(file);
-          break;
-        default:
-          break;
-      }
-    } else {
-      alert("Please upload an image with a maximum size of 500KB.");
+    switch (member) {
+      case "teamMember1":
+        setKartuTandaMahasiswaTeamMember1(file);
+        break;
+      case "teamMember2":
+        setKartuTandaMahasiswaTeamMember2(file);
+        break;
+      case "ketua":
+        setKartuTandaMahasiswaKetua(file);
+        break;
+      default:
+        break;
     }
   };
-  
+
   const handleBuktiPembayaranUpload = async (e) => {
     const file = e.target.files[0];
-  
-    // Check if the file size is less than or equal to 500KB
-    if (file && file.size <= 500 * 1024) {
-      setBuktiPembayaran(file);
-    } else {
-      alert("Please upload an image with a maximum size of 500KB.");
-    }
+    setBuktiPembayaran(file);
   };
-  
 
   const handleSaveLomba = async () => {
     try {
-      setIsLoading(true);
       console.log("Start handleSaveLomba");
       const user = Auth.currentUser;
       const uid = user.uid;
@@ -135,8 +119,8 @@ const DaftarCompetition = () => {
 
       // Simpan data ke Realtime Database
       const db = getDatabase();
-      const lombaRef = ref(db, jenisLomba + "/" + uid);
-   set(lombaRef, {
+      const lombaRef = push(ref(db, jenisLomba + "/" + uid));
+      await set(lombaRef, {
         jenisLomba,
         email,
         namaTeam,
@@ -154,9 +138,7 @@ const DaftarCompetition = () => {
 
       console.log("Data saved successfully.");
       window.location.href = "/success";
-      setIsLoading(false);
     } catch (error) {
-      setIsLoading(false);
       console.error("Error uploading data:", error);
     }
   };
@@ -293,7 +275,6 @@ const DaftarCompetition = () => {
               >
                 SELESAI
               </button>
-              {isLoading && <div>Loading...</div>}
             </div>
           </form>
         </div>
