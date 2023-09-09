@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { getDatabase, ref, set } from 'firebase/database';
-import { getStorage, ref as storageRef, uploadBytes } from 'firebase/storage';
-import { Auth } from '../../config/firebase/firebase';
+import React, { useState } from "react";
+import { getDatabase, ref, set } from "firebase/database";
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
+import { Auth } from "../../config/firebase/firebase";
 import maskot from "../../assets/img/img_6.jpg";
-// import "../../assets/css/From.css"; 
+import "../../assets/css/From.css";
 
 const DaftarCompetition = () => {
   const [jenisLomba, setJenisLomba] = useState("UI/UX");
@@ -16,6 +16,16 @@ const DaftarCompetition = () => {
   const [noWhatsAppKetua, setNoWhatsAppKetua] = useState("");
   const [kartuTandaMahasiswa, setKartuTandaMahasiswa] = useState(null);
   const [buktiPembayaran, setBuktiPembayaran] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [kartuTandaMahasiswaTeamMember1, setKartuTandaMahasiswaTeamMember1] =
+    useState(null);
+  const [kartuTandaMahasiswaTeamMember2, setKartuTandaMahasiswaTeamMember2] =
+    useState(null);
+
+  const [kartuTandaMahasiswaKetua, setKartuTandaMahasiswaKetua] =
+    useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -47,36 +57,86 @@ const DaftarCompetition = () => {
         break;
     }
   };
-  const handleKTMUpload = async (e) => {
+  const handleKTMUpload = async (e, member) => {
     const file = e.target.files[0];
-    setKartuTandaMahasiswa(file);
+  
+    // Check if the file size is less than or equal to 500KB
+    if (file && file.size <= 500 * 1024) {
+      switch (member) {
+        case "teamMember1":
+          setKartuTandaMahasiswaTeamMember1(file);
+          break;
+        case "teamMember2":
+          setKartuTandaMahasiswaTeamMember2(file);
+          break;
+        case "ketua":
+          setKartuTandaMahasiswaKetua(file);
+          break;
+        default:
+          break;
+      }
+    } else {
+      alert("Please upload an image with a maximum size of 500KB.");
+    }
   };
-
+  
   const handleBuktiPembayaranUpload = async (e) => {
     const file = e.target.files[0];
-    setBuktiPembayaran(file);
+  
+    // Check if the file size is less than or equal to 500KB
+    if (file && file.size <= 500 * 1024) {
+      setBuktiPembayaran(file);
+    } else {
+      alert("Please upload an image with a maximum size of 500KB.");
+    }
   };
+  
 
   const handleSaveLomba = async () => {
     try {
-      console.log("Start handleSaveLomba")
+      setIsLoading(true);
+      console.log("Start handleSaveLomba");
       const user = Auth.currentUser;
       const uid = user.uid;
 
       const storage = getStorage();
 
       // Upload kartuTandaMahasiswa
-      const kartuTandaMahasiswaRef = storageRef(storage, `ktm/${uid}`);
-      const kartuTandaMahasiswaSnapshot = await uploadBytes(kartuTandaMahasiswaRef, kartuTandaMahasiswa);
+      const kartuTandaMahasiswaTeamMember1Ref = storageRef(
+        storage,
+        `ktm/${jenisLomba}/${namaTeam}/${uid}_team_member_1`
+      );
+      const kartuTandaMahasiswaTeamMember2Ref = storageRef(
+        storage,
+        `ktm/${jenisLomba}/${namaTeam}/${uid}_team_member_2`
+      );
+      const kartuTandaMahasiswaKetuaRef = storageRef(
+        storage,
+        `ktm/ketua/${uid}_ketua`
+      );
 
-      // Upload buktiPembayaran
-      const buktiPembayaranRef = storageRef(storage, `pembayaran/${uid}`);
-      const buktiPembayaranSnapshot = await uploadBytes(buktiPembayaranRef, buktiPembayaran);
+      const kartuTandaMahasiswaTeamMember1Snapshot = await uploadBytes(
+        kartuTandaMahasiswaTeamMember1Ref,
+        kartuTandaMahasiswaTeamMember1
+      );
+      const kartuTandaMahasiswaTeamMember2Snapshot = await uploadBytes(
+        kartuTandaMahasiswaTeamMember2Ref,
+        kartuTandaMahasiswaTeamMember2
+      );
+      const kartuTandaMahasiswaKetuaSnapshot = await uploadBytes(
+        kartuTandaMahasiswaKetuaRef,
+        kartuTandaMahasiswaKetua
+      );
+      const buktiPembayaranRef = storageRef(storage, `pembayaran/competition/${jenisLomba}/${namaTeam}${uid}`);
+      const buktiPembayaranSnapshot = await uploadBytes(
+        buktiPembayaranRef,
+        buktiPembayaran
+      );
 
       // Simpan data ke Realtime Database
       const db = getDatabase();
-      const lombaRef = ref(db, jenisLomba + '/' + uid);
-      await set(lombaRef, {
+      const lombaRef = ref(db, jenisLomba + "/" + uid);
+   set(lombaRef, {
         jenisLomba,
         email,
         namaTeam,
@@ -85,15 +145,19 @@ const DaftarCompetition = () => {
         teamMember2,
         asalPerguruanTinggi,
         noWhatsAppKetua,
-        kartuTandaMahasiswa: kartuTandaMahasiswaSnapshot.metadata.fullPath,
+        kartuTandaMahasiswaTeamMember1:kartuTandaMahasiswaTeamMember1Snapshot.metadata.fullPath,
+        kartuTandaMahasiswaTeamMember2:kartuTandaMahasiswaTeamMember2Snapshot.metadata.fullPath,
+        kartuTandaMahasiswaKetua:kartuTandaMahasiswaKetuaSnapshot.metadata.fullPath,
         buktiPembayaran: buktiPembayaranSnapshot.metadata.fullPath,
         statusLomba: "pending",
       });
 
-      console.log('Data saved successfully.');
-      window.location.href = '/success';
+      console.log("Data saved successfully.");
+      window.location.href = "/success";
+      setIsLoading(false);
     } catch (error) {
-      console.error('Error uploading data:', error);
+      setIsLoading(false);
+      console.error("Error uploading data:", error);
     }
   };
 
@@ -182,10 +246,29 @@ const DaftarCompetition = () => {
                   type="file"
                   className="input"
                   accept="image/*"
-                  onChange={handleKTMUpload}
+                  onChange={(e) => handleKTMUpload(e, "ketua")}
+                />
+              </div>
+
+              <div className="form-field d-flex align-items-center">
+                <input
+                  type="file"
+                  className="input"
+                  accept="image/*"
+                  onChange={(e) => handleKTMUpload(e, "teamMember1")}
                 />
               </div>
               <div className="form-field d-flex align-items-center">
+                <input
+                  type="file"
+                  className="input"
+                  accept="image/*"
+                  onChange={(e) => handleKTMUpload(e, "teamMember2")}
+                />
+              </div>
+
+              <div className="form-field d-flex align-items-center">
+              <label htmlFor="buktiPembayaran" className="label-style">Bukti Pembayaran</label>
                 <input
                   type="file"
                   className="input"
@@ -210,6 +293,7 @@ const DaftarCompetition = () => {
               >
                 SELESAI
               </button>
+              {isLoading && <div>Loading...</div>}
             </div>
           </form>
         </div>

@@ -1,46 +1,53 @@
-import React, { useState } from 'react';
-import { getDatabase, ref, set } from 'firebase/database';
-import { Auth } from '../../config/firebase/firebase';
-import maskot from '../../assets/img/invofest.png';
+import React, { useState } from "react";
+import { getDatabase, ref, set } from "firebase/database";
+import { Auth } from "../../config/firebase/firebase";
+import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/From.css";
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 const DaftarSeminar = () => {
-  const [email, setEmail] = useState('');
-  const [nama, setNama] = useState('');
-  const [alamat, setAlamat] = useState('');
-  const [asalPerguruanTinggi, setAsalPerguruanTinggi] = useState('');
-  const [buktiPembayaran, setBuktiPembayaran] = useState('');
-  const [noWhatsApp, setNoWhatsApp] = useState('');
+  const [email, setEmail] = useState("");
+  const [nama, setNama] = useState("");
+  const [alamat, setAlamat] = useState("");
+  const [asalPerguruanTinggi, setAsalPerguruanTinggi] = useState("");
+  const [noWhatsApp, setNoWhatsApp] = useState("");
+  const [buktiPembayaran, setBuktiPembayaran] = useState(null);
+
   const [formErrors, setFormErrors] = useState({
-    email: '',
-    nama: '',
-    alamat: '',
-    asalPerguruanTinggi: '',
-    buktiPembayaran: '',
-    noWhatsApp: '',
+    email: "",
+    nama: "",
+    alamat: "",
+    asalPerguruanTinggi: "",
+    buktiPembayaran: "",
+    noWhatsApp: "",
   });
   const [formValid, setFormValid] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
     switch (name) {
-      case 'email':
+      case "email":
         setEmail(value);
         break;
-      case 'nama':
+      case "nama":
         setNama(value);
         break;
-      case 'alamat':
+      case "alamat":
         setAlamat(value);
         break;
-      case 'asalPerguruanTinggi':
+      case "asalPerguruanTinggi":
         setAsalPerguruanTinggi(value);
         break;
-      case 'buktiPembayaran':
-        setBuktiPembayaran(value);
-        break;
-      case 'noWhatsApp':
+      case "noWhatsApp":
         setNoWhatsApp(value);
+        break;
+      case "buktiPembayaran":
+        // Handle the file input change
+        if (files.length > 0) {
+          setBuktiPembayaran(files[0]);
+        } else {
+          setBuktiPembayaran(null);
+        }
         break;
       default:
         break;
@@ -51,35 +58,33 @@ const DaftarSeminar = () => {
   const validateField = (fieldName, value) => {
     const errors = { ...formErrors };
     switch (fieldName) {
-      case 'email':
-        errors.email = value.length === 0 ? 'Email wajib diisi' : '';
+      case "email":
+        errors.email = value.length === 0 ? "Email wajib diisi" : "";
         break;
-      case 'nama':
-        errors.nama = value.length === 0 ? 'Nama wajib diisi' : '';
+      case "nama":
+        errors.nama = value.length === 0 ? "Nama wajib diisi" : "";
         break;
-      case 'alamat':
-        errors.alamat = value.length === 0 ? 'Alamat wajib diisi' : '';
+      case "alamat":
+        errors.alamat = value.length === 0 ? "Alamat wajib diisi" : "";
         break;
-      case 'asalPerguruanTinggi':
+      case "asalPerguruanTinggi":
         errors.asalPerguruanTinggi =
-          value.length === 0 ? 'Asal Perguruan Tinggi wajib diisi' : '';
+          value.length === 0 ? "Asal Perguruan Tinggi wajib diisi" : "";
         break;
-      case 'buktiPembayaran':
+      case "buktiPembayaran":
         errors.buktiPembayaran =
-          value.length === 0 ? 'Bukti Pembayaran wajib diisi' : '';
+          value.length === 0 ? "Bukti Pembayaran wajib diisi" : "";
         break;
-      case 'noWhatsApp':
+      case "noWhatsApp":
         errors.noWhatsApp =
-          value.length === 0 ? 'No. WhatsApp wajib diisi' : '';
+          value.length === 0 ? "No. WhatsApp wajib diisi" : "";
         break;
       default:
         break;
     }
 
     setFormErrors(errors);
-    setFormValid(
-      !Object.values(errors).some((error) => error.length > 0)
-    );
+    setFormValid(!Object.values(errors).some((error) => error.length > 0));
   };
 
   const handleSaveSeminar = async () => {
@@ -87,27 +92,42 @@ const DaftarSeminar = () => {
       const user = Auth.currentUser;
       const uid = user.uid;
       const db = getDatabase();
-      const seminarRef = ref(db, 'seminar/' + uid);
+      const seminarRef = ref(db, "seminar/" + uid);
 
       if (formValid) {
+        // Upload buktiPembayaran if it's not null
+        let buktiPembayaranPath = null;
+        if (buktiPembayaran) {
+          const storage = getStorage();
+          const buktiPembayaranRef = storageRef(
+            storage,
+            `bukti_pembayaran/seminar/${uid}_${buktiPembayaran.name}`
+          );
+          const buktiPembayaranSnapshot = await uploadBytes(
+            buktiPembayaranRef,
+            buktiPembayaran
+          );
+          buktiPembayaranPath = buktiPembayaranSnapshot.metadata.fullPath;
+        }
+
         await set(seminarRef, {
-          eventAcara: 'Seminar',
-          email,
-          nama,
-          alamat,
-          asalPerguruanTinggi,
-          buktiPembayaran,
-          noWhatsApp,
-          StatusPembayaran: 'pending',
+          eventAcara: "Seminar",
+          email: email,
+          nama: nama,
+          alamat: alamat,
+          asalPerguruanTinggi: asalPerguruanTinggi,
+          buktiPembayaran: buktiPembayaranPath,
+          noWhatsApp: noWhatsApp,
+          StatusPembayaran: "pending",
         });
 
-        console.log('Data berhasil disimpan ke Firebase');
-        window.location.href = '/success';
+        console.log("Data berhasil disimpan ke Firebase");
+        window.location.href = "/success";
       } else {
-        console.error('Form tidak valid. Mohon periksa kembali.');
+        console.error("Form tidak valid. Mohon periksa kembali.");
       }
     } catch (error) {
-      console.error('Gagal menyimpan data ke Firebase:', error);
+      console.error("Gagal menyimpan data ke Firebase:", error);
     }
   };
 
@@ -165,21 +185,19 @@ const DaftarSeminar = () => {
                   onChange={handleChange}
                   placeholder="Asal Perguruan Tinggi"
                 />
-                <div className="error">
-                  {formErrors.asalPerguruanTinggi}
-                </div>
+                <div className="error">{formErrors.asalPerguruanTinggi}</div>
               </div>
               <div className="form-field d-flex align-items-center">
                 <input
-                  type="text"
+                  type="file"
                   className="input"
+                  accept="image/*"
                   name="buktiPembayaran"
-                  value={buktiPembayaran}
                   onChange={handleChange}
-                  placeholder="Link Drive Bukti Pembayaran"
                 />
                 <div className="error">{formErrors.buktiPembayaran}</div>
               </div>
+
               <div className="form-field d-flex align-items-center">
                 <input
                   type="text"

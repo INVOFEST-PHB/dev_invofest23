@@ -18,10 +18,15 @@ class FormBiodata extends Component {
   };
 
   componentDidMount() {
-    const userdata = JSON.parse(localStorage.getItem('userdata'));
     const user = Auth.currentUser;
-    const uid = user.uid;
-    getDataAPI(uid);
+  
+    if (user) {
+      const uid = user.uid;
+      getDataAPI(uid);
+    } else {
+      // Handle the case when the user is not logged in
+      // Redirect to login page or show a message
+    }
   }
 
   handleSaveBiodata = async () => {
