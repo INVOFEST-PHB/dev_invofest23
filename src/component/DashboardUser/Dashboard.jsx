@@ -166,38 +166,74 @@ class Dashboard extends Component {
                     {/* <p className="text-muted mb-1">Your data status</p> */}
                   </div>
                   {/* <!-- content --> */}
-                  <div
-                    className="row mt-5"
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                  >
-                    <div className="col-md-6 d-flex justify-content-center mt-4">
-                      <a href="/competition">
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-rounded btn-fw btn-lg"
-                          data-aos="zoom-in"
-                          data-aos-delay="300"
-                        >
-                          Daftar Competition
-                        </button>
-                      </a>
-                    </div>
+                  <center>
                     <div
-                      className="col-md-6 d-flex justify-content-center mt-4"
+                      className="row mt-5"
                       data-aos="zoom-in"
                       data-aos-delay="300"
                     >
-                      <button
-                        type="button"
-                        className="btn btn-primary btn-rounded btn-fw btn-lg"
+                      <div className="col justify-content-center mt-4">
+                        <a href="/competition">
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-rounded btn-fw btn-lg"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                          >
+                            Daftar Competition
+                          </button>
+                        </a>
+                      </div>
+                      <div
+                        className="col justify-content-center mt-4"
                         data-aos="zoom-in"
                         data-aos-delay="300"
                       >
-                        Daftar Events
-                      </button>
+                        <a href="/workshop">
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-rounded btn-fw btn-lg"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                          >
+                            Daftar Workshop
+                          </button>
+                        </a>
+                      </div>
+                      <div
+                        className="col justify-content-center mt-4"
+                        data-aos="zoom-in"
+                        data-aos-delay="300"
+                      >
+                        <a href="/seminar">
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-rounded btn-fw btn-lg"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                          >
+                            Daftar Seminar
+                          </button>
+                        </a>
+                      </div>
+                      <div
+                        className="col justify-content-center mt-4"
+                        data-aos="zoom-in"
+                        data-aos-delay="300"
+                      >
+                        <a href="/talkshow">
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-rounded btn-fw btn-lg"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                          >
+                            Daftar Talkshow
+                          </button>
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                  </center>
                 </div>
               </div>
             </div>
@@ -277,11 +313,11 @@ class Dashboard extends Component {
                                     >
                                       <button
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-fw"
+                                        className="btn btn-warning"
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                        <p>{bio.dataObject.statusLomba}</p>
+                                        {bio.dataObject.statusLomba}
                                       </button>
                                     </div>
                                   </div>
@@ -297,11 +333,11 @@ class Dashboard extends Component {
                               return (
                                 <div className="preview-item border-bottom">
                                   {/* LOMBA UI/UX */}
-                                  <div className="preview-thumbnail">
+                                  {/* <div className="preview-thumbnail">
                                     <div className="preview-icon bg-primary">
                                       <i className="mdi mdi-file-document"></i>
                                     </div>
-                                  </div>
+                                  </div> */}
                                   {/* lomba */}
                                   <div
                                     className="preview-item-content d-sm-flex flex-grow"
@@ -335,7 +371,7 @@ class Dashboard extends Component {
                                     >
                                       <button
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-fw"
+                                        className="btn btn-warning"
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
@@ -355,11 +391,11 @@ class Dashboard extends Component {
                               return (
                                 <div className="preview-item border-bottom">
                                   {/* LOMBA UI/UX */}
-                                  <div className="preview-thumbnail">
+                                  {/* <div className="preview-thumbnail">
                                     <div className="preview-icon bg-primary">
                                       <i className="mdi mdi-file-document"></i>
                                     </div>
-                                  </div>
+                                  </div> */}
                                   {/* lomba */}
                                   <div
                                     className="preview-item-content d-sm-flex flex-grow"
@@ -393,11 +429,11 @@ class Dashboard extends Component {
                                     >
                                       <button
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-fw"
+                                        className="btn btn-warning"
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                        <p>{bio.dataObject.statusLomba}</p>
+                                        {bio.dataObject.statusLomba}
                                       </button>
                                     </div>
                                   </div>
@@ -422,7 +458,7 @@ class Dashboard extends Component {
               <div className="card">
                 <div className="card-body">
                   <div
-                    className="d-flex flex-row justify-content-between"
+                    className="d-flex flex-row justify-con  tent-between"
                     data-aos="zoom-in"
                     data-aos-delay="300"
                   >
@@ -450,11 +486,11 @@ class Dashboard extends Component {
                             {seminar.map((bio) => {
                               return (
                                 <div className="preview-item border-bottom">
-                                  <div className="preview-thumbnail">
+                                  {/* <div className="preview-thumbnail">
                                     <div className="preview-icon bg-primary">
                                       <i className="mdi mdi-file-document"></i>
                                     </div>
-                                  </div>
+                                  </div> */}
 
                                   {/* EVent */}
                                   <div
@@ -488,12 +524,11 @@ class Dashboard extends Component {
                                     >
                                       <button
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-fw"
+                                        className="btn btn-warning"
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
                                         {bio.dataObject.StatusPembayaran}
-                                        
                                       </button>
                                     </div>
                                   </div>
@@ -507,11 +542,11 @@ class Dashboard extends Component {
                             {talkshow.map((bio) => {
                               return (
                                 <div className="preview-item border-bottom">
-                                  <div className="preview-thumbnail">
+                                  {/* <div className="preview-thumbnail">
                                     <div className="preview-icon bg-primary">
                                       <i className="mdi mdi-file-document"></i>
                                     </div>
-                                  </div>
+                                  </div> */}
 
                                   {/* EVent */}
                                   <div
@@ -545,11 +580,11 @@ class Dashboard extends Component {
                                     >
                                       <button
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-fw"
+                                        className="btn btn-warning"
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                       {bio.dataObject.StatusPembayaran}
+                                        {bio.dataObject.StatusPembayaran}
                                       </button>
                                     </div>
                                   </div>
@@ -563,170 +598,179 @@ class Dashboard extends Component {
                           <Fragment>
                             {this.state.workshopUIUX.map((bio) => {
                               return (
-                        <div className="preview-item border-bottom" key={bio.id}>
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-primary">
-                              <i className="mdi mdi-file-document"></i>
-                            </div>
-                          </div>
-                          <div
-                            className="preview-item-content d-sm-flex flex-grow"
-                            data-aos="zoom-in"
-                            data-aos-delay="300"
-                          >
-                            <div className="flex-grow">
-                              <h6
-                                className="preview-subject"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                {bio.dataObject.jenisWorkshop}
-                              </h6>
-                              <a
-                                href="/qorkshop"
-                                style={tag_A}
-                                className="mb-0"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                Lihat Timeline
-                              </a>
-                            </div>
-                            <div
-                              className="me-auto text-sm-right pt-2 pt-sm-0"
-                              data-aos="zoom-in"
-                              data-aos-delay="300"
-                            >
-                              {/* <!-- <p className="text-muted">15 minutes ago</p>
+                                <div
+                                  className="preview-item border-bottom"
+                                  key={bio.id}
+                                >
+                                  {/* <div className="preview-thumbnail">
+                                    <div className="preview-icon bg-primary">
+                                      <i className="mdi mdi-file-document"></i>
+                                    </div>
+                                  </div> */}
+                                  <div
+                                    className="preview-item-content d-sm-flex flex-grow"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300"
+                                  >
+                                    <div className="flex-grow">
+                                      <h6
+                                        className="preview-subject"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.jenisWorkshop}
+                                      </h6>
+                                      <a
+                                        href="/qorkshop"
+                                        style={tag_A}
+                                        className="mb-0"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        Lihat Timeline
+                                      </a>
+                                    </div>
+                                    <div
+                                      className="me-auto text-sm-right pt-2 pt-sm-0"
+                                      data-aos="zoom-in"
+                                      data-aos-delay="300"
+                                    >
+                                      {/* <!-- <p className="text-muted">15 minutes ago</p>
                                 <p className="text-muted mb-0">30 tasks, 5 issues </p> --> */}
-                              <button
-                                type="button"
-                                className="btn btn-primary btn-rounded btn-fw"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                {bio.dataObject.statusPembayaran}
-                              </button>
-                              {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
-                            </div>
-                          </div>
-                        </div>
-                          );
-                        })}
-                      </Fragment>
-                    ) : null}
+                                      <button
+                                        type="button"
+                                        className="btn btn-warning"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.statusPembayaran}
+                                      </button>
+                                      {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </Fragment>
+                        ) : null}
                         {this.state.workshopAI.length > 0 ? (
                           <Fragment>
                             {this.state.workshopAI.map((bio) => {
                               return (
-                        <div className="preview-item border-bottom" key={bio.id}>
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-primary">
-                              <i className="mdi mdi-file-document"></i>
-                            </div>
-                          </div>
-                          <div
-                            className="preview-item-content d-sm-flex flex-grow"
-                            data-aos="zoom-in"
-                            data-aos-delay="300"
-                          >
-                            <div className="flex-grow">
-                              <h6
-                                className="preview-subject"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                {bio.dataObject.jenisWorkshop}
-                              </h6>
-                              <a
-                                href="/workshop"
-                                style={tag_A}
-                                className="mb-0"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                Lihat Timeline
-                              </a>
-                            </div>
-                            <div
-                              className="me-auto text-sm-right pt-2 pt-sm-0"
-                              data-aos="zoom-in"
-                              data-aos-delay="300"
-                            >
-                              {/* <!-- <p className="text-muted">15 minutes ago</p>
+                                <div
+                                  className="preview-item border-bottom"
+                                  key={bio.id}
+                                >
+                                  {/* <div className="preview-thumbnail">
+                                    <div className="preview-icon bg-primary">
+                                      <i className="mdi mdi-file-document"></i>
+                                    </div>
+                                  </div> */}
+                                  <div
+                                    className="preview-item-content d-sm-flex flex-grow"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300"
+                                  >
+                                    <div className="flex-grow">
+                                      <h6
+                                        className="preview-subject"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.jenisWorkshop}
+                                      </h6>
+                                      <a
+                                        href="/workshop"
+                                        style={tag_A}
+                                        className="mb-0"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        Lihat Timeline
+                                      </a>
+                                    </div>
+                                    <div
+                                      className="me-auto text-sm-right pt-2 pt-sm-0"
+                                      data-aos="zoom-in"
+                                      data-aos-delay="300"
+                                    >
+                                      {/* <!-- <p className="text-muted">15 minutes ago</p>
                                 <p className="text-muted mb-0">30 tasks, 5 issues </p> --> */}
-                              <button
-                                type="button"
-                                className="btn btn-primary btn-rounded btn-fw"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                               {bio.dataObject.statusPembayaran}
-                              </button>
-                              {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
-                            </div>
-                          </div>
-                        </div>
-                          );
-                        })}
-                      </Fragment>
-                    ) : null}
+                                      <button
+                                        type="button"
+                                        className="btn btn-warning"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.statusPembayaran}
+                                      </button>
+                                      {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </Fragment>
+                        ) : null}
                         {this.state.workshopDev.length > 0 ? (
                           <Fragment>
                             {this.state.workshopDev.map((bio) => {
                               return (
-                        <div className="preview-item border-bottom" key={bio.id}>
-                          <div className="preview-thumbnail">
-                            <div className="preview-icon bg-primary">
-                              <i className="mdi mdi-file-document"></i>
-                            </div>
-                          </div>
-                          <div
-                            className="preview-item-content d-sm-flex flex-grow"
-                            data-aos="zoom-in"
-                            data-aos-delay="300"
-                          >
-                            <div className="flex-grow">
-                              <h6
-                                className="preview-subject"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                {bio.dataObject.jenisWorkshop}
-                              </h6>
-                              <a
-                                href="/workshop"
-                                style={tag_A}
-                                className="mb-0"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                Lihat Timeline
-                              </a>
-                            </div>
-                            <div
-                              className="me-auto text-sm-right pt-2 pt-sm-0"
-                              data-aos="zoom-in"
-                              data-aos-delay="300"
-                            >
-                              {/* <!-- <p className="text-muted">15 minutes ago</p>
+                                <div
+                                  className="preview-item border-bottom"
+                                  key={bio.id}
+                                >
+                                  {/* <div className="preview-thumbnail">
+                                    <div className="preview-icon bg-primary">
+                                      <i className="mdi mdi-file-document"></i>
+                                    </div>
+                                  </div> */}
+                                  <div
+                                    className="preview-item-content d-sm-flex flex-grow"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="300"
+                                  >
+                                    <div className="flex-grow">
+                                      <h6
+                                        className="preview-subject"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.jenisWorkshop}
+                                      </h6>
+                                      <a
+                                        href="/workshop"
+                                        style={tag_A}
+                                        className="mb-0"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        Lihat Timeline
+                                      </a>
+                                    </div>
+                                    <div
+                                      className="me-auto text-sm-right pt-2 pt-sm-0"
+                                      data-aos="zoom-in"
+                                      data-aos-delay="300"
+                                    >
+                                      {/* <!-- <p className="text-muted">15 minutes ago</p>
                                 <p className="text-muted mb-0">30 tasks, 5 issues </p> --> */}
-                              <button
-                                type="button"
-                                className="btn btn-primary btn-rounded btn-fw"
-                                data-aos="zoom-in"
-                                data-aos-delay="300"
-                              >
-                                {bio.dataObject.statusPembayaran}
-                              </button>
-                              {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
-                            </div>
-                          </div>
-                        </div>
-                          );
-                        })}
-                      </Fragment>
-                    ) : null}
+                                      <button
+                                        type="button"
+                                        className="btn btn-warning"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="300"
+                                      >
+                                        {bio.dataObject.statusPembayaran}
+                                      </button>
+                                      {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </Fragment>
+                        ) : null}
                       </div>
                     </div>
                   </div>

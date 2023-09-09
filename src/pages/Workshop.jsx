@@ -14,6 +14,7 @@ import Sponsor from "../component/LandingPage/Sponsor";
 import img from "../assets/img/12345.jpg";
 import Footer from "../component/Footer";
 import { Auth } from '../config/firebase/firebase';
+import Logo from "../assets/img/logo_invofest.png";
 
 
 class Workshop extends Component {
@@ -28,14 +29,21 @@ class Workshop extends Component {
           title="Workshop"
           description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />
-        <SusunanAcara acara="Susunan Acara" />
+        {/* <SusunanAcara acara="Susunan Acara" /> */}
+        <h1
+          data-aos="zoom-out"
+          data-aos-duration="300"
+          className="text-center mt-5 text-decoration-underline"
+        >
+          SUSUNAN ACARA
+        </h1>
         {/* <div className="container"> */}
         <div className="row">
           <div className="col">
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  // icons={faMagento}
+                  icons={Logo}
                   name="Workshop Mobile Development"
                   desc="Daftar Sekarang Workshop Mobile Development di acara Invofest 2023"
                   button="read more"
@@ -48,7 +56,7 @@ class Workshop extends Component {
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  // icons={faMagento}
+                  icons={Logo}
                   name="Workshop UI/UX Design"
                   desc="Daftar Sekarang Workshop UI/UX Design di acara Invofest 2023"
                   button="read more"
@@ -61,7 +69,7 @@ class Workshop extends Component {
             <div className="our_solution_category">
               <div className="solution_cards_box">
                 <SusunanAcara
-                  // icons={faMagento}
+                  icons={Logo}
                   name="Workshop Artificial Intelligence"
                   desc="Daftar Sekarang Workshop Artificial Intelligence di acara Invofest 2023"
                   button="read more"
