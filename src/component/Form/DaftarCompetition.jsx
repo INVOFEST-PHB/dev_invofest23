@@ -223,7 +223,8 @@ const DaftarCompetition = () => {
                   placeholder="Asal Perguruan Tinggi"
                 />
               </div>
-              <div className="form-field d-flex align-items-center">
+              <label>Uploda KTM Ketua</label>
+              <div className="form-field d-flex align-items-center">          
                 <input
                   type="file"
                   className="input"

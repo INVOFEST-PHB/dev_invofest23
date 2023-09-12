@@ -151,7 +151,7 @@ export default class PageHome extends Component {
           </div>
         </div>
         {/* <Sponsor /> */}
-        {/* <ComponentFaq /> */}
+        <ComponentFaq />
         <Maps />
         <Footer />
       </div>
