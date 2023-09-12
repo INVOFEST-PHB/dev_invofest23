@@ -14,18 +14,11 @@ function Cards(props) {
 
   return (
     <div>
-      {/* <h5
-        data-aos="flip-up"
-        data-aos-duration="300"
-        className="text-center display-4 font-weight-bold"
-      >
-        {props.title}
-      </h5> */}
       <div className="ag-format-container">
         <div className="ag-courses_box">
           <div
             data-aos="fade-up"
-            data-aos-duration="400"
+            data-aos-duration="300"
             className="ag-courses_item"
           >
             <div className="ag-courses-item_link">
@@ -34,20 +27,25 @@ function Cards(props) {
               <div className="ag-courses-item_title">{props.cardTitle}</div>
 
               <div className="ag-courses-item_date-box">
-                {props.text1}
+              {props.text1}
                 <span className="ag-courses-item_date p-3">{props.text2}</span>
-                <a href={props.link}>
+                <a
+                  href={props.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
                   >
-                    {props.text3}
+                   {props.text3}
                   </button>
                 </a>
               </div>
             </div>
           </div>
-          {/* <div
+
+          <div
             data-aos="fade-up"
             data-aos-duration="400"
             className="ag-courses_item"
@@ -55,17 +53,17 @@ function Cards(props) {
             <div className="ag-courses-item_link">
               <div className="ag-courses-item_bg"></div>
 
-              <div className="ag-courses-item_title">UX/UI Desain</div>
+              <div className="ag-courses-item_title">{props.cardTitle2}</div>
 
               <div className="ag-courses-item_date-box">
-                Competition
-                <span className="ag-courses-item_date p-3">Register Now</span>
-                <a href="/competition/ui-ux-desain">
+              {props.text21}
+                <span className="ag-courses-item_date p-3">{props.text22}</span>
+                <a href={props.link2}>
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
                   >
-                    Daftar
+                    {props.text23}
                   </button>
                 </a>
               </div>
@@ -83,9 +81,34 @@ function Cards(props) {
               <div className="ag-courses-item_title">Web Desain</div>
 
               <div className="ag-courses-item_date-box">
-                Competition:
-                <span className="ag-courses-item_date p-3">Register Now</span>
-                <a href="/competition/web-desain">
+              {props.text31}
+                <span className="ag-courses-item_date p-3">{props.text32}</span>
+                <a href={props.link2}>
+                  <button
+                    type="button"
+                    className="btn btn-outline-warning btn-lg mt-2"
+                  >
+                    {props.text33}
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            className="ag-courses_item"
+          >
+            <div className="ag-courses-item_link">
+              <div className="ag-courses-item_bg"></div>
+
+              <div className="ag-courses-item_title">Software Develompment</div>
+
+              <div className="ag-courses-item_date-box">
+                Start:
+                <span className="ag-courses-item_date p-3">04.11.2022</span>
+                <a href="/competition/software-developer">
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
@@ -105,12 +128,12 @@ function Cards(props) {
             <div className="ag-courses-item_link">
               <div className="ag-courses-item_bg"></div>
 
-              <div className="ag-courses-item_title">Software Develompment</div>
+              <div className="ag-courses-item_title">Video Kreatif</div>
 
               <div className="ag-courses-item_date-box">
-                Competition
-                <span className="ag-courses-item_date p-3">Register Now</span>
-                <a href="/competition/software-development">
+                Start:
+                <span className="ag-courses-item_date p-3">04.11.2022</span>
+                <a href="/competition/video-kreatif">
                   <button
                     type="button"
                     className="btn btn-outline-warning btn-lg mt-2"
@@ -126,7 +149,4 @@ function Cards(props) {
     </div>
   );
 }
-
-// Cards.propTypes = {};
-
 export default Cards;

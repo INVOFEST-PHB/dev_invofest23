@@ -116,7 +116,7 @@ function App() {
 
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/biodata" element={user ? <FormBiodata /> : <Navigate to="/login" />} />
+          <Route path="/biodata" element={ <FormBiodata />} />
           <Route path="/login" element={<Login />} />
           {/* <Route path="/biodata" element={<Biodata />} /> */}
 
