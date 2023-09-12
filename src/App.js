@@ -88,6 +88,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<PageHome />} />
+          <Route path="/*" element={<BlankPage/>} />
 
           {/* Compentition */}
           <Route path="/competition" element={<Competition />} />

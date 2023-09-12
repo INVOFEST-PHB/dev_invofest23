@@ -62,7 +62,7 @@ function Login() {
             <h2 className="text-center font-bold mt-3 ">Login</h2>
           <form onSubmit={handleEmailLogin} className="p-3 mt-5">
             <div className="mt-5">
-              <p>{msg}</p>
+              <center><p>{error}</p></center>
               <div className="form-field d-flex align-items-center mt-5">
                 <input
                   type="email"
@@ -83,12 +83,6 @@ function Login() {
               <button className="button btn mt-3" type="submit">
                 LOGIN
               </button>
-              {/* <button
-                onClick={handleGoogleLogin}
-                className="button btn mt-3"
-              >
-                Login with Google
-              </button> */}
             </div>
           </form>
           <div className="text-center fs-6">

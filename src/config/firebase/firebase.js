@@ -4,6 +4,7 @@ import {getAuth, GoogleAuthProvider,createUserWithEmailAndPassword, signInWithEm
 import { Database, getDatabase, onValue, ref } from "firebase/database";
 import "firebase/firestore"
 // import "firebase/auth";
+// import env from 'dotenv';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,

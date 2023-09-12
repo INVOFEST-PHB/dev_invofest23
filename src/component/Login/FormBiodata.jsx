@@ -88,7 +88,6 @@ class FormBiodata extends Component {
             <form className="p-3 "onSubmit={this.handleSaveBiodata}>
               <div className="mt-5">
                 <div className="form-field d-flex align-items-center mt-5">
-                  {/* <label htmlFor="username">Username</label> */}
                   <input
                     type="text"
                     className="input"
@@ -99,7 +98,6 @@ class FormBiodata extends Component {
                   />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  {/* <label htmlFor="alamat">Alamat</label> */}
                   <input
                     type="date"
                     className="input"
@@ -111,7 +109,6 @@ class FormBiodata extends Component {
                   />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  {/* <label htmlFor="tanggalLahir">Tanggal Lahir</label> */}
                   <input
                     type="text"
                     className="input"
@@ -122,7 +119,6 @@ class FormBiodata extends Component {
                   />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  {/* <label htmlFor="nomerHandphone">Nomer Handphone</label> */}
                   <input
                     type="text"
                     className="input"
@@ -141,10 +137,8 @@ class FormBiodata extends Component {
                     onChange={this.handleChange}
                     placeholder="Enter your education status"
                   />
-                  {/* {/* <label htmlFor="jenjangPendidikan">Jenjang Pendidikan/Status</label> */}
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  {/* {/* <label htmlFor="namaInstitusi">Nama Institusi</label> */} 
                   <input
                     type="text"
                     className="input"
@@ -155,7 +149,6 @@ class FormBiodata extends Component {
                   />
                 </div>
                 <div className="form-field d-flex align-items-center">
-                  {/* {/* <label htmlFor="namaInstitusi">Nama Institusi</label> */} 
                   <input
                     type="text"
                     className="input"
