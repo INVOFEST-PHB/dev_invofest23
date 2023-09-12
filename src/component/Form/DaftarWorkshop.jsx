@@ -88,6 +88,7 @@ class DaftarWorkshop extends Component {
     const uid = user.uid;
     const {
       email,
+      jenisWorkshop,
       nama,
       alamat,
       asalPerguruanTinggi,
@@ -97,7 +98,7 @@ class DaftarWorkshop extends Component {
 
     if (this.validateForm()) {
       const db = getDatabase();
-      const workshopRef = ref(db, "workshop/" + uid);
+      const workshopRef = ref(db, jenisWorkshop+"/"+ uid);
       const newWorkshopRef = push(workshopRef);
 
       const storage = getStorage();
@@ -108,6 +109,7 @@ class DaftarWorkshop extends Component {
 
       const newData = {
         eventAcara: "Workshop",
+        jenisWorkshop,
         email,
         nama,
         alamat,
@@ -151,6 +153,7 @@ class DaftarWorkshop extends Component {
       asalPerguruanTinggi,
       noWhatsApp,
       formErrors,
+      buktiPembayaran,
     } = this.state;
 
     return (
@@ -225,15 +228,13 @@ class DaftarWorkshop extends Component {
                 </div>
 
                 <div className="form-field d-flex align-items-center">
-                  <input
-                    type="file" // Ubah tipe input menjadi file
-                    className="input"
-                    accept="image/*"
-                    name="buktiPembayaran"
-                    onChange={this.handleChange}
-                  />
-                  <div className="error">{formErrors.buktiPembayaran}</div>
-                </div>
+              <span class="control-fileupload">
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm ketua'}</label>
+          <input type="file" id="file" accept="image/*"
+                  name="buktiPembayaran"
+                  onChange={this.handleChange}/>
+        </span>
+        </div>
 
                 <div className="form-field d-flex align-items-center">
                   <input

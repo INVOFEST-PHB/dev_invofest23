@@ -82,10 +82,9 @@ class Dashboard extends Component {
             console.log(`Path used for fetching: ${lombaRefPath}`);
           });
       });
-
       const jenisWorkshopTypes = [
         "UI/UX Design",
-        "Artificial Intelligence",
+        "Artificial Intelegent",
         "Mobile Development",
       ];
       jenisWorkshopTypes.forEach((jenisworkshop) => {
@@ -99,7 +98,7 @@ class Dashboard extends Component {
               // Update the respective state array based on jenisworkshop
               if (jenisworkshop === "UI/UX Design") {
                 this.setState({ workshopUIUX: workshopData });
-              } else if (jenisworkshop === "Artificial Intelligence") {
+              } else if (jenisworkshop === "Artificial Intelegent") {
                 this.setState({ workshopAI: workshopData });
               } else if (jenisworkshop === "Mobile Development") {
                 this.setState({ workshopDev: workshopData });
@@ -107,7 +106,7 @@ class Dashboard extends Component {
                 console.log("Nodata");
               }
             } else {
-              console.error(`No workshop data found for ${jenisworkshop}`);
+              console.error(`No Lomba data found for ${jenisworkshop}`);
               console.log(`Path used for fetching: ${workshopRefPath}`);
             }
           })
@@ -119,6 +118,9 @@ class Dashboard extends Component {
             console.log(`Path used for fetching: ${workshopRefPath}`);
           });
       });
+
+      
+     
     } else {
       // Handle the case when there is no authenticated user
       console.error("No authenticated user found.");
@@ -702,7 +704,7 @@ class Dashboard extends Component {
                                         data-aos="zoom-in"
                                         data-aos-delay="300"
                                       >
-                                        {bio.dataObject.statusPembayaran}
+                                        {bio.dataObject.StatusPembayaran}
                                       </button>
                                       {/* <!-- <button type="button" className="btn btn-primary btn-rounded btn-fw">Belum Verifikasi</button> --> */}
                                     </div>
