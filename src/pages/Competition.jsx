@@ -16,44 +16,26 @@ class Competition extends Component {
         />
         <br />
         {/* <Cards title="Competition Invofest 2023 !!" /> */}
-        <h5
-          data-aos="flip-up"
-          data-aos-duration="300"
-          className="text-center display-4 font-weight-bold"
-        >
-          Competition Invofest 2023 !!
-        </h5>
-        <div className="container">
-          <div className="row">
-            <div className="col-4">
+    
               <Cards
                 cardTitle="UI/UX Desain"
                 text1="Competition"
                 text2="Register Now"
                 link="/competition/ui-ux-desain"
                 text3="Daftar"
+
+                cardTitle2="Web Desain"
+                text21="Competition"
+                text22="Register Now"
+                link2="/competition/web-desain"
+                text23="Daftar"
+
+                cardTitle3="Software Development"
+                text31="Competition"
+                text32="Register Now"
+                link3="/competition/software-development"
+                text33="Daftar"
               />
-            </div>
-            <div className="col-4">
-              <Cards
-                cardTitle="Web Desain"
-                text1="Competition"
-                text2="Register Now"
-                link="/competition/web-desain"
-                text3="Daftar"
-              />
-            </div>
-            <div className="col-4">
-              <Cards
-                cardTitle="Software Development"
-                text1="Competition"
-                text2="Register Now"
-                link="/competition/software-development"
-                text3="Daftar"
-              />
-            </div>
-          </div>
-        </div>
         <Footer />
       </div>
     );
