@@ -140,6 +140,11 @@ class DaftarTalkshow extends Component {
       console.error("Gagal menyimpan data ke Firebase:", error);
     }
   };
+  handleChangeFile = (e) => {
+    const { name, files } = e.target;
+    this.setState({ [name]: files[0] });
+  };
+  
   
 
   render() {
@@ -212,16 +217,13 @@ class DaftarTalkshow extends Component {
                   </div>
                 </div>
                 <div className="form-field d-flex align-items-center">
-  <input
-    type="file"
-    className="input"
-    name="buktiPembayaran"
-    onChange={this.handleChangeFile}
-  />
-  <div className="error">
-    {formErrors.buktiPembayaran}
-  </div>
-</div>
+              <span class="control-fileupload">
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm ketua'}</label>
+          <input type="file" id="file" accept="image/*"
+                  name="buktiPembayaran"
+                  onChange={this.handleChangeFile}/>
+        </span>
+        </div>
 
                 <div className="form-field d-flex align-items-center">
                   <input

@@ -18,4 +18,82 @@
 
 } 
 
+input[type=file] {
+	display: block !important;
+	right: 1px;
+	top: 1px;
+	height: 34px;
+	opacity: 0;
+  border-radius: 15px;
+  width: 100%;
+	background: none;
+	position: absolute;
+  overflow: hidden;
+  z-index: 2;
+}
+.control-fileupload {
+	display: block;
+	border-radius: 15px;
+	width: 100%;
+	height: 45px;
+	line-height: 36px;
+	padding: 10px 20px 20px 20px;
+  overflow: hidden;
+  position: relative;
+  
+  &:before, input, label {
+    cursor: pointer !important;
+  }
+  /* File upload button */
+  &:before {
+    /* inherit from boostrap btn styles */
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+    text-align: center;
+    cursor: pointer;
+    /* background-color: #3c00ff; */
+    background-repeat: repeat-x;
+    border-bottom-color: #00e340;
+    border-radius: 10px;
+    transition: color 0.2s ease;
+
+    /* add more custom styles*/
+    content: 'masukan image';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    right: 2px;
+    line-height: 20px;
+    text-align: center;
+  }
+  &:hover, &:focus {
+    &:before {
+      color: #333333;
+      /* background-color: #e6e6e6; */
+      color: #333333;
+      text-decoration: none;
+      background-position: 0 -25px;
+      transition: background-position 0.2s ease-out;
+    }
+  }
+  
+  label {
+    line-height: 24px;
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
+    margin-right: 90px;
+    margin-bottom: 0px;
+    cursor: text;
+  }
+}
 

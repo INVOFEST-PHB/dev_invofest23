@@ -188,15 +188,13 @@ const DaftarSeminar = () => {
                 <div className="error">{formErrors.asalPerguruanTinggi}</div>
               </div>
               <div className="form-field d-flex align-items-center">
-                <input
-                  type="file"
-                  className="input"
-                  accept="image/*"
+              <span class="control-fileupload">
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm ketua'}</label>
+          <input type="file" id="file" accept="image/*"
                   name="buktiPembayaran"
-                  onChange={handleChange}
-                />
-                <div className="error">{formErrors.buktiPembayaran}</div>
-              </div>
+                  onChange={handleChange}/>
+        </span>
+        </div>
 
               <div className="form-field d-flex align-items-center">
                 <input
