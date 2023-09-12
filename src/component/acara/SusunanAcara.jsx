@@ -7,9 +7,6 @@ import "aos/dist/aos.css";
 
 class SusunanAcara extends Component {
   render() {
-    //  useEffect(() => {
-    //    AOS.init();
-    //  }, []);
 
     return (
       <div className="">

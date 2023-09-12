@@ -4,23 +4,28 @@ import "../../assets/css/login.css";
 import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Fire, SignUpUser } from '../../config/firebase/firebase'
+import { Auth, Fire, SignUpUser } from "../../config/firebase/firebase";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
+
 
 function Register() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);  
-  const history = useNavigate();
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [otpCode, setOtpCode] = useState("");
+  const [targetEmail, setTargetEmail] = useState(""); // State untuk email target
+  const auth = getAuth();
 
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
+  const history = useNavigate();
 
   const handleChangeText = (e) => {
     const { name, value } = e.target;
     if (name === "email") {
       setEmail(value);
+
     } else if (name === "password") {
       setPassword(value);
     } else if (name === "confirmPassword") {
@@ -30,25 +35,24 @@ function Register() {
 
   const handleRegisterSubmit = async () => {
     setLoading(true);
-  
+
     if (password === confirmPassword) {
       await SignUpUser(email, password);
-  
+
       // Simpan informasi pengguna di localStorage
       const userData = {
         email,
-        password // Perlu dicatat bahwa menyimpan password di localStorage tidak dianjurkan dari segi keamanan.
+        password, // Perlu dicatat bahwa menyimpan password di localStorage tidak dianjurkan dari segi keamanan.
       };
-      localStorage.setItem('userData', JSON.stringify(userData));
-  
+      localStorage.setItem("userData", JSON.stringify(userData));
+
       history("/biodata");
     } else {
-      // Passwords do not match, show an error or take appropriate action
+      setError("Password dan konfirmasi password tidak cocok.");
     }
-  
+
     setLoading(false);
   };
-  
 
   return (
     <div className="belakang">
@@ -86,12 +90,10 @@ function Register() {
                 placeholder="Confirm Password"
               />
             </div>
-            <button
-              className="btn mt-3"
-              onClick={handleRegisterSubmit}
-            >
+            <button className="btn mt-3" onClick={handleRegisterSubmit}>
               {loading ? "Loading..." : "Register"}
             </button>
+            {error && <p className="error-message">{error}</p>}
           </div>
           <div className="text-center fs-6">
             <a href="/login">Already have an account? Log in</a>

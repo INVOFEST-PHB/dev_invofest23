@@ -24,31 +24,60 @@ class TabsAcara extends Component {
     
     
     return (
-        <Container>
+      <Container data-aos="zoom-out" data-aos-duration="300">
         <Tabs justify className="tabs mb-3">
-        <Tab className="subtabs" eventKey="Deskripsi" title="Deskripsi">
-        {/* <Demo1 /> */}
-        <p className="blockquote">{this.props.tabsDeskripsi1}
-        <br /><br />{this.props.tabsDeskripsi2}</p>
-
-        </Tab>
-        <Tab className="subtabs" eventKey="Persiapan" title={ this.props.titleTabs}>
-        <ol>
-        <p className="blockquote"><li className="ms-2">{this.props.li1}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li2}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li3}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li4}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li5}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li6}</li></p>
-        <p className="blockquote"><li className="ms-2">{this.props.li7}</li></p>
-        </ol>
-        </Tab>
-        <Tab className="subtabs" eventKey="contact" title="Contact">
-        <p className="blockquote">{this.props.contact1}
-        <br /><br />{this.props.contact2}</p>
-        {/* <Demo3 /> */}
-        </Tab>
-      </Tabs>
+          <Tab className="subtabs" eventKey="Deskripsi" title="Deskripsi">
+            {/* <Demo1 /> */}
+            <p
+              className="blockquote"
+              data-aos="zoom-out"
+              data-aos-duration="400"
+            >
+              {this.props.tabsDeskripsi1}
+              <br />
+              <br />
+              {this.props.tabsDeskripsi2}
+            </p>
+          </Tab>
+          <Tab
+            className="subtabs"
+            eventKey="Persiapan"
+            title={this.props.titleTabs}
+          >
+            <ol>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li1}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li2}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li3}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li4}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li5}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li6}</li>
+              </p>
+              <p className="blockquote">
+                <li className="ms-2">{this.props.li7}</li>
+              </p>
+            </ol>
+          </Tab>
+          <Tab className="subtabs" eventKey="contact" title="Contact">
+            <p className="blockquote">
+              {this.props.contact1}
+              <br />
+              <br />
+              {this.props.contact2}
+            </p>
+            {/* <Demo3 /> */}
+          </Tab>
+        </Tabs>
       </Container>
     );
   }

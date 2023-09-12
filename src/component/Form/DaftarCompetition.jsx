@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 import { Auth } from "../../config/firebase/firebase";
-import maskot from "../../assets/img/img_6.jpg";
+import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/From.css";
 
 const DaftarCompetition = () => {
@@ -233,6 +233,7 @@ const DaftarCompetition = () => {
                 />
               </div>
 
+              <p>Upload KTM Anggota 1</p>
               <div className="form-field d-flex align-items-center">
                 <input
                   type="file"
@@ -240,7 +241,10 @@ const DaftarCompetition = () => {
                   accept="image/*"
                   onChange={(e) => handleKTMUpload(e, "teamMember1")}
                 />
+                {/* <p style={{color: "black"}}>input</p> */}
               </div>
+
+              <p>Upload KTM Anggota 2</p>
               <div className="form-field d-flex align-items-center">
                 <input
                   type="file"
@@ -250,8 +254,11 @@ const DaftarCompetition = () => {
                 />
               </div>
 
+              <p>Upload bukti Pembayaran</p>
               <div className="form-field d-flex align-items-center">
-              <label htmlFor="buktiPembayaran" className="label-style">Bukti Pembayaran</label>
+                {/* <label htmlFor="buktiPembayaran" className="label-style">
+                Bukti Pembayaran
+                </label> */}
                 <input
                   type="file"
                   className="input"
