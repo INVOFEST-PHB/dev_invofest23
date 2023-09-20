@@ -104,7 +104,7 @@ function App() {
           <Route path="/workshop" element={<Workshop />} />
           <Route path="/workshop/mobile-development" element={<WorkshopOne />} />
           <Route path="/workshop/ui-ux-desain" element={<WorkshopTwo />} />
-          <Route path="/workshop/artificial-intellegence" element={<WorkshopThree/>} />
+          <Route path="/workshop/artificial-intelligence" element={<WorkshopThree/>} />
 
 
           {/* Talkshow */}

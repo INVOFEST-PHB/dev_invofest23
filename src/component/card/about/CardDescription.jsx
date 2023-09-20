@@ -40,11 +40,8 @@ export default function CardDescription() {
             </p>
             <p>
               Di festival teknologi kampus kami, kami menawarkan beragam acara
-              dan kegiatan yang mencakup konferensi, lokakarya, pameran,
-              kompetisi, serta diskusi panel dengan para ahli industri
-              terkemuka. Dengan beragam topik seperti Cyber Security,
-              pemrograman, desain antarmuka pengguna, teknologi wearable, dan
-              banyak lagi, kami memastikan ada sesuatu untuk semua orang.
+              dan kegiatan yang mencakup seminar, workshop, kompetisi, serta talkshow dengan para
+              praktisi bidang IT, kami memastikan ada sesuatu untuk semua orang.
             </p>
             <p>
               Kami percaya bahwa kolaborasi dan pertukaran ide adalah kunci

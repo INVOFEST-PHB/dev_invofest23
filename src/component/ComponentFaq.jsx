@@ -11,17 +11,16 @@ const data = {
     {
       title: "Apa itu Invofest 2023 ?",
       content:
-        "Invofest merupakan acara festival inovasi teknologi tahunan kampus Politeknik Harapan Bersam Tegal <br/> yang mengadakan kegiatan dan serangkaian acara seperti Workshop, seminar dan kompetisi di bidang tekhnologi.",
+        "Invofest merupakan acara festival inovasi teknologi tahunan kampus Politeknik Harapan Bersam Tegal <br/> yang mengadakan kegiatan dan serangkaian acara seperti Workshop, seminar, talkshow dan kompetisi di bidang tekhnologi.",
     },
     {
       title: "Ada kegiatan dan acara apa saja pada Event Invofest tahun ini ?",
       content:
-        "Di acara invofest tahun ini ada beberapa acara seperti pameran karya teknologi mahasiswa poltek harber <br/> Worksho, Seminar, kompetisi dan masih banyak lagi.",
+        "Di acara invofest tahun ini ada beberapa rangkaian acara yang menarik seperti <br/> Workshop, Seminar, talkshow, kompetisi dan masih banyak lagi.",
     },
     {
       title: "Kapan Event Invofest akan berlangsung ? ",
-      content:
-        "Acara Invofest akan di adakan pada tanggal ___ sampai tanggal ___ 2023",
+      content: "Acara Invofest akan di adakan pada 23 sampai 25 Oktober 2023",
     },
     {
       title: "Bagaimana cara daftar Kompetisi di Event Invofest 2023 ?",
@@ -36,11 +35,12 @@ const data = {
     {
       title: "Bagaimana cara daftar Seminar Umum di Event Invofest 2023 ?",
       content:
-        "Teman-teman bisa pergi ke halaman Seminar, gulir kebawah, kemudian pilih seminar yang akan di ikuti <br/> klik daftar, lalu isi formulir yang sudah di sediakan kemudian submit",
+        "Teman-teman bisa pergi ke halaman Seminar <br/> klik daftar, lalu isi formulir yang sudah di sediakan kemudian submit",
     },
     {
-      title: "Kapan Pendaftaran Kompetisi, Workshop, Seminar umum di buka  ?",
-      content: "pendaftarab kompetisi, workshop dan seminar umum akan mulai dibuka pada tanggal __ ___ 2023",
+      title: "Bagaimana cara daftar Talkshow Umum di Event Invofest 2023 ?",
+      content:
+        "Teman-teman bisa pergi ke halaman Talkshow <br/> klik daftar, lalu isi formulir yang sudah di sediakan kemudian submit",
     },
   ],
 };
