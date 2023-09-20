@@ -73,7 +73,7 @@ class Workshop extends Component {
                   name="Workshop Artificial Intelligence"
                   desc="Daftar Sekarang Workshop Artificial Intelligence di acara Invofest 2023"
                   button="read more"
-                  link="/workshop/artificial-intelegence"
+                  link="/workshop/artificial-intellegence"
                 />
               </div>
             </div>

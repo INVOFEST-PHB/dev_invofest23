@@ -12,7 +12,7 @@ const BlankPage = () => {
               Silahkan cek alamat URL dengan benar!
             </p>
             <div>
-              <a class="btn btn-success w-50 mt-4" href="#">
+              <a class="btn btn-success w-50 mt-4" href="/">
                 Kembali
               </a>
             </div>
