@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import img from "../assets/img/logo_invofest.png";
 import SocialIcons from "./LandingPage/SosialIcons";
-import img2 from "../assets/img/logo_poltek.png";
+import img2 from "../assets/img/logo_phb_text.png";
 import img3 from "../assets/img/LOGO HMPTI-1.png";
 
 export default function Footer() {

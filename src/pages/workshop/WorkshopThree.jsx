@@ -17,12 +17,12 @@ class WorkshopThree extends Component {
           title="Artificial Intelligence"
           description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />
-        <section id="team" className="pb-5">
-          <div className="container">
+        <section id="team" className="pb-5 ">
+          <div className="container ">
             <h5 className="section-title h1 mt-5">Pembicara</h5>
             <div className="row">
-              {/* <!-- Team member --> */}
-              <div className="col">
+        <center>
+              <div className="col-xs-4 col-sm-4 col-md-4">
                 <DescPersonal
                   image={Pemateri3}
                   name="Dewi Idda Rohmana"
@@ -31,6 +31,7 @@ class WorkshopThree extends Component {
                   jobs="Artificial Intelligence Coach di Orbit Future Academy"
                 />
               </div>
+        </center>
             </div>
           </div>
         </section>

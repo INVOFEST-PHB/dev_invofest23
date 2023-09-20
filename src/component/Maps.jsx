@@ -1,6 +1,6 @@
 import React, { useEffect, Component } from "react";
 import {  Row, Col } from "react-bootstrap";
-import Logo from "../assets/img/logo_phb_text.png";
+import Logo from "../assets/img/logo_poltek.png";
 // importing aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';

@@ -15,7 +15,7 @@ import {
   getWorkshopAPI,
 } from "../../config/firebase/GetData";
 import { getDatabase, ref } from "firebase/database";
-import BiodataUser from "./component/BiodataUser";
+import Biodatauser from "./Biodatauser";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -148,7 +148,7 @@ class Dashboard extends Component {
         >
           {/* <!-- partial --> */}
           <div className="main-panel">
-            <BiodataUser />
+            <Biodatauser />
 
             <div
               className="col-md-12 grid-margin stretch-card"

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import maskot from "../../assets/img/invofest.png";
 import "../../assets/css/login.css";
-import { useNavigate } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Auth, Fire, SignUpUser } from "../../config/firebase/firebase";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { sendPasswordResetEmail } from "firebase/auth";
-
 
 function Register() {
   const [error, setError] = useState("");
@@ -15,17 +11,35 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [otpCode, setOtpCode] = useState("");
-  const [targetEmail, setTargetEmail] = useState(""); // State untuk email target
-  const auth = getAuth();
+  const [validEmail, setValidEmail] = useState(true);
 
+  const auth = getAuth();
   const history = useNavigate();
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const isStrongPassword = (password) => {
+    const lengthRegex = /^.{8,}$/;
+    const uppercaseRegex = /[A-Z]/;
+    const numberRegex = /[0-9]/;
+    const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/;
+
+    return (
+      lengthRegex.test(password) &&
+      uppercaseRegex.test(password) &&
+      numberRegex.test(password) &&
+      specialCharacterRegex.test(password)
+    );
+  };
 
   const handleChangeText = (e) => {
     const { name, value } = e.target;
     if (name === "email") {
       setEmail(value);
-
+      setValidEmail(validateEmail(value));
     } else if (name === "password") {
       setPassword(value);
     } else if (name === "confirmPassword") {
@@ -36,19 +50,42 @@ function Register() {
   const handleRegisterSubmit = async () => {
     setLoading(true);
 
-    if (password === confirmPassword) {
-      await SignUpUser(email, password);
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-      // Simpan informasi pengguna di localStorage
+    if (!password.match(passwordRegex)) {
+      setError(
+        "Password harus terdiri dari huruf besar, huruf kecil, angka, karakter khusus, dan minimal 8 karakter."
+      );
+      setLoading(false);
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Password dan konfirmasi password tidak cocok.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const methods = await fetchSignInMethodsForEmail(auth, email);
+
+      if (methods.length > 0) {
+        setError("Email sudah terdaftar.");
+        setLoading(false);
+        return;
+      }
+
+      await createUserWithEmailAndPassword(auth, email, password);
+
       const userData = {
         email,
-        password, // Perlu dicatat bahwa menyimpan password di localStorage tidak dianjurkan dari segi keamanan.
+        password,
       };
-      localStorage.setItem("userData", JSON.stringify(userData));
-
+      localStorage.setItem("userData", JSON.stringify(userData.email));
       history("/biodata");
-    } else {
-      setError("Password dan konfirmasi password tidak cocok.");
+    } catch (error) {
+      setError("Terjadi kesalahan saat mendaftar. Silakan coba lagi.");
+      console.error(error);
     }
 
     setLoading(false);
@@ -72,6 +109,12 @@ function Register() {
                 placeholder="Email"
               />
             </div>
+            {!validEmail && (
+              <p className="error-message">
+                Please enter a valid email address.
+              </p>
+            )}
+
             <div className="form-field d-flex align-items-center">
               <input
                 type="password"
@@ -93,7 +136,7 @@ function Register() {
             <button className="btn mt-3" onClick={handleRegisterSubmit}>
               {loading ? "Loading..." : "Register"}
             </button>
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className="error-message mt-2">{error}</p>}
           </div>
           <div className="text-center fs-6">
             <a href="/login">Already have an account? Log in</a>

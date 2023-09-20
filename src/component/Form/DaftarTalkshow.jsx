@@ -218,7 +218,7 @@ class DaftarTalkshow extends Component {
                 </div>
                 <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm ketua'}</label>
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm'}</label>
           <input type="file" id="file" accept="image/*"
                   name="buktiPembayaran"
                   onChange={this.handleChangeFile}/>

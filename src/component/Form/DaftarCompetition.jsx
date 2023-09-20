@@ -113,7 +113,7 @@ const DaftarCompetition = () => {
         kartuTandaMahasiswaKetuaRef,
         kartuTandaMahasiswaKetua
       );
-      const buktiPembayaranRef = storageRef(storage, `pembayaran/competition/${jenisLomba}/${namaTeam}${uid}`);
+      const buktiPembayaranRef = storageRef(storage, `bukti_pembayaran/competition/${jenisLomba}/${namaTeam}${uid}`);
       const buktiPembayaranSnapshot = await uploadBytes(
         buktiPembayaranRef,
         buktiPembayaran
@@ -230,25 +230,25 @@ const DaftarCompetition = () => {
               </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{kartuTandaMahasiswaKetua ? `File : ${kartuTandaMahasiswaKetua.name}` : 'Choose a file ktm ketua'}</label>
+              <label for="file"  className="text-black" >{kartuTandaMahasiswaKetua ? `File : ${kartuTandaMahasiswaKetua.name}` : 'Choose a ktm ketua'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'ketua')}/>
         </span>
         </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{kartuTandaMahasiswaTeamMember1 ? `File : ${kartuTandaMahasiswaTeamMember1.name}` : 'Choose a file ktm anggota 1'}</label>
+              <label for="file" className="text-black" >{kartuTandaMahasiswaTeamMember1 ? `File : ${kartuTandaMahasiswaTeamMember1.name}` : 'Choose a ktm anggota 1'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'teamMember1')}/>
         </span>
         </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{kartuTandaMahasiswaTeamMember2 ? `File : ${kartuTandaMahasiswaTeamMember2.name}` : 'Choose a file ktm anggota 2'}</label>
+              <label for="file" className="text-black " >{kartuTandaMahasiswaTeamMember2 ? `File : ${kartuTandaMahasiswaTeamMember2.name}` : 'Choose a ktm anggota 2'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'teamMember2')}/>
         </span>
         </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file bukti pembayaran'}</label>
+              <label for="file" className="text-black" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'bukti pembayaran'}</label>
           <input type="file" id="file" onChange={handleBuktiPembayaranUpload}/>
         </span>
         </div>

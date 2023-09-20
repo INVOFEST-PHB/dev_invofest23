@@ -92,9 +92,7 @@ const Banner = () => {
                       ajang yang ditunggu-tunggu oleh para pencinta teknologi,
                       mahasiswa, akademisi, dan praktisi industri.
                     </p> */}
-                    <button onClick={handleRedirect}>
-                      Let’s Connect <ArrowRightCircle size={25} />
-                    </button>
+                  
                   </div>
                 )}
               </TrackVisibility>
