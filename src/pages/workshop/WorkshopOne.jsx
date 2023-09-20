@@ -17,7 +17,7 @@ class WorkshopOne extends Component {
           <div>
             <Navbars />
             <BannerAcara
-              title="Workshop Mobile Development"
+              title="Mobile Development"
               description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
             />
             <section id="team" className="pb-5">
@@ -25,17 +25,19 @@ class WorkshopOne extends Component {
                 <h5 className="section-title h1 mt-5">Pembicara</h5>
                 <div className="row">
                   {/* <!-- Team member --> */}
-                  <div className="col">
+                  <center>
+                  <div className="col-md-4 col-sm-4 col-xs-4">
                     <DescPersonal
                       image={Pemateri1}
                       name="Musnadil Firdaus"
                       job="ex Mobile Developer di PT. Bhumi Varta Technology"
                       names="Musnadil Firdaus"
-                      jobs="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
+                      jobs="ex Mobile Developer di PT. Bhumi Varta Technology"
                       twiter="https://"
                       google="https://"
                     />
                   </div>
+                  </center>
                 </div>
               </div>
             </section>
