@@ -96,8 +96,8 @@ class Seminar extends Component {
             kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
             tujuan tersebut."
             contact="Contact"
-            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+            contact1="Aisyi Fatikha (0895-2734-4073)"
+            contact2="Putri willa (0812-1556-2576)"
           />
         </div>
         <Sponsor />
