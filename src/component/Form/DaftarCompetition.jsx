@@ -152,7 +152,11 @@ const DaftarCompetition = () => {
       <div className="card-biodata">
         <div className="wrapper">
           <div className="maskot">
-            <img src={maskot} alt="" />
+            <center>
+          <div className="col-6">
+              <img src={maskot} alt="" />
+          </div>
+            </center>
           </div>
           <h2 className="text-center font-bold mt-3 "> Daftar Competition</h2>
           <form className="p-3">
@@ -230,19 +234,19 @@ const DaftarCompetition = () => {
               </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file"  className="text-black" >{kartuTandaMahasiswaKetua ? `File : ${kartuTandaMahasiswaKetua.name}` : 'Choose a ktm ketua'}</label>
+              <label for="file"  className="text-black" >{kartuTandaMahasiswaKetua ? `File : ${kartuTandaMahasiswaKetua.name}` : ' ktm ketua'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'ketua')}/>
         </span>
         </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" className="text-black" >{kartuTandaMahasiswaTeamMember1 ? `File : ${kartuTandaMahasiswaTeamMember1.name}` : 'Choose a ktm anggota 1'}</label>
+              <label for="file" className="text-black" >{kartuTandaMahasiswaTeamMember1 ? `File : ${kartuTandaMahasiswaTeamMember1.name}` : ' ktm anggota 1'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'teamMember1')}/>
         </span>
         </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" className="text-black " >{kartuTandaMahasiswaTeamMember2 ? `File : ${kartuTandaMahasiswaTeamMember2.name}` : 'Choose a ktm anggota 2'}</label>
+              <label for="file" className="text-black " >{kartuTandaMahasiswaTeamMember2 ? `File : ${kartuTandaMahasiswaTeamMember2.name}` : ' ktm anggota 2'}</label>
           <input type="file" id="file" onChange={(e) => handleKTMUpload(e, 'teamMember2')}/>
         </span>
         </div>

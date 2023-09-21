@@ -20,7 +20,7 @@ const data = {
     },
     {
       title: "Kapan Event Invofest akan berlangsung ? ",
-      content:
+      content:""
     },
     {
       title: "Bagaimana cara daftar Kompetisi di Event Invofest 2023 ?",
