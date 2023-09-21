@@ -79,8 +79,8 @@ class Talkshow extends Component {
             mendatang, baik dalam hal teknologi, lingkungan, pendidikan, maupun
             tanggung jawab sosial. sehingga siap berkarir di era Digital seperti sekarang ini"
             contact="Contact"
-            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+            contact1="Aisyi Fatikha (0895-2734-4073)"
+            contact2="Putri willa (0812-1556-2576)"
           />
         </div>
         <Sponsor />
