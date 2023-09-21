@@ -14,7 +14,7 @@ class WorkshopThree extends Component {
       <div>
         <Navbars />
         <BannerAcara
-          title="Mobile App"
+          title="Artificial Intelligence"
           description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
         />
         <section id="team" className="pb-5 ">

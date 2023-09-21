@@ -1,7 +1,8 @@
 import React, { useEffect, Component } from "react";
-import meter1 from "../../assets/img/sponsor.jpg";
-import meter2 from "../../assets/img/sponsor2.png";
-import meter3 from "../../assets/img/sponsor3.png";
+import meter1 from "../../assets/img/bento_kopi_logo-transformed-removebg-preview.png";
+import meter2 from "../../assets/img/bni.png";
+import meter3 from "../../assets/img/coklat.png";
+import meter4 from "../../assets/img/Dicoding Logo - Default Color.png";
 import Carousel from "react-multi-carousel";
 // import Carousel from "react-owl-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -55,6 +56,10 @@ class Sponsor extends Component {
       height: "100px"
     }
 
+    const sizeIconslong = {
+      width: "300px",
+      height: "100px",
+    };
     return (
     //  <section data-aos="zoom-in" className="skill mt-5" id="skills">
     //     <div className="container">
@@ -99,19 +104,19 @@ class Sponsor extends Component {
             <div className="row">
              <div className="col">
                 <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
+                {/* <div className="mb-5"><img style={sizeIcons} src={meter2} alt="" /></div> */}
             </div>
             <div className="col">
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
+                <div className="mb-5"><img style={sizeIcons} src={meter2} alt="" /></div>
+                {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
             </div>
             <div className="col">
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
+                <div className="mb-5"><img style={sizeIcons} src={meter3} alt="" /></div>
+                {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
             </div>
             <div className="col">
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
-                <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div>
+                <div className="mb-5"><img style={sizeIconslong} src={meter4} alt="" /></div>
+                {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
             </div>
           </div>
            </center>

@@ -15,7 +15,7 @@ class WorkshopTwo extends Component {
           <div>
             <Navbars />
             <BannerAcara
-              title="UI/UX Design"
+              title="UI/UX Desain"
               description="Acara Workshop Invofest 2023 akan di meriahkan oleh praktisi professional di bidang IT"
             />
             <section id="team" className="pb-5">
