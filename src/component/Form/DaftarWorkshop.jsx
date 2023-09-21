@@ -161,7 +161,11 @@ class DaftarWorkshop extends Component {
         <div className="card-biodata">
           <div className="wrapper">
             <div className="maskot">
+              <center>
+          <div className="col-6">
               <img src={maskot} alt="" />
+          </div>
+            </center>
             </div>
             <h2 className="text-center font-bold mt-3 "> Daftar Workshop</h2>
             <form className="p-3">
@@ -229,7 +233,7 @@ class DaftarWorkshop extends Component {
 
                 <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm '}</label>
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : ' file ktm '}</label>
           <input type="file" id="file" accept="image/*"
                   name="buktiPembayaran"
                   onChange={this.handleChange}/>

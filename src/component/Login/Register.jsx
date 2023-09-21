@@ -21,19 +21,7 @@ function Register() {
     return regex.test(email);
   };
 
-  const isStrongPassword = (password) => {
-    const lengthRegex = /^.{8,}$/;
-    const uppercaseRegex = /[A-Z]/;
-    const numberRegex = /[0-9]/;
-    const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/;
 
-    return (
-      lengthRegex.test(password) &&
-      uppercaseRegex.test(password) &&
-      numberRegex.test(password) &&
-      specialCharacterRegex.test(password)
-    );
-  };
 
   const handleChangeText = (e) => {
     const { name, value } = e.target;
@@ -49,16 +37,15 @@ function Register() {
 
   const handleRegisterSubmit = async () => {
     setLoading(true);
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!password.match(passwordRegex)) {
+    setError(
+      "Password harus terdiri dari huruf besar, huruf kecil, angka, dan minimal 8 karakter."
+    );
+    setLoading(false);
+  }
 
-    if (!password.match(passwordRegex)) {
-      setError(
-        "Password harus terdiri dari huruf besar, huruf kecil, angka, karakter khusus, dan minimal 8 karakter."
-      );
-      setLoading(false);
-      return;
-    }
 
     if (password !== confirmPassword) {
       setError("Password dan konfirmasi password tidak cocok.");
@@ -96,7 +83,11 @@ function Register() {
       <div className="card-login">
         <div className="wrapper">
           <div className="maskot">
-            <img src={maskot} alt="" />
+          <center>
+          <div className="col-6">
+              <img src={maskot} alt="" />
+          </div>
+            </center>
           </div>
           <h2 className="text-center font-bold mt-3 ">Registrasi</h2>
           <div className="p-3 mt-5">

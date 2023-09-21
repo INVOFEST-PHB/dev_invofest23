@@ -136,7 +136,11 @@ const DaftarSeminar = () => {
       <div className="card-biodata">
         <div className="wrapper">
           <div className="maskot">
-            <img src={maskot} alt="" />
+            <center>
+          <div className="col-6">
+              <img src={maskot} alt="" />
+          </div>
+            </center>
           </div>
           <h2 className="text-center font-bold mt-3">Daftar Seminar</h2>
           <form className="p-3">
@@ -189,7 +193,7 @@ const DaftarSeminar = () => {
               </div>
               <div className="form-field d-flex align-items-center">
               <span class="control-fileupload">
-              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : 'Choose a file ktm'}</label>
+              <label for="file" >{buktiPembayaran ? `File : ${buktiPembayaran.name}` : ' file ktm'}</label>
           <input type="file" id="file" accept="image/*"
                   name="buktiPembayaran"
                   onChange={handleChange}/>

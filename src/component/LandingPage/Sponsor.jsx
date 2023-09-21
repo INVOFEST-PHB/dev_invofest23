@@ -57,8 +57,8 @@ class Sponsor extends Component {
     }
 
     const sizeIconslong = {
-      width: "300px",
-      height: "100px",
+      width: "160px",
+      height: "90px",
     };
     return (
     //  <section data-aos="zoom-in" className="skill mt-5" id="skills">
@@ -107,7 +107,7 @@ class Sponsor extends Component {
                 {/* <div className="mb-5"><img style={sizeIcons} src={meter2} alt="" /></div> */}
             </div>
             <div className="col">
-                <div className="mb-5"><img style={sizeIcons} src={meter2} alt="" /></div>
+                <div className="mb-5"><img style={sizeIconslong} src={meter2} alt="" /></div>
                 {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
             </div>
             <div className="col">

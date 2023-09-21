@@ -69,7 +69,11 @@ function FormBiodata() {
       <div className="card-biodata">
         <div className="wrapper">
           <div className="maskot">
-            <img src={maskot} alt="" />
+          <center>
+          <div className="col-6">
+              <img src={maskot} alt="" />
+          </div>
+            </center>
           </div>
           <h2 className="text-center font-bold mt-3 ">Isi Biodata</h2>
           <form className="p-3 " onSubmit={handleSaveBiodata}>
