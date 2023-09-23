@@ -94,8 +94,8 @@ class CompetitionWebDesain extends Component {
           ketentuan perlombaan."
             contact="Contact"
             contact1="Abdul Muhith(+62 899-6071-414)"
-            contact2="Besta (0895-1857-0693)"
-            contact3="Fida (0855-4040-7654)"
+            contact2="Fida (0855-4040-7654)"
+            contact3="Besta (0895-1857-0693)"
             guidebook="https://bit.ly/GuideBook-Invofest2023"
           />
         </div>
