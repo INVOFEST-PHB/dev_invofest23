@@ -89,8 +89,9 @@ class CompetitonUiUx extends Component {
             li7="Peserta harus mengikuti seluruh rangkaian acara, prosedur, dan
           ketentuan perlombaan."
             contact="Contact"
-            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+            contact1="Abdul Muhith(+62 899-6071-414)"
+            contact2="Besta (0895-1857-0693)"
+            contact3="Fida (0855-4040-7654)"
           />
         </div>
         {/* <Sponsor /> */}

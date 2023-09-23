@@ -40,8 +40,8 @@ class WorkshopThree extends Component {
           <TabsAcara
             tabsDeskripsi1="Acara workshop Artificial Intelligence yang akan di mentori langsung oleh Kak Dewi Idda Rohmana, Yang saat ini bekerja sebagai Artificial Intelligence Coach di Orbit Future Academy, ayo saksikan keseruannya!!"
             contact="Contact"
-            contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-            contact2="Filamsi Mabda G (+62 858-5368-5622)"
+            contact1="Kartika (0813-2918-5235)"
+            contact2="Riky (0858-7802-2969)"
           />
         </div>
         <Footer />

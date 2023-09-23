@@ -46,8 +46,8 @@ class WorkshopOne extends Component {
               <TabsAcara
                 tabsDeskripsi1="Acara workshop Mobile Development yang akan di mentori langsung oleh Kak musnadil Firdaus, Yang saat ini bekerja sebagai Mobile Developer dari PT. Bhumi Varta Technology, ayo saksikan keseruannya!!"
                 contact="Contact"
-                contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-                contact2="Filamsi Mabda G (+62 858-5368-5622)"
+                contact1="Kartika (0813-2918-5235)"
+                contact2="Riky (0858-7802-2969)"
               />
             </div>
             <Footer />

@@ -43,8 +43,8 @@ class WorkshopTwo extends Component {
               <TabsAcara
                 tabsDeskripsi1="Acara workshop UI/UX Desain yang akan di mentori langsung oleh Mas Agus Setyo P., Yang saat ini bekerja sebagai UI/UX Engineer di PT Indodev Niaga Internet, ayo saksikan keseruannya!!"
                 contact="Contact"
-                contact1="Abdul Muhith Nawawi (+62 899-6071-414)"
-                contact2="Filamsi Mabda G (+62 858-5368-5622)"
+                contact1="Kartika (0813-2918-5235)"
+                contact2="Riky (0858-7802-2969)"
               />
             </div>
             <Footer />
