@@ -77,7 +77,6 @@ class CompetitonUiUx extends Component {
             li1="Peserta adalah mahasiswa/i aktif D1 hingga S1/Sederajat perguruan
             tinggi/universitas se-Indonesia yang dibuktikan dengan Kartu Tanda
             Mahasiswa atau Surat Keterangan resmi."
-
             li2="Peserta adalah perorangan/individu maupun tim (maksimal 3 orang)
           serta tidak dapat diwakilkan oleh orang lain."
             li3="Setiap anggota tim wajib berasal dari Sekolah yang sama."
@@ -94,6 +93,7 @@ class CompetitonUiUx extends Component {
             contact1="Abdul Muhith(+62 899-6071-414)"
             contact2="Besta (0895-1857-0693)"
             contact3="Fida (0855-4040-7654)"
+            guidebook="https://bit.ly/GuideBook-Invofest2023"
           />
         </div>
         {/* <Sponsor /> */}

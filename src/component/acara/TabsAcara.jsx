@@ -77,6 +77,12 @@ class TabsAcara extends Component {
             </p>
             {/* <Demo3 /> */}
           </Tab>
+          <Tab className="subtabs" eventKey="guidebook" title="Guide Book">
+            <p className="blockquote">
+            <a href="https://bit.ly/GuideBook-Invofest2023">Link Guidebook Lomba</a>
+            </p>
+            <p className="blockquote">https://bit.ly/GuideBook-Invofest2023</p>
+          </Tab>
         </Tabs>
       </Container>
     );
