@@ -33,7 +33,7 @@ class CompetitonUiUx extends Component {
                         nameTime1="1 September - 15 Oktober 2023"
                         // 2
                         tanggal2="Pengumpulan Karya"
-                        nameTime2=" 16 Oktober 2023"
+                        nameTime2="1 September - 16 Oktober 2023"
                         // 3
                         tanggal3="Pengumuman Finalis"
                         nameTime3=" 19 Oktober 2023"
@@ -57,9 +57,9 @@ class CompetitonUiUx extends Component {
         <div className="mt-4">
           <TabsAcara
             tabsDeskripsi1="Salah satu perlombaan dalam kegiatan Invofest (Infomatics Vocational
-          Festival) 2023 adalah National UI UX Design Competition yang mana
+          Festival) 2023 adalah UI UX Design National IT Competition INVOFEST 2023 yang mana
           diharapkan melalui ajang perlombaan ini para peserta dari kalangan
-          SMA/SMK Sederajat dapat semakin menggali serta memacu potensi yang ada di
+          Mahasiswa/i dapat semakin menggali serta memacu potensi yang ada di
           dalam diri sebagai salah satu upaya menjadi sumber daya manusia yang
           unggul di bidang ilmu pengetahuan dan teknologi. Lomba ini mengusung
           tema “Innovation and creation of the golden generation to realize a
@@ -74,8 +74,10 @@ class CompetitonUiUx extends Component {
           kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
           tujuan tersebut."
             titleTabs="Persyaratan"
-            li1="Peserta adalah siswa/siswi dari SMA/SMK Sederajat se-Indonesia yang dibuktikan dengan Kartu Tanda
-          Mahasiswa atau Surat Keterangan resmi."
+            li1="Peserta adalah mahasiswa/i aktif D1 hingga S1/Sederajat perguruan
+            tinggi/universitas se-Indonesia yang dibuktikan dengan Kartu Tanda
+            Mahasiswa atau Surat Keterangan resmi."
+
             li2="Peserta adalah perorangan/individu maupun tim (maksimal 3 orang)
           serta tidak dapat diwakilkan oleh orang lain."
             li3="Setiap anggota tim wajib berasal dari Sekolah yang sama."

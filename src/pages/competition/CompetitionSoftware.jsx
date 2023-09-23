@@ -32,7 +32,7 @@ class CompentitionSoftware extends Component {
                         descTime1="Ayo tunjukan skill Kalian!!"
                         // 2
                         tanggal2="Pengumpulan Karya"
-                        nameTime2="16 Oktober 2023"
+                        nameTime2="1 September - 16 Oktober 2023"
                         descTime2="Ayo Pertunjakn skill Kalian!!"
                         // 3
                         tanggal3="Pengumuman Finalis"
@@ -61,9 +61,9 @@ class CompentitionSoftware extends Component {
         <div className="mt-4">
           <TabsAcara
             tabsDeskripsi1="Salah satu perlombaan dalam kegiatan Invofest (Infomatics Vocational
-                Festival) 2023 adalah National UI UX Design Competition yang mana
+                Festival) 2023 adalah Software Development National IT Competition INVOFEST 2023 yang mana
                 diharapkan melalui ajang perlombaan ini para peserta dari kalangan
-                mahasiswa/i dapat semakin menggali serta memacu potensi yang ada di
+                Mahasiswa/i dapat semakin menggali serta memacu potensi yang ada di
                 dalam diri sebagai salah satu upaya menjadi sumber daya manusia yang
                 unggul di bidang ilmu pengetahuan dan teknologi. Lomba ini mengusung
                 tema “Innovation and creation of the golden generation to realize a
