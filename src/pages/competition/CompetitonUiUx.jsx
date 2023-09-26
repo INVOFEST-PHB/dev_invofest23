@@ -93,8 +93,13 @@ class CompetitonUiUx extends Component {
             contact1="Abdul Muhith(+62 899-6071-414)"
             contact2="Fida (0855-4040-7654)"
             contact3="Besta (0895-1857-0693)"
+            title="Guidebook"
             guidebook="https://bit.ly/GuideBook-Invofest2023"
+            guid="https://bit.ly/GuideBook-Invofest2023"
+            guidLink="Link Guidebook Lomba"
+            link = 'https://bit.ly/GuideBook-Invofest2023'
           />
+          <br />
         </div>
         {/* <Sponsor /> */}
         <Footer />

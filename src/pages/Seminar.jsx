@@ -95,6 +95,14 @@ class Seminar extends Component {
             tanggung jawab sosial. Kesadaran akan dampak jangka panjang serta
             kolaborasi lintas generasi dan sektor menjadi kunci dalam mewujudkan
             tujuan tersebut."
+            
+            judulDetail="Waktu & Lokasi"
+            detail="Detail"
+            Detail1="Senin, 23 Oktober 2023"
+            Detail2="Pukul 08.00 WIB - 12.00 WIB"
+            Detail3="Gedung C, Lantai 1 - Aula"
+
+
             contact="Contact"
             contact1="Aisyi Fatikha (0895-2734-4073)"
             contact2="Putri willa (0812-1556-2576)"

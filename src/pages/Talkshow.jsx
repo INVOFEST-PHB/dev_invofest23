@@ -78,6 +78,14 @@ class Talkshow extends Component {
             menciptakan solusi-solusi baru untuk tantangan masa kini dan
             mendatang, baik dalam hal teknologi, lingkungan, pendidikan, maupun
             tanggung jawab sosial. sehingga siap berkarir di era Digital seperti sekarang ini"
+            
+            judulDetail="Waktu & Lokasi"
+            detail="Detail"
+            Detail1="Senin, 23 Oktober 2023"
+            Detail2="Pukul 08.00 WIB - 12.00 WIB"
+            Detail3="Gedung C, Lantai 1 - Aula"
+
+
             contact="Contact"
             contact1="Aisyi Fatikha (0895-2734-4073)"
             contact2="Putri willa (0812-1556-2576)"

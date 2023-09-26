@@ -4,6 +4,8 @@ import "../../assets/css/login.css";
 import { useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { sendPasswordResetEmail } from "firebase/auth";
+import { ref, set } from "firebase/database";
+import { database } from "../../config/firebase/firebase";
 
 function Register() {
   const [error, setError] = useState("");
@@ -62,13 +64,16 @@ function Register() {
         return;
       }
 
-      await createUserWithEmailAndPassword(auth, email, password);
-
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      const userRef = ref(database, `users/${user.uid}`);
       const userData = {
         email,
         password,
+        createdAt: new Date().toISOString().split('T')[0],
       };
       localStorage.setItem("userData", JSON.stringify(userData.email));
+      await set(userRef, userData);
       history("/biodata");
     } catch (error) {
       setError("Terjadi kesalahan saat mendaftar. Silakan coba lagi.");

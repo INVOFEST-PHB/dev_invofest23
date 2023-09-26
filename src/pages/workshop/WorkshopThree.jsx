@@ -42,7 +42,15 @@ class WorkshopThree extends Component {
             contact="Contact"
             contact1="Kartika (0813-2918-5235)"
             contact2="Riky (0858-7802-2969)"
+
+            judulDetail="Waktu & Lokasi"
+            detail="Detail"
+            Detail1="Senin, 24 Oktober 2023"
+            Detail2="Pukul 08.00 WIB - 16.00 WIB"
+            Detail3="Lab Komputer"
+
           />
+          <br />
         </div>
         <Footer />
       </div>

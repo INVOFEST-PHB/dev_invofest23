@@ -39,6 +39,27 @@ class TabsAcara extends Component {
               {this.props.tabsDeskripsi2}
             </p>
           </Tab>
+          <Tab className="subtabs" eventKey="" title={this.props.detail}>
+            {/* <Demo1 /> */}
+            <div className="blockquote">
+            <h3 >{this.props.judulDetail}</h3>
+            <p
+              data-aos="zoom-out"
+              data-aos-duration="400"
+            >
+              {this.props.Detail1}
+              <br />
+              <br />
+              {this.props.Detail2}
+              <br />
+              <br />
+              {this.props.Detail3}
+              <br />
+              <br />
+              {this.props.Detail4}
+            </p>
+            </div>
+          </Tab>
           <Tab
             className="subtabs"
             eventKey="Persiapan"
@@ -64,7 +85,10 @@ class TabsAcara extends Component {
                 <li className="ms-2">{this.props.li6}</li>
               </p>
               <p className="blockquote">
-                <li className="ms-2">{this.props.li7}</li>
+               <li className="ms-2">{this.props.li7}</li>
+              </p>
+              <p className="blockquote">
+                {this.props.des2}
               </p>
             </ol>
           </Tab>
@@ -77,11 +101,11 @@ class TabsAcara extends Component {
             </p>
             {/* <Demo3 /> */}
           </Tab>
-          <Tab className="subtabs" eventKey="guidebook" title="Guide Book">
+          <Tab className="subtabs" eventKey="guidebook" title={this.props.title}>
             <p className="blockquote">
-            <a href="https://bit.ly/GuideBook-Invofest2023">Link Guidebook Lomba</a>
+            <a href={this.props.guid}>{this.props.guidLink}</a>
             </p>
-            <p className="blockquote">https://bit.ly/GuideBook-Invofest2023</p>
+            <p className="blockquote">{this.props.link}</p>
           </Tab>
         </Tabs>
       </Container>

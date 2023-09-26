@@ -98,7 +98,12 @@ class CompentitionSoftware extends Component {
             contact2="Fida (0855-4040-7654)"
             contact3="Besta (0895-1857-0693)"
             guidebook="https://bit.ly/GuideBook-Invofest2023"
+            title="Guidebook"
+            guid="https://bit.ly/GuideBook-Invofest2023"
+            guidLink="Link Guidebook Lomba"
+            link = 'https://bit.ly/GuideBook-Invofest2023'
           />
+          <br />
         </div>
         {/* <Sponsor /> */}
         <Footer />
