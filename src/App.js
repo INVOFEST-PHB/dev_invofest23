@@ -97,8 +97,7 @@ function App() {
           <Route path="/competition/web-desain" element={<CompetitionWebDesain />} />
           <Route path="/competition/software-development" element={<CompentitionSoftware />} />
           {/* <Route path="/competition/karya-tulis-ilmiah" element={<CompentitionKti />} /> */}
-
-
+          
           {/* Workshop */}
           <Route path="/file" element={<File />} />
           <Route path="/workshop" element={<Workshop />} />
