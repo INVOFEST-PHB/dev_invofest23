@@ -20,7 +20,7 @@ const data = {
     },
     {
       title: "Kapan Event Invofest akan berlangsung ? ",
-      content:""
+      content:"Invofest 2023 akan berlangsung pada tanggal 23 - 25 Oktober 2023"
     },
     {
       title: "Bagaimana cara daftar Kompetisi di Event Invofest 2023 ?",

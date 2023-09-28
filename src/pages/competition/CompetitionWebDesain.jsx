@@ -82,7 +82,7 @@ class CompetitionWebDesain extends Component {
             atau Surat Keterangan resmi."
             li2="Peserta adalah perorangan/individu maupun tim (maksimal 3 orang)
           serta tidak dapat diwakilkan oleh orang lain."
-            li3="Setiap anggota tim wajib berasal dari universitas yang sama."
+            li3="Setiap anggota tim wajib berasal dari Sekolah yang sama."
             li4="Masing-masing tim wajib menentukan nama tim dan satu ketua tim."
             li5="Peserta lomba mendaftar dan melengkapi seluruh data yang
           diperlukan melalui formulir yang telah disediakan."
@@ -97,6 +97,7 @@ class CompetitionWebDesain extends Component {
             contact2="Fida (0855-4040-7654)"
             contact3="Besta (0895-1857-0693)"
             guidebook="https://bit.ly/GuideBook-Invofest2023"
+            titleTabsLomba="Guide Book"
           />
         </div>
         {/* <Sponsor /> */}
