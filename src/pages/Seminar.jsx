@@ -3,8 +3,9 @@ import Navbars from "../component/Navbars";
 import BannerAcara from "../component/banner/BannerAcara";
 import "../assets/css/card/personal.css";
 import img from "../assets/img/12345.jpg";
-import Pemateri1 from "../assets/img/acara/seminar/pak_david.jpeg";
-import Pemateri2 from "../assets/img/acara/seminar/pak_romi.jpeg";
+import Pemateri1 from "../assets/img/acara/seminar/mas_nofi.jpg";
+import Pemateri2 from "../assets/img/acara/seminar/pak_david.jpeg";
+import Pemateri3 from "../assets/img/acara/seminar/pak_romi.jpeg";
 import DescPersonal from "../component/card/personal/DescPersonal";
 import Footer from "../component/Footer";
 import TabsAcara from "../component/acara/TabsAcara";
@@ -60,6 +61,18 @@ class Seminar extends Component {
               <div className="col">
                 <DescPersonal
                   image={Pemateri1}
+                  name="Nofi Bayu Darmawan"
+                  job="Founder & CEO Komerce Startup Teknologi Terkemuka di Jawa Tengah"
+                  names="Nofi Bayu Darmawan"
+                  jobs="Founder & CEO Komerce Startup Teknologi Terkemuka di Jawa Tengah"
+                  fb="https://"
+                  twiter="https://"
+                  google="https://"
+                />
+              </div>
+              <div className="col">
+                <DescPersonal
+                  image={Pemateri2}
                   name="David Wijaya"
                   job="Business Development Manager Training & Academy di Red Hat Indonesia"
                   names="David Wijaya"
@@ -71,7 +84,7 @@ class Seminar extends Component {
               </div>
               <div className="col">
                 <DescPersonal
-                  image={Pemateri2}
+                  image={Pemateri3}
                   name="Romi Satria Wahono"
                   job="Enterprise Architecture & Digital Transformation Guru
                   Founder & CEO BrainCorp"
