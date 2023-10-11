@@ -4,6 +4,7 @@ import meter2 from "../../assets/img/sponsor/bni.png";
 import meter3 from "../../assets/img/sponsor/coklat.png";
 import meter4 from "../../assets/img/sponsor/Dicoding Logo - Default Color.png";
 import meter5 from "../../assets/img/sponsor/logo_komerce.png";
+import meter6 from "../../assets/img/sponsor/plaza-tegal.png";
 import Carousel from "react-multi-carousel";
 // import Carousel from "react-owl-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -126,6 +127,10 @@ class Sponsor extends Component {
             </div>
             <div className="col">
                 <div className="mb-5"><img style={sizeIcons2} src={meter5} alt="" /></div>
+                {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
+            </div>
+            <div className="col">
+                <div className="mb-5"><img style={sizeIcons2} src={meter6} alt="" /></div>
                 {/* <div className="mb-5"><img style={sizeIcons} src={meter1} alt="" /></div> */}
             </div>
           </div>
