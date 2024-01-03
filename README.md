@@ -17,7 +17,7 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests]([https://facebook.github.io/create-react-app/docs/running-tests](https://www.google.com/imgres?imgurl=https%3A%2F%2Fasset.kompas.com%2Fcrops%2Fj64UbkdOb0mtE9uqWUgkfb1CdD8%3D%2F192x502%3A2752x1782%2F750x500%2Fdata%2Fphoto%2F2019%2F06%2F12%2F686907793.jpg&tbnid=pQYXWZtX7X3FdM&vet=12ahUKEwiolof6zcGDAxXbbGwGHaQKDcAQMygCegQIARAv..i&imgrefurl=https%3A%2F%2Fedukasi.kompas.com%2Fread%2F2019%2F06%2F12%2F11025281%2Fpemerintah-fokuslah-ke-pendidikan-sd-dan-madrasah%3Fpage%3Dall&docid=Usn5fjL8rXY1PM&w=750&h=500&q=sd&ved=2ahUKEwiolof6zcGDAxXbbGwGHaQKDcAQMygCegQIARAv)) for more information.
+See the section about [running tests](https://www.google.com/imgres?imgurl=https%3A%2F%2Fasset.kompas.com%2Fcrops%2Fj64UbkdOb0mtE9uqWUgkfb1CdD8%3D%2F192x502%3A2752x1782%2F750x500%2Fdata%2Fphoto%2F2019%2F06%2F12%2F686907793.jpg&tbnid=pQYXWZtX7X3FdM&vet=12ahUKEwiolof6zcGDAxXbbGwGHaQKDcAQMygCegQIARAv..i&imgrefurl=https%3A%2F%2Fedukasi.kompas.com%2Fread%2F2019%2F06%2F12%2F11025281%2Fpemerintah-fokuslah-ke-pendidikan-sd-dan-madrasah%3Fpage%3Dall&docid=Usn5fjL8rXY1PM&w=750&h=500&q=sd&ved=2ahUKEwiolof6zcGDAxXbbGwGHaQKDcAQMygCegQIARAv) for more information.
 
 ### `npm run build`
 
